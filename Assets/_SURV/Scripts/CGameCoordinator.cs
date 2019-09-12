@@ -1,0 +1,125 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
+
+	[SerializeField]
+	private CInventryMan m_cInventryMan;
+
+    CPartyChara shigeru;
+
+    private List<CTask> m_lsTasks = new List<CTask>();
+
+	// Use this for initialization
+	void Start () {
+		//m_cInventryMan.Init();
+
+        CSituationStatus.Instance.Init();
+
+        shigeru = new CPartyChara("Shigeru");
+		CPartyStatus.Instance.AppendPartyChara(shigeru);
+		shigeru.Hp = 50;
+        shigeru.AtkNaked = 10;
+		shigeru.Food = 50;
+        shigeru.GainExp(0);
+        int mapW = CMapMan.Instance.WIDTH;
+        int mapH = CMapMan.Instance.HEIGHT;
+        var vPartyPos = new Vector2(Mathf.Round(mapW * 0.5f), Mathf.Round(mapH * 0.5f));
+        CPartyStatus.Instance.SetPartyPos(vPartyPos);
+        CMapMan.Instance.SetDispPartyPos(vPartyPos);
+
+        CSoundMan.Instance.PlayBGM("BGM_Field00");
+        CPartyStatus.Instance.UpdatePartyText();
+        CSituationStatus.Instance.UpdateSituationText();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
+        if(Input.GetKeyDown(KeyCode.Y)){
+            // デバッグ用
+            shigeru.Hp = 5000;
+            shigeru.MaxHp = 5000;
+            shigeru.AtkNaked = 1000;
+            CPartyStatus.Instance.UpdatePartyText();
+        }
+
+        if (m_lsTasks.Count != 0)
+        {
+            var cTask = m_lsTasks[0];
+            if (cTask.CalledCount == 0)
+            {
+				cTask.OnInitialize();
+                cTask.OnStart();
+            }
+            else if (false == cTask.IsEnd)
+            {
+                cTask.OnUpdate();
+            }
+            else
+            {
+                cTask.OnEnd();
+                m_lsTasks.RemoveAt(0);
+            }
+			cTask.CalledCount++;
+            return;
+        }
+
+		if (Input.GetKeyDown(KeyCode.W))
+		{
+			m_lsTasks.Add(new CTaskMoveArea(new Vector2(0,1)));
+			m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            m_lsTasks.Add(new CTaskMoveArea(new Vector2(0,-1)));
+            m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+			m_lsTasks.Add(new CTaskMoveArea(new Vector2(-1,0)));
+			m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+			m_lsTasks.Add(new CTaskMoveArea(new Vector2(1,0)));
+			m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+			var enemy = CSituationStatus.Instance.GetChara(0);
+
+            if(enemy != null)
+            {
+                m_lsTasks.Add(new CTaskAttack(shigeru, enemy, "を思いっきり殴った", "SE_Punch00"));
+				m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
+				m_lsTasks.Add(new CTaskAdvanceTurn());
+            }
+            else
+            {
+				m_lsTasks.Add(new CTaskSearchAround());
+				m_lsTasks.Add(new CTaskAdvanceTurn());
+                
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            // デバッグ用「待つ」コマンド
+            var enemy = CSituationStatus.Instance.GetChara(0);
+
+            if(enemy != null)
+            {
+                m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
+                m_lsTasks.Add(new CTaskAdvanceTurn());
+            }
+            else
+            {
+                m_lsTasks.Add(new CTaskAdvanceTurn());
+            }
+        }
+
+    }
+}

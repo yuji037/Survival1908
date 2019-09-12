@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6269782f8eec041bda22548cb9b8d152, type: 3}
+  m_Name: CLocationData
+  m_EditorClassIdentifier: 
+  m_pcLocationStatus:
+  - Name: "\u6D77"
+    DebugMapColor: {r: 0.21226418, g: 0.50176054, b: 1, a: 1}
+    SearchItemList: []
+  - Name: "\u7A7A\u304D\u5730"
+    DebugMapColor: {r: 0.7725491, g: 0.7294118, b: 0.5803922, a: 1}
+    SearchItemList: []
+  - Name: "\u3046\u3063\u305D\u3046\u3068\u3057\u305F\u68EE"
+    DebugMapColor: {r: 0.19215688, g: 0.48235297, b: 0.07058824, a: 1}
+    SearchItemList:
+    - Rate: 90
+      Item: "\u6728\u306E\u679D"
+    - Rate: 10
+      Item: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
+    - Rate: 30
+      Item: "\u6728\u82FA"
+    - Rate: 70
+      Item: "\u30E4\u30B7\u306E\u8449"
+  - Name: "\u3072\u3089\u3051\u305F\u5DDD\u8FBA"
+    DebugMapColor: {r: 0.5683072, g: 0.7589479, b: 0.9339623, a: 1}
+    SearchItemList:
+    - Rate: 20
+      Item: "\u751F\u9B5A"
+    - Rate: 80
+      Item: "\u77F3\u7247"

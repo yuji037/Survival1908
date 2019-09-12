@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774887d9adf2f4b4986e6fc62f9ae6f1, type: 3}
+  m_Name: CSoundSettings
+  m_EditorClassIdentifier: 
+  m_pcSoundClips:
+  - id: BGM_Field00
+    audioClip: {fileID: 8300000, guid: 9b1d341f8f8404a0dbd5adc882febc67, type: 3}
+    volume: 0
+  - id: BGM_NormalBattle00
+    audioClip: {fileID: 8300000, guid: bc449a792933b4d3ba21da3a81f4eb23, type: 3}
+    volume: 0
+  - id: 
+    audioClip: {fileID: 0}
+    volume: 0
+  - id: 
+    audioClip: {fileID: 0}
+    volume: 0
+  - id: 
+    audioClip: {fileID: 0}
+    volume: 0
+  - id: SE_Punch00
+    audioClip: {fileID: 8300000, guid: 1f8fa10286d9443aeb6574cdc3b6b78e, type: 3}
+    volume: 0
+  - id: SE_Miss00
+    audioClip: {fileID: 8300000, guid: 9f52a9633e7f14ad3bfbcc6419eb1aa3, type: 3}
+    volume: 0
+  - id: SE_FootSand00
+    audioClip: {fileID: 8300000, guid: e14714cd7a4a34d1ba7baf3677f6dbda, type: 3}
+    volume: 0
+  - id: 
+    audioClip: {fileID: 0}
+    volume: 0
+  - id: 
+    audioClip: {fileID: 0}
+    volume: 0

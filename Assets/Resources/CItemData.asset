@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5700fe4c5774618beb0247c5365dc2, type: 3}
+  m_Name: CItemData
+  m_EditorClassIdentifier: 
+  m_pcItemStatus:
+  - ID: Facility00
+    Name: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+    ItemType: 3
+    EffectValue1: 0
+  - ID: Food00
+    Name: "\u6728\u82FA"
+    ItemType: 0
+    EffectValue1: 10
+  - ID: Food01
+    Name: "\u751F\u9B5A"
+    ItemType: 0
+    EffectValue1: 20
+  - ID: NoUse00
+    Name: "\u8131\u51FA\u306E\u79D8\u5B9D"
+    ItemType: 2
+    EffectValue1: 1
+  - ID: NoUse01
+    Name: "\u30E4\u30B7\u306E\u8449"
+    ItemType: 2
+    EffectValue1: 1
+  - ID: NoUse02
+    Name: "\u77F3\u7247"
+    ItemType: 2
+    EffectValue1: 1
+  - ID: Weapon00
+    Name: "\u6728\u306E\u679D"
+    ItemType: 1
+    EffectValue1: 5
+  - ID: Weapon01
+    Name: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
+    ItemType: 1
+    EffectValue1: 15
