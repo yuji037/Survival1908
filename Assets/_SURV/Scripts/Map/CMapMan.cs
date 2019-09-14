@@ -51,18 +51,24 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
         for (int h = 0; h < HEIGHT; ++h) {
             m_poMapElement2D[h] = new GameObject[WIDTH];
             for (int w = 0; w < WIDTH; ++w) {
-                int mapType = GetMapType(w, h);
+                var cMapCell = m_cMapData.map[h][w];
+                int iLocationType = cMapCell.iLocationType;
                 var oCell = Instantiate(m_oMapCellPrefab);
                 var rt = oCell.GetComponent<RectTransform>();
                 oCell.transform.SetParent(m_oMapCellParent.transform, false);
                 rt.localPosition = new Vector3(m_fCellWidth * w, m_fCellHeight * h);
 
                 // デバッグ的に色を変える
-				var c = CSituationStatus.Instance.m_pcLocationStatus[mapType].DebugMapColor;
+				var c = CSituationStatus.Instance.m_pcLocationStatus[iLocationType].DebugMapColor;
 				c.a *= 0.2f;
                 oCell.GetComponentInChildren<Image>().color = c;
                 oCell.GetComponentInChildren<Text>().text = "";
                 m_poMapElement2D[h][w] = oCell;
+
+                if(cMapCell.cFacility.eType == eFacilityType.None)
+                {
+                    cMapCell.cFacility = null;
+                }
             }
         }
 

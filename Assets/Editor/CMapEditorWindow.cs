@@ -74,7 +74,7 @@ public class CMapEditorWindow : EditorWindow
 			for (int w = 0; w < m_cMapData.map[h].Leength; ++w) {
 				EditorGUI.DrawRect(
 					new Rect(
-						m_vMapDispPos + new Vector2(w * m_fCellSize, h * m_fCellSize), 
+						m_vMapDispPos + new Vector2(w * m_fCellSize, (m_cMapData.map.Length - 1 - h) * m_fCellSize), 
 						new Vector2(m_fCellSize, m_fCellSize)), 
 					m_pcLocationStatus[m_cMapData.map[h][w].iLocationType].DebugMapColor);
             }
@@ -124,7 +124,7 @@ public class CMapEditorWindow : EditorWindow
         vPos /= m_fCellSize;
 
         int w = Mathf.FloorToInt(vPos.x);
-        int h = Mathf.FloorToInt(vPos.y);
+        int h = m_cMapData.map.Length - 1 - Mathf.FloorToInt(vPos.y);
 
 		if (h < 0 || h >= m_cMapData.map.Length ||
 			w < 0 || w >= m_cMapData.map[0].Leength)

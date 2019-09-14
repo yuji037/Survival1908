@@ -13,14 +13,39 @@ MonoBehaviour:
   m_Name: CCraftData
   m_EditorClassIdentifier: 
   m_pcCraftStatus:
-  - DstItemUnit:
+  - eCraftConditionType: 0
+    DstItemUnit:
       ItemID: Facility00
       ItemName: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
       Count: 1
     SrcItemUnitList:
     - ItemID: Weapon00
       ItemName: "\u6728\u306E\u679D"
-      Count: 5
+      Count: 2
     - ItemID: NoUse01
       ItemName: "\u30E4\u30B7\u306E\u8449"
-      Count: 10
+      Count: 2
+  - eCraftConditionType: 0
+    DstItemUnit:
+      ItemID: Facility00
+      ItemName: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+      Count: 1
+    SrcItemUnitList:
+    - ItemID: Weapon00
+      ItemName: "\u6728\u306E\u679D"
+      Count: 2
+    - ItemID: NoUse01
+      ItemName: "\u30E4\u30B7\u306E\u8449"
+      Count: 2
+  - eCraftConditionType: 0
+    DstItemUnit:
+      ItemID: Facility00
+      ItemName: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+      Count: 1
+    SrcItemUnitList:
+    - ItemID: Weapon00
+      ItemName: "\u6728\u306E\u679D"
+      Count: 2
+    - ItemID: NoUse01
+      ItemName: "\u30E4\u30B7\u306E\u8449"
+      Count: 2

@@ -23,6 +23,12 @@ public class CChara
         return DefNaked;
     }
 
+    public virtual void HealHP(float fValue)
+    {
+        Hp += fValue;
+        if (Hp > MaxHp) Hp = MaxHp;
+    }
+
 	public virtual void OnDead(){
         var fFood = 0f;
         switch (Name) {

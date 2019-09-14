@@ -4,7 +4,9 @@ using UnityEngine;
 
 public enum eFacilityType
 {
+    None,
     Shelter,
+    Bonfire,
     MAX,
 }
 

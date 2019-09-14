@@ -87,7 +87,7 @@ public class CTaskAttack : CTask
 			m_cTarget.OnDead();
             if (m_cTarget.Name == "ゴリラ") {
                 CMessageWindowMan.Instance.AddText(m_cTarget.Name + "は何かを落とした…");
-                var item = CItemDataMan.Instance.GetItemStatusById("Tool00");
+                var item = CItemDataMan.Instance.GetItemStatusById("NoUse00");
                 yield return new WaitForSeconds(1f);
                 CInventryMan.Instance.GainItemCount(item.ID, 1);
                 CMessageWindowMan.Instance.AddText(item.Name + "を手に入れた！");
@@ -103,11 +103,10 @@ public class CTaskAttack : CTask
 		}
 	}
 
-    public override void OnEnd()
-    {
-        base.OnEnd();
-
-        CMessageWindowMan.Instance.AddText("終了");
-    }
+    //public override void OnEnd()
+    //{
+    //    base.OnEnd();
+    //    CMessageWindowMan.Instance.AddText("終了");
+    //}
 
 }

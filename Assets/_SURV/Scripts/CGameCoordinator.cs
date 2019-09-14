@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
-
-	[SerializeField]
-	private CInventryMan m_cInventryMan;
 
     CPartyChara shigeru;
 
     private List<CTask> m_lsTasks = new List<CTask>();
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private GameObject[]    m_poActionButton;
+    private Action[]        m_pActionDelegate = new Action[2];
+
+
+    // Use this for initialization
+    void Start () {
 		//m_cInventryMan.Init();
 
         CSituationStatus.Instance.Init();
@@ -32,18 +36,15 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
         CSoundMan.Instance.PlayBGM("BGM_Field00");
         CPartyStatus.Instance.UpdatePartyText();
         CSituationStatus.Instance.UpdateSituationText();
+
+        UpdateInputAction();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetKeyDown(KeyCode.Y)){
-            // デバッグ用
-            shigeru.Hp = 5000;
-            shigeru.MaxHp = 5000;
-            shigeru.AtkNaked = 1000;
-            CPartyStatus.Instance.UpdatePartyText();
-        }
+        DebugInputKeyboard();
+
 
         if (m_lsTasks.Count != 0)
         {
@@ -66,60 +67,132 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
             return;
         }
 
-		if (Input.GetKeyDown(KeyCode.W))
-		{
-			m_lsTasks.Add(new CTaskMoveArea(new Vector2(0,1)));
-			m_lsTasks.Add(new CTaskAdvanceTurn());
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
+
+    }
+
+    private void DebugInputKeyboard()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            m_lsTasks.Add(new CTaskMoveArea(new Vector2(0,-1)));
-            m_lsTasks.Add(new CTaskAdvanceTurn());
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-			m_lsTasks.Add(new CTaskMoveArea(new Vector2(-1,0)));
-			m_lsTasks.Add(new CTaskAdvanceTurn());
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-			m_lsTasks.Add(new CTaskMoveArea(new Vector2(1,0)));
-			m_lsTasks.Add(new CTaskAdvanceTurn());
+            // デバッグ用
+            shigeru.Hp = 5000;
+            shigeru.MaxHp = 5000;
+            shigeru.AtkNaked = 1000;
+            CPartyStatus.Instance.UpdatePartyText();
         }
 
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-			var enemy = CSituationStatus.Instance.GetChara(0);
-
-            if(enemy != null)
-            {
-                m_lsTasks.Add(new CTaskAttack(shigeru, enemy, "を思いっきり殴った", "SE_Punch00"));
-				m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
-				m_lsTasks.Add(new CTaskAdvanceTurn());
-            }
-            else
-            {
-				m_lsTasks.Add(new CTaskSearchAround());
-				m_lsTasks.Add(new CTaskAdvanceTurn());
-                
-            }
+            InputButtonAction(0);
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            // デバッグ用「待つ」コマンド
-            var enemy = CSituationStatus.Instance.GetChara(0);
+            InputButtonAction(1);
+        }
 
-            if(enemy != null)
+        if (m_lsTasks.Count != 0)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            m_lsTasks.Add(new CTaskMoveArea(new Vector2(0, 1)));
+            m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            m_lsTasks.Add(new CTaskMoveArea(new Vector2(0, -1)));
+            m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            m_lsTasks.Add(new CTaskMoveArea(new Vector2(-1, 0)));
+            m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            m_lsTasks.Add(new CTaskMoveArea(new Vector2(1, 0)));
+            m_lsTasks.Add(new CTaskAdvanceTurn());
+        }
+    }
+
+    public void InputButtonAction(int index)
+    {
+        if (m_pActionDelegate[index] == null)
+            return;
+
+        m_pActionDelegate[index]();
+    }
+
+    public void SetInputAction(int index, string btnText, Action action)
+    {
+        m_poActionButton[index].GetComponentInChildren<Text>().text = btnText;
+        m_pActionDelegate[index] = action;
+    }
+
+    public void UpdateInputAction()
+    {
+        var enemy = CSituationStatus.Instance.GetChara(0);
+
+        if (enemy != null)
+        {
+            SetInputAction(0, "攻撃する", () =>
+            {
+                m_lsTasks.Add(new CTaskAttack(shigeru, enemy, "を思いっきり殴った", "SE_Punch00"));
+                m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
+                m_lsTasks.Add(new CTaskAdvanceTurn());
+            });
+        }
+        else
+        {
+            SetInputAction(0, "探索", () =>
+            {
+                m_lsTasks.Add(new CTaskSearchAround());
+                m_lsTasks.Add(new CTaskAdvanceTurn());
+            });
+        }
+
+        if (enemy != null)
+        {
+            SetInputAction(1, "待つ", () =>
             {
                 m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
                 m_lsTasks.Add(new CTaskAdvanceTurn());
+            });
+        }
+        else
+        {
+            var ivPos = CPartyStatus.Instance.GetPartyPos();
+            var cFacility = CMapMan.Instance.GetMapFacility(ivPos.x, ivPos.y);
+            if(cFacility == null)
+            {
+                SetInputAction(1, "待つ", () =>
+                {
+                    m_lsTasks.Add(new CTaskAdvanceTurn());
+                });
             }
             else
             {
-                m_lsTasks.Add(new CTaskAdvanceTurn());
+                switch (cFacility.eType)
+                {
+                    case eFacilityType.Shelter:
+                        SetInputAction(1, "休む", () =>
+                        {
+                            m_lsTasks.Add(new CTaskRest());
+                            m_lsTasks.Add(new CTaskAdvanceTurn());
+                        });
+                        break;
+                    case eFacilityType.Bonfire:
+                        SetInputAction(1, "調理する", () =>
+                        {
+                            m_lsTasks.Add(new CTaskAdvanceTurn());
+                        });
+                        break;
+                }
             }
         }
-
     }
+
+
 }
+

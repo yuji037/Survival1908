@@ -6,10 +6,11 @@ using System;
 [Serializable]
 public class CItemStatus
 {
-    public string ID;
-    public string Name;
-    public eItemType ItemType;
-    public float EffectValue1;
+    public string       Name;
+    public string       ID;
+    public eItemType    ItemType;
+    public int          EffectTypeID;
+    public float        EffectValue1;
 
     public void Use(){
         switch (ItemType) {
@@ -22,7 +23,7 @@ public class CItemStatus
             case eItemType.Facility:
                 var ivPos = CPartyStatus.Instance.GetPartyPos();
                 var cFacility = new CFacility();
-                cFacility.eType = eFacilityType.Shelter;
+                cFacility.eType = (eFacilityType)EffectTypeID;
                 CMapMan.Instance.SetMapFacility(ivPos.x, ivPos.y, cFacility);
                 break;
         }
@@ -34,5 +35,6 @@ public enum eItemType{
     Weapon,
 	NoUse,
     Facility,
+    Armor,
     MAX,
 }

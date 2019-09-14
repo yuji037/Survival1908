@@ -10,6 +10,7 @@ public class CTaskAdvanceTurn : CTask
 
 		CPartyStatus.Instance.OnTurnElapsed();
 		CSituationStatus.Instance.OnTurnElapsed();
+        CGameCoordinator.Instance.UpdateInputAction();
 
 		IsEnd = true;
 	}

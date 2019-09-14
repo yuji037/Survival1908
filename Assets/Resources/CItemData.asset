@@ -13,35 +13,83 @@ MonoBehaviour:
   m_Name: CItemData
   m_EditorClassIdentifier: 
   m_pcItemStatus:
-  - ID: Facility00
-    Name: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
-    ItemType: 3
-    EffectValue1: 0
-  - ID: Food00
-    Name: "\u6728\u82FA"
-    ItemType: 0
+  - Name: "\u7363\u76AE\u306E\u670D"
+    ID: Armor00
+    ItemType: 4
+    EffectTypeID: 0
     EffectValue1: 10
-  - ID: Food01
-    Name: "\u751F\u9B5A"
-    ItemType: 0
-    EffectValue1: 20
-  - ID: NoUse00
-    Name: "\u8131\u51FA\u306E\u79D8\u5B9D"
-    ItemType: 2
-    EffectValue1: 1
-  - ID: NoUse01
-    Name: "\u30E4\u30B7\u306E\u8449"
-    ItemType: 2
-    EffectValue1: 1
-  - ID: NoUse02
-    Name: "\u77F3\u7247"
-    ItemType: 2
-    EffectValue1: 1
-  - ID: Weapon00
-    Name: "\u6728\u306E\u679D"
-    ItemType: 1
-    EffectValue1: 5
-  - ID: Weapon01
-    Name: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
-    ItemType: 1
+  - Name: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+    ID: Facility00
+    ItemType: 3
+    EffectTypeID: 1
+    EffectValue1: 0
+  - Name: "\u305F\u304D\u706B"
+    ID: Facility01
+    ItemType: 3
+    EffectTypeID: 2
     EffectValue1: 15
+  - Name: "\u6728\u82FA"
+    ID: Food00
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 10
+  - Name: "\u751F\u9B5A"
+    ID: Food01
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 20
+  - Name: "\u751F\u8089"
+    ID: Food02
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 35
+  - Name: "\u7363\u8089\u3068\u304D\u306E\u3053\u306E\u6C34\u708A\u304D"
+    ID: Food03
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 35
+  - Name: "\u3058\u3083\u304C\u3044\u3082"
+    ID: Food04
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 8
+  - Name: "\u8131\u51FA\u306E\u79D8\u5B9D"
+    ID: NoUse00
+    ItemType: 2
+    EffectTypeID: 0
+    EffectValue1: 1
+  - Name: "\u30E4\u30B7\u306E\u8449"
+    ID: NoUse01
+    ItemType: 2
+    EffectTypeID: 0
+    EffectValue1: 1
+  - Name: "\u77F3\u7247"
+    ID: NoUse02
+    ItemType: 2
+    EffectTypeID: 0
+    EffectValue1: 1
+  - Name: "\u7363\u306E\u76AE"
+    ID: NoUse03
+    ItemType: 2
+    EffectTypeID: 0
+    EffectValue1: 1
+  - Name: "\u6728\u306E\u679D"
+    ID: Weapon00
+    ItemType: 1
+    EffectTypeID: 0
+    EffectValue1: 5
+  - Name: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
+    ID: Weapon01
+    ItemType: 1
+    EffectTypeID: 0
+    EffectValue1: 15
+  - Name: "\u77F3\u65A7"
+    ID: Weapon02
+    ItemType: 1
+    EffectTypeID: 0
+    EffectValue1: 25
+  - Name: "\u77F3\u69CD"
+    ID: Weapon03
+    ItemType: 1
+    EffectTypeID: 0
+    EffectValue1: 35

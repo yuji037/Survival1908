@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CTask {
 
-	public		int 	CalledCount 	= 0;
-    public      bool    IsEnd           = false;
+	public		int 	CalledCount;
+    public      bool    IsEnd;
     protected   float   m_fStartTime;
 
 	public void OnInitialize(){

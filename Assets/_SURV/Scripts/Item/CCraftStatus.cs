@@ -6,8 +6,9 @@ using System;
 [Serializable]
 public class CCraftStatus
 {
-	public CItemCountUnit 	DstItemUnit;
-	public CItemCountUnit[] SrcItemUnitList;
+    public eCraftConditionType  eCraftConditionType;
+	public CItemCountUnit 	    DstItemUnit;
+	public CItemCountUnit[]     SrcItemUnitList;
 }
 
 [Serializable]
@@ -33,4 +34,10 @@ public class CItemCountUnit{
         ItemID      = status.ID;
         ItemName    = status.Name;
     }
+}
+
+public enum eCraftConditionType
+{
+    None = 0,
+    Bonfire = 10,
 }
