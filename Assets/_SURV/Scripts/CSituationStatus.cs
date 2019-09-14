@@ -98,12 +98,27 @@ public class CSituationStatus : CSingletonMonoBehaviour<CSituationStatus>
 		}
 		return m_lsEnemy [index];
 	}
-    public int GetLocationStatusCount(){
+
+    public int GetLocationStatusCount()
+    {
         return m_pcLocationStatus.Length;
     }
-    public string GetCurrentLocationName(){
+
+    public string GetCurrentLocationName()
+    {
         return m_pcLocationStatus[m_iLocationType].Name;
     }
+
+    public string GetLocationName(int iLocationType)
+    {
+        return m_pcLocationStatus[iLocationType].Name;
+    }
+
+    public CFacility GetCurrentFacility(){
+        var ivPos = CPartyStatus.Instance.GetPartyPos();
+        return CMapMan.Instance.GetMapFacility(ivPos.x, ivPos.y);
+    }
+
     public void UpdateLocation(){
         var vPos = CPartyStatus.Instance.m_vPartyPos;
         m_iLocationType = CMapMan.Instance.GetMapType(

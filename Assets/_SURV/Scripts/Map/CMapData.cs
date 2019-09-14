@@ -46,5 +46,6 @@ public class CMapCellArray{
 public class CMapCell
 {
     public int iLocationType;
+    public int iEncountType;
     public CFacility cFacility;
 }

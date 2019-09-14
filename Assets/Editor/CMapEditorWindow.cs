@@ -72,11 +72,12 @@ public class CMapEditorWindow : EditorWindow
 		// マップ表示
 		for (int h = 0; h < m_cMapData.map.Length; ++h) {
 			for (int w = 0; w < m_cMapData.map[h].Leength; ++w) {
-				EditorGUI.DrawRect(
-					new Rect(
-						m_vMapDispPos + new Vector2(w * m_fCellSize, (m_cMapData.map.Length - 1 - h) * m_fCellSize), 
-						new Vector2(m_fCellSize, m_fCellSize)), 
-					m_pcLocationStatus[m_cMapData.map[h][w].iLocationType].DebugMapColor);
+                EditorGUI.DrawRect(
+                    new Rect(
+                        m_vMapDispPos + new Vector2(w * m_fCellSize, (m_cMapData.map.Length - 1 - h) * m_fCellSize),
+                        new Vector2(m_fCellSize, m_fCellSize)),
+                    m_pcLocationStatus[m_cMapData.map[h][w].iLocationType].DebugMapColor +
+                    Color.red * Mathf.PingPong((float)EditorApplication.timeSinceStartup, 1f));
             }
         }
 

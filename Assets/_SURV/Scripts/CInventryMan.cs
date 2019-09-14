@@ -13,6 +13,9 @@ public class CItemUIElement
 
 public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
 {
+    [SerializeField]
+    private GameObject m_oWindow;
+
     private Dictionary<string, int> m_dicItemHasCount = new Dictionary<string, int>();
 
     [SerializeField]
@@ -41,7 +44,7 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
     void Start()
     {
         m_oInventryCellElement.SetActive(false);
-        gameObject.SetActive(false);
+        DispWindow(false);
     }
 
     // Update is called once per frame
@@ -65,6 +68,15 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
             m_dicItemHasCount[sID] = 0;
         }
         m_dicItemHasCount[sID] += iCount;
+    }
+
+    public void DispWindow(bool bDisp)
+    {
+        m_oWindow.SetActive(bDisp);
+        if (bDisp)
+        {
+            UpdateInventryUI();
+        }
     }
 
     public void UpdateInventryUI()
@@ -126,11 +138,6 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
             // WARNING:ここ既にアクティブかどうかチェックした方が、動作軽くなるかも
             m_lsInventryElements[iElement].gameObject.SetActive(false);
         }
-    }
-
-    private void OnEnable()
-    {
-        UpdateInventryUI();
     }
 
     private void SelectInventryItem(int index)

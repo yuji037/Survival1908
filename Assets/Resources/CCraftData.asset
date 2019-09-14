@@ -27,25 +27,31 @@ MonoBehaviour:
       Count: 2
   - eCraftConditionType: 0
     DstItemUnit:
-      ItemID: Facility00
-      ItemName: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+      ItemID: Facility01
+      ItemName: "\u305F\u304D\u706B"
       Count: 1
     SrcItemUnitList:
     - ItemID: Weapon00
       ItemName: "\u6728\u306E\u679D"
       Count: 2
-    - ItemID: NoUse01
-      ItemName: "\u30E4\u30B7\u306E\u8449"
-      Count: 2
-  - eCraftConditionType: 0
+  - eCraftConditionType: 10
     DstItemUnit:
-      ItemID: Facility00
-      ItemName: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+      ItemID: Food03
+      ItemName: "\u7363\u8089\u3068\u304D\u306E\u3053\u306E\u6C34\u708A\u304D"
       Count: 1
     SrcItemUnitList:
-    - ItemID: Weapon00
-      ItemName: "\u6728\u306E\u679D"
+    - ItemID: Food02
+      ItemName: "\u751F\u8089"
       Count: 2
-    - ItemID: NoUse01
-      ItemName: "\u30E4\u30B7\u306E\u8449"
+    - ItemID: Food05
+      ItemName: "\u304D\u306E\u3053"
       Count: 2
+  - eCraftConditionType: 10
+    DstItemUnit:
+      ItemID: Food06
+      ItemName: "\u713C\u3044\u305F\u8089"
+      Count: 1
+    SrcItemUnitList:
+    - ItemID: Food02
+      ItemName: "\u751F\u8089"
+      Count: 1

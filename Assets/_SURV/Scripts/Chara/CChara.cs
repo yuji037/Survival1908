@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class CChara
 {
     public string Name;
+    public string ID;
     public float MaxHp;
     public float Hp;
     public float AtkNaked;

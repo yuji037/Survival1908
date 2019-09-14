@@ -16,14 +16,23 @@ public class CTaskMoveArea : CTask
 	}
 
 	IEnumerator TaskCoroutine(){
-		CMessageWindowMan.Instance.ClearText();
 
+        // 移動可能かチェック
+        var vPrePos = CPartyStatus.Instance.m_vPartyPos;
+        var vNextPos = vPrePos + m_vMoveDiff;
+
+        var canMove = CMapMan.Instance.CanMoveToPosition(vNextPos);
+        if(false == canMove)
+        {
+            IsEnd = true;
+            yield break;
+        }
+
+		CMessageWindowMan.Instance.ClearText();
 		CMessageWindowMan.Instance.AddText("移動した...");
         CSoundMan.Instance.Play("SE_FootSand00");
 
         // 位置移動処理
-        var vPrePos = CPartyStatus.Instance.m_vPartyPos;
-        var vNextPos = vPrePos + m_vMoveDiff;
         for (float t = 0; t < 1f; t += Time.deltaTime) {
             var fRate = t;
             CMapMan.Instance.SetDispPartyPos(
@@ -37,85 +46,15 @@ public class CTaskMoveArea : CTask
         // 敵からの逃避判定
         yield return StartCorutine(CheckEscapeFromEnemy());
 
-        if (vNextPos.x >= 7) {
-            var random = Random.Range(0, 100);
-            if (random < 30) {
-                // 敵にエンカウント
-                var enemy = new CChara("唸る野犬");
-                enemy.Hp = 15;
-                enemy.AtkNaked = 4;
-                enemy.ExpHaving = 4;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-            else if (random < 40) {
-                var enemy = new CChara("狼");
-                enemy.Hp = 30;
-                enemy.AtkNaked = 10;
-                enemy.ExpHaving = 10;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-        }
-        else if (vNextPos.y >= 7) {
-            var random = Random.Range(0, 100);
-            if (random < 30) {
-                // 敵にエンカウント
-                var enemy = new CChara("ゴリラ");
-                enemy.Hp = 100;
-                enemy.AtkNaked = 25;
-                enemy.ExpHaving = 50;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-            else if (random < 60) {
-                var enemy = new CChara("狼");
-                enemy.Hp = 30;
-                enemy.AtkNaked = 10;
-                enemy.ExpHaving = 10;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-        }
-        else if (vNextPos.y <= 4) {
-            var random = Random.Range(0, 100);
-            if (random < 5) {
-                // 敵にエンカウント
-                var enemy = new CChara("ゴリラ");
-                enemy.Hp = 100;
-                enemy.AtkNaked = 25;
-                enemy.ExpHaving = 50;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-            else if (random < 35) {
-                var enemy = new CChara("狼");
-                enemy.Hp = 30;
-                enemy.AtkNaked = 10;
-                enemy.ExpHaving = 10;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-        }
-        else {
-            var random = Random.Range(0, 100);
-            if (random < 10) {
-                // 敵にエンカウント
-                var enemy = new CChara("唸る野犬");
-                enemy.Hp = 15;
-                enemy.AtkNaked = 4;
-                enemy.ExpHaving = 4;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
-            else if (random < 20) {
-                var enemy = new CChara("狼");
-                enemy.Hp = 30;
-                enemy.AtkNaked = 10;
-                enemy.ExpHaving = 10;
-                CSituationStatus.Instance.RegisterChara(enemy);
-                CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
-            }
+        // 敵とのエンカウント判定
+        var ivPos = vNextPos.GetIntVector2();
+        var npc = CNpcEncountDataMan.Instance.GetEncountNpc(
+            CMapMan.Instance.GetEncountType(ivPos.x, ivPos.y));
+
+        if(npc != null)
+        {
+            CSituationStatus.Instance.RegisterChara(npc);
+            CSoundMan.Instance.PlayBGM("BGM_NormalBattle00");
         }
 
 		IsEnd = true;

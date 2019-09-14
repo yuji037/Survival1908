@@ -37,22 +37,32 @@ MonoBehaviour:
     ID: Food01
     ItemType: 0
     EffectTypeID: 0
-    EffectValue1: 20
+    EffectValue1: 10
   - Name: "\u751F\u8089"
     ID: Food02
     ItemType: 0
     EffectTypeID: 0
-    EffectValue1: 35
+    EffectValue1: 20
   - Name: "\u7363\u8089\u3068\u304D\u306E\u3053\u306E\u6C34\u708A\u304D"
     ID: Food03
     ItemType: 0
     EffectTypeID: 0
-    EffectValue1: 35
+    EffectValue1: 50
   - Name: "\u3058\u3083\u304C\u3044\u3082"
     ID: Food04
     ItemType: 0
     EffectTypeID: 0
     EffectValue1: 8
+  - Name: "\u304D\u306E\u3053"
+    ID: Food05
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 3
+  - Name: "\u713C\u3044\u305F\u8089"
+    ID: Food06
+    ItemType: 0
+    EffectTypeID: 0
+    EffectValue1: 30
   - Name: "\u8131\u51FA\u306E\u79D8\u5B9D"
     ID: NoUse00
     ItemType: 2

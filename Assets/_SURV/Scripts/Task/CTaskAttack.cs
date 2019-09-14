@@ -85,12 +85,22 @@ public class CTaskAttack : CTask
             var player = CPartyStatus.Instance.GetPartyChara(0);
             var preLevel = player.Level;
 			m_cTarget.OnDead();
-            if (m_cTarget.Name == "ゴリラ") {
-                CMessageWindowMan.Instance.AddText(m_cTarget.Name + "は何かを落とした…");
-                var item = CItemDataMan.Instance.GetItemStatusById("NoUse00");
-                yield return new WaitForSeconds(1f);
-                CInventryMan.Instance.GainItemCount(item.ID, 1);
-                CMessageWindowMan.Instance.AddText(item.Name + "を手に入れた！");
+
+            // ドロップアイテム
+            var dropItemList = CCharaItemDropDataMan.Instance.GetDropItemsByCharaName(m_cTarget.Name);
+            if (dropItemList.Count != 0) {
+
+                var dropItemText = "";
+                for(int i = 0; i < dropItemList.Count; ++i)
+                {
+                    var itemUnit = dropItemList[i];
+                    dropItemText += itemUnit.ItemName + " " + itemUnit.Count + "個";
+                    if (i < dropItemList.Count - 1)
+                        dropItemText += "、";
+
+                    CInventryMan.Instance.GainItemCount(itemUnit.ItemID, itemUnit.Count);
+                }
+                CMessageWindowMan.Instance.AddText(dropItemText + "を手に入れた！");
                 yield return new WaitForSeconds(1f);
             }
             if (preLevel != player.Level) {

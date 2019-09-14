@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class CPartyDetailMan : CSingletonMonoBehaviour<CPartyDetailMan>
 {
-    [SerializeField]
-    private GameObject[] m_pcWindow;
-
     public void SwitchPartyDetail(int index)
     {
-        if (m_pcWindow[index].activeSelf)
-            return;
-
-        for(int i = 0; i < m_pcWindow.Length; ++i)
+        switch (index)
         {
-            m_pcWindow[i].SetActive(i == index);
+            case 0:
+                // HACK: すっごい頭悪そうなやり方
+                CInventryMan.   Instance.DispWindow(true);
+                CCraftMan.      Instance.DispWindow(false);
+                break;
+            case 1:
+                CInventryMan.   Instance.DispWindow(false);
+                CCraftMan.      Instance.DispWindow(true);
+                break;
         }
     }
 }

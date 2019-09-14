@@ -93,13 +93,23 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
         m_imgPartyCell.color = color;
     }
 
-    public int GetMapType(int x, int y){
+    public int GetMapType(int x, int y)
+    {
 		return m_cMapData.map[y][x].iLocationType;
     }
-    public CFacility GetMapFacility(int x, int y){
+
+    public int GetEncountType(int x, int y)
+    {
+        return m_cMapData.map[y][x].iEncountType;
+    }
+
+    public CFacility GetMapFacility(int x, int y)
+    {
         return m_cMapData.map[y][x].cFacility;
     }
-    public void SetMapFacility(int x, int y, CFacility cFacility){
+
+    public void SetMapFacility(int x, int y, CFacility cFacility)
+    {
         m_cMapData.map[y][x].cFacility = cFacility;
 
         Text cText = m_poMapElement2D[y][x].GetComponentInChildren<Text>();
@@ -112,7 +122,10 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
         switch (cFacility.eType)
         {
             case eFacilityType.Shelter:
-                cText.text = "S";
+                cText.text = "家";
+                break;
+            case eFacilityType.Bonfire:
+                cText.text = "火";
                 break;
         }
     }
@@ -120,6 +133,32 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
     public void SetDispPartyPos(Vector2 partyPos){
         var rtParent = m_oMapCellParent.GetComponent<RectTransform>();
         rtParent.localPosition = partyPos * new Vector3(m_fCellWidth * -1, m_fCellHeight * -1, 0);
+    }
+
+    public bool CanMoveToPosition(Vector2 vPos)
+    {
+        var ivPos = new IntVector2(
+            Mathf.RoundToInt(vPos.x),
+            Mathf.RoundToInt(vPos.y));
+
+        if( ivPos.y < 0                                 ||
+            ivPos.y >= m_cMapData.map.Length            ||
+            ivPos.x < 0                                 ||
+            ivPos.x >= m_cMapData.map[ivPos.y].Leength)
+        {
+            return false;
+        }
+
+        var sLocationName = CSituationStatus.Instance.
+            GetLocationName(m_cMapData.map[ivPos.y][ivPos.x].iLocationType);
+
+        switch (sLocationName)
+        {
+            case "海":
+                return false;
+        }
+
+        return true;
     }
 
 	public static void SaveMapData(CMapData cMapData)

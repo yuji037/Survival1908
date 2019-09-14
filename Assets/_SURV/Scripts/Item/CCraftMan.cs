@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
 {
+    [SerializeField]
+    private GameObject m_oWindow;
+
     private CCraftStatus[]                      m_pcCraftStatus;
     private Dictionary<string, CCraftStatus>    m_dicCraftStatus = new Dictionary<string, CCraftStatus>();
 
@@ -34,13 +37,22 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
     void Start()
     {
         m_oCraftCellElement.SetActive(false);
-        gameObject.SetActive(false);
+        DispWindow(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void DispWindow(bool bDisp)
+    {
+        m_oWindow.SetActive(bDisp);
+        if (bDisp)
+        {
+            UpdateCraftUI();
+        }
     }
 
     public void UpdateCraftUI()
@@ -58,8 +70,26 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
         foreach (var cs in m_pcCraftStatus)
         {
             // 表示しない条件
-            //if (craftStatus.Value == 0)
-            //    continue;
+            var isDisp = false;
+            var cFacility = CSituationStatus.Instance.GetCurrentFacility();
+            switch (cs.eCraftConditionType)
+            {
+                case eCraftConditionType.None:
+                    isDisp = true;
+                    break;
+                case eCraftConditionType.Bonfire:
+                    if( cFacility != null &&
+                        cFacility.eType == eFacilityType.Bonfire)
+                    {
+                        isDisp = true;
+                    }
+                    break;
+
+            }
+            if (false == isDisp)
+            {
+                continue;
+            }
 
             CItemUIElement element = null;
             if (iElement >= m_lsCraftElements.Count)
@@ -108,12 +138,6 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
             // WARNING:ここ既にアクティブかどうかチェックした方が、動作軽くなるかも
             m_lsCraftElements[iElement].gameObject.SetActive(false);
         }
-    }
-
-    private void OnEnable()
-    {
-        Awake();
-        UpdateCraftUI();
     }
 
     private void SelectCraftItem(int index)

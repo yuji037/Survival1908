@@ -130,3 +130,13 @@ public struct IntVector2
         y = _y;
     }
 }
+
+public static class Vector2Extention
+{
+    public static IntVector2 GetIntVector2(this Vector2 vec2)
+    {
+        return new IntVector2(
+            Mathf.RoundToInt(vec2.x),
+            Mathf.RoundToInt(vec2.y));
+    }
+}

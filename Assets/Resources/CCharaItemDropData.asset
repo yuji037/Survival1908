@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9aa2ded894649b6955175a0091e2fb, type: 3}
+  m_Name: CCharaItemDropData
+  m_EditorClassIdentifier: 
+  m_pcCharaItemDropUnits:
+  - CharaName: "\u5538\u308B\u91CE\u72AC"
+    CharaID: 
+    ItemDropUnits:
+    - DropRatePercent: 100
+      ItemCountUnit:
+        ItemID: Food02
+        ItemName: "\u751F\u8089"
+        Count: 1
+  - CharaName: "\u72FC"
+    CharaID: 
+    ItemDropUnits:
+    - DropRatePercent: 100
+      ItemCountUnit:
+        ItemID: Food02
+        ItemName: "\u751F\u8089"
+        Count: 1
+  - CharaName: "\u30B4\u30EA\u30E9"
+    CharaID: 
+    ItemDropUnits:
+    - DropRatePercent: 100
+      ItemCountUnit:
+        ItemID: Food02
+        ItemName: "\u751F\u8089"
+        Count: 2
+    - DropRatePercent: 50
+      ItemCountUnit:
+        ItemID: NoUse00
+        ItemName: "\u8131\u51FA\u306E\u79D8\u5B9D"
+        Count: 0

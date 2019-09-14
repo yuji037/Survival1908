@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
 
 [CustomEditor(typeof(CCraftData))]
 public class CCraftDataEditor : Editor
@@ -20,6 +21,12 @@ public class CCraftDataEditor : Editor
                     srcUnit.CorrectItemInfo();
                 }
             }
+            EditorUtility.SetDirty(cT);
+        }
+        if (GUILayout.Button("Sort"))
+        {
+            cT.m_pcCraftStatus = cT.m_pcCraftStatus.OrderBy(st => st.DstItemUnit.ItemID).ToArray();
+            EditorUtility.SetDirty(cT);
         }
 
         base.OnInspectorGUI();

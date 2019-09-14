@@ -148,8 +148,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1890032273}
-  - {fileID: 1254021684}
+  - {fileID: 1830585184}
+  - {fileID: 133018332}
   m_Father: {fileID: 1961241204}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -170,9 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10399effcd0334cdea4b20289ad17243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pcWindow:
-  - {fileID: 1890032272}
-  - {fileID: 1254021683}
 --- !u!1 &100126196
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +244,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100126196}
   m_CullTransparentMesh: 0
+--- !u!1 &133018331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133018332}
+  - component: {fileID: 133018333}
+  m_Layer: 5
+  m_Name: CraftMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &133018332
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133018331}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1254021684}
+  m_Father: {fileID: 57676916}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &133018333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133018331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b2fd134bb2c4e37a550d70907d6147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oWindow: {fileID: 1254021683}
+  m_oCraftCellParent: {fileID: 2111754476}
+  m_oCraftCellElement: {fileID: 807293924}
+  m_imgSelectingCraftUI: {fileID: 504629412}
+  m_buttonCraftAction: {fileID: 1933089433}
+  m_txtSelectCraftAction: {fileID: 0}
+  m_txtCraftDesctiption: {fileID: 930621923}
 --- !u!1 &135730258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1890032274}
+      - m_Target: {fileID: 1830585185}
         m_MethodName: UseSelectedItem
         m_Mode: 1
         m_Arguments:
@@ -2747,9 +2800,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1254021684}
-  - component: {fileID: 1254021685}
   m_Layer: 5
-  m_Name: CraftWindow
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2762,7 +2814,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254021683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2773,32 +2825,14 @@ RectTransform:
   - {fileID: 622435608}
   - {fileID: 135730259}
   - {fileID: 930621922}
-  m_Father: {fileID: 57676916}
-  m_RootOrder: 1
+  m_Father: {fileID: 133018332}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1254021685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254021683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b2fd134bb2c4e37a550d70907d6147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oCraftCellParent: {fileID: 2111754476}
-  m_oCraftCellElement: {fileID: 807293924}
-  m_imgSelectingCraftUI: {fileID: 504629412}
-  m_buttonCraftAction: {fileID: 1933089433}
-  m_txtSelectCraftAction: {fileID: 0}
-  m_txtCraftDesctiption: {fileID: 930621923}
 --- !u!1 &1283446149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,6 +3981,60 @@ MonoBehaviour:
       Item: "\u751F\u9B5A"
   m_sLocationName: "\u7A7A\u304D\u5730"
   m_iLocationType: 0
+--- !u!1 &1830585183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830585184}
+  - component: {fileID: 1830585185}
+  m_Layer: 5
+  m_Name: InventryMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1830585184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830585183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1890032273}
+  m_Father: {fileID: 57676916}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1830585185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830585183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45b9b36136c84e3d81a2bf591b2a027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oWindow: {fileID: 1890032272}
+  m_oInventryCellParent: {fileID: 252803279}
+  m_oInventryCellElement: {fileID: 2006055342}
+  m_imgSelectingInventryUI: {fileID: 1925422574}
+  m_txtSelectItemAction: {fileID: 196489793}
 --- !u!1 &1890032272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,9 +4044,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890032273}
-  - component: {fileID: 1890032274}
   m_Layer: 5
-  m_Name: InventryWindow
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3971,7 +4058,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890032272}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3981,7 +4068,7 @@ RectTransform:
   - {fileID: 960605834}
   - {fileID: 1597554934}
   - {fileID: 1399779179}
-  m_Father: {fileID: 57676916}
+  m_Father: {fileID: 1830585184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3989,22 +4076,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1890032274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890032272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a45b9b36136c84e3d81a2bf591b2a027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oInventryCellParent: {fileID: 252803279}
-  m_oInventryCellElement: {fileID: 2006055342}
-  m_imgSelectingInventryUI: {fileID: 1925422574}
-  m_txtSelectItemAction: {fileID: 196489793}
 --- !u!1 &1925422572
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,7 +4232,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1254021685}
+      - m_Target: {fileID: 133018333}
         m_MethodName: CraftSelectedItem
         m_Mode: 1
         m_Arguments:

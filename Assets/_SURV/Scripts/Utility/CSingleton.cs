@@ -20,4 +20,9 @@ public abstract class CSingleton<T> where T : new()
 
         m_instance = new T();
     }
+
+    public static void Reflesh()
+    {
+        m_instance = new T();
+    }
 }

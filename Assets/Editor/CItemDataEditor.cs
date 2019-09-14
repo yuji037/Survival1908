@@ -11,7 +11,12 @@ public class CItemDataEditor : Editor
 	{
 		var cT = target as CItemData;
 
-		if (GUILayout.Button("Sort")) {
+        if (GUILayout.Button("Reflesh"))
+        {
+            CItemDataMan.Reflesh();
+            Repaint();
+        }
+        if (GUILayout.Button("Sort")) {
 			cT.m_pcItemStatus = cT.m_pcItemStatus.OrderBy(st => st.ID).ToArray();
 			EditorUtility.SetDirty(cT);
 		}

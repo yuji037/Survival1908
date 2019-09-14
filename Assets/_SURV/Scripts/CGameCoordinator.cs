@@ -182,8 +182,8 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
                             m_lsTasks.Add(new CTaskAdvanceTurn());
                         });
                         break;
-                    case eFacilityType.Bonfire:
-                        SetInputAction(1, "調理する", () =>
+                    default:
+                        SetInputAction(1, "待つ", () =>
                         {
                             m_lsTasks.Add(new CTaskAdvanceTurn());
                         });
