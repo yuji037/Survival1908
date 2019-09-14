@@ -19,6 +19,12 @@ public class CItemStatus
             case eItemType.Weapon:
                 CPartyStatus.Instance.GetPartyChara(0).EquipWeapon(ID);
                 break;
+            case eItemType.Facility:
+                var ivPos = CPartyStatus.Instance.GetPartyPos();
+                var cFacility = new CFacility();
+                cFacility.eType = eFacilityType.Shelter;
+                CMapMan.Instance.SetMapFacility(ivPos.x, ivPos.y, cFacility);
+                break;
         }
     }
 }

@@ -12,6 +12,8 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
     [SerializeField]
     private GameObject m_oMapCellParent;
 
+    private GameObject[][] m_poMapElement2D;
+
     private CMapData m_cMapData;
 
     public int WIDTH{ get; private set; }
@@ -43,8 +45,11 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
         m_fCellWidth    = cellRT.rect.width;
         m_fCellHeight   = cellRT.rect.height;
 
+        m_poMapElement2D = new GameObject[HEIGHT][];
+
         // UI生成
         for (int h = 0; h < HEIGHT; ++h) {
+            m_poMapElement2D[h] = new GameObject[WIDTH];
             for (int w = 0; w < WIDTH; ++w) {
                 int mapType = GetMapType(w, h);
                 var oCell = Instantiate(m_oMapCellPrefab);
@@ -56,7 +61,8 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
 				var c = CSituationStatus.Instance.m_pcLocationStatus[mapType].DebugMapColor;
 				c.a *= 0.2f;
                 oCell.GetComponentInChildren<Image>().color = c;
-                oCell.GetComponentInChildren<Text>().text = "a";
+                oCell.GetComponentInChildren<Text>().text = "";
+                m_poMapElement2D[h][w] = oCell;
             }
         }
 
@@ -83,6 +89,26 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
 
     public int GetMapType(int x, int y){
 		return m_cMapData.map[y][x].iLocationType;
+    }
+    public CFacility GetMapFacility(int x, int y){
+        return m_cMapData.map[y][x].cFacility;
+    }
+    public void SetMapFacility(int x, int y, CFacility cFacility){
+        m_cMapData.map[y][x].cFacility = cFacility;
+
+        Text cText = m_poMapElement2D[y][x].GetComponentInChildren<Text>();
+
+        if(cFacility == null)
+        {
+            cText.text = "";
+            return;
+        }
+        switch (cFacility.eType)
+        {
+            case eFacilityType.Shelter:
+                cText.text = "S";
+                break;
+        }
     }
 
     public void SetDispPartyPos(Vector2 partyPos){

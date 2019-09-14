@@ -16,6 +16,7 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
     private     bool        m_IsUpdating            = false;
 
     public      Vector2     m_vPartyPos { get; private set; }
+    private     IntVector2  m_ivPartyPos;
 
     [SerializeField]
     private     Text        m_textMessage;
@@ -68,8 +69,16 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 		return m_lsPartyChara [index];
 	}
 
+    public IntVector2 GetPartyPos()
+    {
+        return m_ivPartyPos;
+    }
+
     public void SetPartyPos(Vector2 vPos){
         m_vPartyPos = vPos;
+        m_ivPartyPos = new IntVector2(
+            Mathf.RoundToInt(vPos.x),
+            Mathf.RoundToInt(vPos.y));
         CSituationStatus.Instance.UpdateLocation();
     }
 
@@ -108,4 +117,16 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 
 		UpdatePartyText();
 	}
+}
+
+public struct IntVector2
+{
+    public int x;
+    public int y;
+
+    public IntVector2(int _x, int _y)
+    {
+        x = _x;
+        y = _y;
+    }
 }
