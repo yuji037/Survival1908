@@ -41,4 +41,4 @@ MonoBehaviour:
       ItemCountUnit:
         ItemID: NoUse00
         ItemName: "\u8131\u51FA\u306E\u79D8\u5B9D"
-        Count: 0
+        Count: 1

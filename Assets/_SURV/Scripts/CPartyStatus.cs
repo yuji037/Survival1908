@@ -20,6 +20,10 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 
     [SerializeField]
     private     Text        m_textMessage;
+    [SerializeField]
+    private     Slider      m_sliderHP;
+    [SerializeField]
+    private     Slider      m_sliderFood;
 
     // Update is called once per frame
     void Update()
@@ -94,6 +98,13 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
                 pc.GetDef() + "\nFood : " +
                 pc.Food.ToString("f0") + "\n脱出の秘宝 : " + 
                 CInventryMan.Instance.GetHasItemCount("NoUse00") + " / 4");
+            m_sliderHP.value = pc.Hp / pc.MaxHp;
+            var rt = m_sliderHP.GetComponent<RectTransform>();
+            var sizeDelta = rt.sizeDelta;
+            // MaxHp:50 で 100f
+            sizeDelta.x = pc.MaxHp * 2f;
+            rt.sizeDelta = sizeDelta;
+            m_sliderFood.value = pc.Food / 100f;
 		}
 	}
 

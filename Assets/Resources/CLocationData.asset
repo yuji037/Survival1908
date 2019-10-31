@@ -26,7 +26,7 @@ MonoBehaviour:
     SearchItemList:
     - Rate: 90
       Item: "\u6728\u306E\u679D"
-    - Rate: 10
+    - Rate: 3
       Item: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
     - Rate: 30
       Item: "\u6728\u82FA"

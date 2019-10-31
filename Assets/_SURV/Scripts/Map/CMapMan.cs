@@ -31,8 +31,8 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
 		m_cMapData = LoadMapData();
 
         // デバッグ的にランダム作成
-        WIDTH = 10;
-        HEIGHT = 10;
+        WIDTH = m_cMapData.map[0].Leength;
+        HEIGHT = m_cMapData.map.Length;
 //        m_cMapData.map = new int[HEIGHT,WIDTH];
 //        int iStatusCount = CSituationStatus.Instance.GetLocationStatusCount();
 //        for (int h = 0; h < HEIGHT; ++h) {
@@ -48,9 +48,9 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
         m_poMapElement2D = new GameObject[HEIGHT][];
 
         // UI生成
-        for (int h = 0; h < HEIGHT; ++h) {
+        for (int h = 0; h < m_cMapData.map.Length; ++h) {
             m_poMapElement2D[h] = new GameObject[WIDTH];
-            for (int w = 0; w < WIDTH; ++w) {
+            for (int w = 0; w < m_cMapData.map[h].Leength; ++w) {
                 var cMapCell = m_cMapData.map[h][w];
                 int iLocationType = cMapCell.iLocationType;
                 var oCell = Instantiate(m_oMapCellPrefab);

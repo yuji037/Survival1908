@@ -34,9 +34,9 @@ public class CPartyChara : CChara
         CEXPTable.Instance.GetLevel(Exp, out iLeftExp, out Level);
         if (iPreLevel != Level) {
             // レベルアップ
-            MaxHp = 50 + (Level - 1) * 7;
-            AtkNaked = 10 + (Level - 1) * 2;
-            DefNaked = 0 + (Level - 1) * 4;
+            MaxHp = 50 + (Level - 1) * 2;
+            AtkNaked = 10 + (Level - 1) * 1;
+            DefNaked = 0 + (Level - 1) * 1;
         }
     }
 

@@ -32,6 +32,7 @@ public class CCharaItemDropDataMan : CSingleton<CCharaItemDropDataMan>
                 var countUnit = new CItemCountUnit();
                 var countRate = Random.Range(0.7f, 1.3f);
                 var count = dropUnit.ItemCountUnit.Count * countRate;
+                if (count <= 0) continue;
                 countUnit.Count = Mathf.RoundToInt(count);
                 countUnit.ItemID = dropUnit.ItemCountUnit.ItemID;
                 countUnit.ItemName = dropUnit.ItemCountUnit.ItemName;

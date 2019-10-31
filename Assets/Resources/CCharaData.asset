@@ -14,20 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_pcCharas:
   - Name: "\u5538\u308B\u91CE\u72AC"
+    ID: 
     MaxHp: 15
     Hp: 0
     AtkNaked: 4
     DefNaked: 0
     ExpHaving: 4
   - Name: "\u72FC"
+    ID: 
     MaxHp: 30
-    Hp: 0
-    AtkNaked: 10
-    DefNaked: 0
-    ExpHaving: 10
-  - Name: "\u30B4\u30EA\u30E9"
-    MaxHp: 100
     Hp: 0
     AtkNaked: 25
     DefNaked: 0
-    ExpHaving: 50
+    ExpHaving: 25
+  - Name: "\u30B4\u30EA\u30E9"
+    ID: 
+    MaxHp: 150
+    Hp: 0
+    AtkNaked: 50
+    DefNaked: 0
+    ExpHaving: 100
+  - Name: "\u30B4\u30EA\u30E9"
+    ID: 
+    MaxHp: 150
+    Hp: 0
+    AtkNaked: 50
+    DefNaked: 0
+    ExpHaving: 100

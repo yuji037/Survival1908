@@ -19,6 +19,7 @@ public class CNpcEncountDataMan : CSingleton<CNpcEncountDataMan>
         foreach(var unit in m_cNpcEncountData.m_pcNpcEncountStatus[iEncountType].NpcEncountUnits)
         {
             fRate += unit.RatePercent;
+            Debug.Log("random : " + random.ToString("f0") + "\nfRate : " + fRate.ToString("f0"));
             if(random < fRate)
             {
                 return CCharaDataMan.Instance.CreateByName(unit.NpcName);

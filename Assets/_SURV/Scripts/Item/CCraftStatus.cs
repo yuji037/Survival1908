@@ -13,8 +13,8 @@ public class CCraftStatus
 
 [Serializable]
 public class CItemCountUnit{
-	public string 	ItemID;
     public string   ItemName;
+	public string 	ItemID;
 	public int 		Count;
 
     public void CorrectItemInfo()

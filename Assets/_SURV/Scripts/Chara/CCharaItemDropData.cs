@@ -20,6 +20,6 @@ public class CCharaItemDropUnit
 [System.Serializable]
 public class CItemDropUnit
 {
-    public float DropRatePercent;
     public CItemCountUnit ItemCountUnit;
+    public float DropRatePercent;
 }

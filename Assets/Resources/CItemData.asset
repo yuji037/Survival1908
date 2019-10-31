@@ -97,9 +97,14 @@ MonoBehaviour:
     ID: Weapon02
     ItemType: 1
     EffectTypeID: 0
-    EffectValue1: 25
+    EffectValue1: 18
   - Name: "\u77F3\u69CD"
     ID: Weapon03
     ItemType: 1
     EffectTypeID: 0
-    EffectValue1: 35
+    EffectValue1: 20
+  - Name: "\u3068\u3052\u68CD\u68D2"
+    ID: Weapon04
+    ItemType: 1
+    EffectTypeID: 0
+    EffectValue1: 25

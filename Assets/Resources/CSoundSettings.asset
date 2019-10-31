@@ -37,8 +37,8 @@ MonoBehaviour:
   - id: SE_FootSand00
     audioClip: {fileID: 8300000, guid: e14714cd7a4a34d1ba7baf3677f6dbda, type: 3}
     volume: 0
-  - id: 
-    audioClip: {fileID: 0}
+  - id: SE_Eat00
+    audioClip: {fileID: 8300000, guid: 6c1bdea152cb048f6b8401cc15fd87ce, type: 3}
     volume: 0
   - id: 
     audioClip: {fileID: 0}
