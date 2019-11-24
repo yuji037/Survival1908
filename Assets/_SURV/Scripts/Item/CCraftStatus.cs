@@ -6,33 +6,33 @@ using System;
 [Serializable]
 public class CCraftStatus
 {
-    public eCraftConditionType  eCraftConditionType;
-	public CItemCountUnit 	    DstItemUnit;
-	public CItemCountUnit[]     SrcItemUnitList;
+	public CItemCountUnit 	    dstItemUnit;
+	public CItemCountUnit[]     srcItemUnitList;
+	public eCraftConditionType  craftConditionType;
 }
 
 [Serializable]
 public class CItemCountUnit{
-    public string   ItemName;
-	public string 	ItemID;
-	public int 		Count;
+    public string   itemName;
+	public string 	itemID;
+	public int 		count;
 
-    public void CorrectItemInfo()
+	public void CorrectItemInfo()
     {
         // 名前で検索
-        CItemStatus status = CItemDataMan.Instance.GetItemStatusByName(ItemName);
+        CItemStatus status = CItemDataMan.Instance.GetItemStatusByName(itemName);
         if (status == null)
         {
             // IDで検索
-            status = CItemDataMan.Instance.GetItemStatusById(ItemID);
+            status = CItemDataMan.Instance.GetItemStatusById(itemID);
         }
         if (status == null)
         {
-            Debug.LogError("存在しないアイテムです ID:" + ItemID + " Name:" + ItemName);
+            Debug.LogError("存在しないアイテムです ID:" + itemID + " Name:" + itemName);
             return;
         }
-        ItemID      = status.ID;
-        ItemName    = status.Name;
+        itemID      = status.id;
+        itemName    = status.name;
     }
 }
 

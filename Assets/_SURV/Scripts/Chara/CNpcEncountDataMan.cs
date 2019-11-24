@@ -16,13 +16,13 @@ public class CNpcEncountDataMan : CSingleton<CNpcEncountDataMan>
         var random = Random.Range(0f, 100f);
         var fRate = 0f;
 
-        foreach(var unit in m_cNpcEncountData.m_pcNpcEncountStatus[iEncountType].NpcEncountUnits)
+        foreach(var unit in m_cNpcEncountData.npcEncountStatusList[iEncountType].npcEncountUnits)
         {
-            fRate += unit.RatePercent;
+            fRate += unit.ratePercent;
             Debug.Log("random : " + random.ToString("f0") + "\nfRate : " + fRate.ToString("f0"));
             if(random < fRate)
             {
-                return CCharaDataMan.Instance.CreateByName(unit.NpcName);
+                return CCharaDataMan.Instance.CreateByName(unit.npcName);
             }
         }
         return null;

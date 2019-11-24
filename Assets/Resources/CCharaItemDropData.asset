@@ -12,33 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9aa2ded894649b6955175a0091e2fb, type: 3}
   m_Name: CCharaItemDropData
   m_EditorClassIdentifier: 
-  m_pcCharaItemDropUnits:
-  - CharaName: "\u5538\u308B\u91CE\u72AC"
-    CharaID: 
-    ItemDropUnits:
-    - DropRatePercent: 100
-      ItemCountUnit:
-        ItemID: Food02
-        ItemName: "\u751F\u8089"
-        Count: 1
-  - CharaName: "\u72FC"
-    CharaID: 
-    ItemDropUnits:
-    - DropRatePercent: 100
-      ItemCountUnit:
-        ItemID: Food02
-        ItemName: "\u751F\u8089"
-        Count: 1
-  - CharaName: "\u30B4\u30EA\u30E9"
-    CharaID: 
-    ItemDropUnits:
-    - DropRatePercent: 100
-      ItemCountUnit:
-        ItemID: Food02
-        ItemName: "\u751F\u8089"
-        Count: 2
-    - DropRatePercent: 50
-      ItemCountUnit:
-        ItemID: NoUse00
-        ItemName: "\u8131\u51FA\u306E\u79D8\u5B9D"
-        Count: 1
+  charaItemDropUnits:
+  - charaName: "\u5538\u308B\u91CE\u72AC"
+    charaID: 
+    itemDropUnits:
+    - itemCountUnit:
+        itemName: "\u751F\u8089"
+        itemID: Food02
+        count: 1
+      dropRatePercent: 100
+  - charaName: "\u72FC"
+    charaID: 
+    itemDropUnits:
+    - itemCountUnit:
+        itemName: "\u751F\u8089"
+        itemID: Food02
+        count: 1
+      dropRatePercent: 100
+  - charaName: "\u30B4\u30EA\u30E9"
+    charaID: 
+    itemDropUnits:
+    - itemCountUnit:
+        itemName: "\u751F\u8089"
+        itemID: Food02
+        count: 2
+      dropRatePercent: 100
+    - itemCountUnit:
+        itemName: "\u8131\u51FA\u306E\u79D8\u5B9D"
+        itemID: NoUse00
+        count: 1
+      dropRatePercent: 50

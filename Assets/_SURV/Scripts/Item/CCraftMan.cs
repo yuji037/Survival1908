@@ -59,10 +59,10 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
     {
         if(m_pcCraftStatus == null)
         {
-            m_pcCraftStatus = Resources.Load<CCraftData>("CCraftData").m_pcCraftStatus;
+            m_pcCraftStatus = Resources.Load<CCraftData>("CCraftData").craftStatusList;
             foreach(var status in m_pcCraftStatus)
             {
-                m_dicCraftStatus[status.DstItemUnit.ItemID] = status;
+                m_dicCraftStatus[status.dstItemUnit.itemID] = status;
             }
         }
 
@@ -72,14 +72,14 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
             // 表示しない条件
             var isDisp = false;
             var cFacility = CSituationStatus.Instance.GetCurrentFacility();
-            switch (cs.eCraftConditionType)
+            switch (cs.craftConditionType)
             {
                 case eCraftConditionType.None:
                     isDisp = true;
                     break;
                 case eCraftConditionType.Bonfire:
                     if( cFacility != null &&
-                        cFacility.eType == eFacilityType.Bonfire)
+                        cFacility.type == eFacilityType.Bonfire)
                     {
                         isDisp = true;
                     }
@@ -111,11 +111,11 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
                 element.gameObject.SetActive(true);
             }
 
-            var sLabelTxt = cs.DstItemUnit.ItemName;
-            if (cs.DstItemUnit.Count >= 2)
-                sLabelTxt += " ×" + cs.DstItemUnit.Count;
+            var sLabelTxt = cs.dstItemUnit.itemName;
+            if (cs.dstItemUnit.count >= 2)
+                sLabelTxt += " ×" + cs.dstItemUnit.count;
             element.text.text = sLabelTxt;
-            element.itemId = cs.DstItemUnit.ItemID;
+            element.itemId = cs.dstItemUnit.itemID;
             element.button.onClick.RemoveAllListeners();
             int index = iElement;
             element.button.onClick.AddListener(() =>
@@ -157,16 +157,19 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
 
         var craftStatus = m_dicCraftStatus[m_sCurrentSelectItemId];
 
-        m_imgSelectingCraftUI.transform.parent.GetComponent<RectTransform>()
-            .localPosition = element.gameObject.GetComponent<RectTransform>().localPosition;
+		//m_imgSelectingCraftUI.transform.parent.GetComponent<RectTransform>()
+		//    .localPosition = element.gameObject.GetComponent<RectTransform>().localPosition;
+		var selectingUiTransform = m_imgSelectingCraftUI.transform.parent.GetComponent<RectTransform>();
+		selectingUiTransform.SetParent(element.gameObject.transform);
+		selectingUiTransform.position = element.gameObject.transform.position;
 
-        bool canCreate = true;
+		bool canCreate = true;
         m_txtCraftDesctiption.text = "必要アイテム\n";
-        foreach(var srcUnit in craftStatus.SrcItemUnitList)
+        foreach(var srcUnit in craftStatus.srcItemUnitList)
         {
-            m_txtCraftDesctiption.text += srcUnit.ItemName + " x" + srcUnit.Count + "\n";
+            m_txtCraftDesctiption.text += srcUnit.itemName + " x" + srcUnit.count + "\n";
             // 必要アイテム数チェック
-            if (CInventryMan.Instance.GetHasItemCount(srcUnit.ItemID) < srcUnit.Count)
+            if (CInventryMan.Instance.GetHasItemCount(srcUnit.itemID) < srcUnit.count)
             {
                 canCreate = false;
             }
@@ -180,15 +183,15 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
     public void CraftSelectedItem()
     {
         // 必要アイテム消費
-        foreach (var srcUnit in m_dicCraftStatus[m_sCurrentSelectItemId].SrcItemUnitList)
+        foreach (var srcUnit in m_dicCraftStatus[m_sCurrentSelectItemId].srcItemUnitList)
         {
-            CInventryMan.Instance.GainItemCount(srcUnit.ItemID, -1 * srcUnit.Count);
+            CInventryMan.Instance.ManipulateItemCount(srcUnit.itemID, -1 * srcUnit.count);
         }
 
         // 製作アイテム増加
-        CInventryMan.Instance.GainItemCount(
-            m_dicCraftStatus[m_sCurrentSelectItemId].DstItemUnit.ItemID,
-            m_dicCraftStatus[m_sCurrentSelectItemId].DstItemUnit.Count);
+        CInventryMan.Instance.ManipulateItemCount(
+            m_dicCraftStatus[m_sCurrentSelectItemId].dstItemUnit.itemID,
+            m_dicCraftStatus[m_sCurrentSelectItemId].dstItemUnit.count);
 
         UpdateCraftUI();
     }

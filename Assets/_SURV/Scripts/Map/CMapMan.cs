@@ -59,13 +59,13 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
                 rt.localPosition = new Vector3(m_fCellWidth * w, m_fCellHeight * h);
 
                 // デバッグ的に色を変える
-				var c = CSituationStatus.Instance.m_pcLocationStatus[iLocationType].DebugMapColor;
+				var c = CSituationStatus.Instance.m_pcLocationStatus[iLocationType].debugMapColor;
 				c.a *= 0.2f;
                 oCell.GetComponentInChildren<Image>().color = c;
                 oCell.GetComponentInChildren<Text>().text = "";
                 m_poMapElement2D[h][w] = oCell;
 
-                if(cMapCell.cFacility.eType == eFacilityType.None)
+                if(cMapCell.cFacility.type == eFacilityType.None)
                 {
                     cMapCell.cFacility = null;
                 }
@@ -119,7 +119,7 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
             cText.text = "";
             return;
         }
-        switch (cFacility.eType)
+        switch (cFacility.type)
         {
             case eFacilityType.Shelter:
                 cText.text = "家";

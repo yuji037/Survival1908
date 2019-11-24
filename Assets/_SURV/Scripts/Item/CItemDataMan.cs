@@ -8,14 +8,17 @@ public class CItemDataMan : CSingleton<CItemDataMan>
 
     public CItemDataMan(){
 
-        var pcItemStatus = Resources.Load<CItemData>("CItemData").m_pcItemStatus;
+        var pcItemStatus = Resources.Load<CItemData>("CItemData").itemStatusList;
         foreach (var status in pcItemStatus) {
-            m_dicItemStatus[status.ID] = status;
+            m_dicItemStatus[status.id] = status;
         }
     }
 
     public CItemStatus GetItemStatusById(string sId)
     {
+		if ( sId == null )
+			return null;
+
         if (false == m_dicItemStatus.ContainsKey(sId))
             return null;
         return m_dicItemStatus[sId];
@@ -24,7 +27,7 @@ public class CItemDataMan : CSingleton<CItemDataMan>
     {
         foreach(var status in m_dicItemStatus.Values)
         {
-            if (status.Name == sName)
+            if (status.name == sName)
                 return status;
         }
         return null;

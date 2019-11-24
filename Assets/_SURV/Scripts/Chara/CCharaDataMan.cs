@@ -11,7 +11,7 @@ public class CCharaDataMan : CSingleton<CCharaDataMan>
         var pcChara = Resources.Load<CCharaData>("CCharaData").m_pcCharas;
         foreach (var chara in pcChara)
         {
-            m_dicChara[chara.Name] = chara;
+            m_dicChara[chara.name] = chara;
         }
     }
 
@@ -19,10 +19,10 @@ public class CCharaDataMan : CSingleton<CCharaDataMan>
     {
         foreach (var chara in m_dicChara.Values)
         {
-            if (chara.Name == sName)
+            if (chara.name == sName)
             {
                 var newChara = chara.DeepClone();
-                newChara.Hp = newChara.MaxHp;
+                newChara.hp = newChara.maxHp;
                 return newChara;
             }
         }
@@ -45,7 +45,7 @@ public class CCharaDataMan : CSingleton<CCharaDataMan>
     {
         foreach(var chara in m_dicChara.Values)
         {
-            if (chara.ID == sId)
+            if (chara.id == sId)
                 return chara;
         }
 

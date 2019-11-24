@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CItemUIElement
 {
@@ -53,6 +54,19 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
 
     }
 
+	public void Load()
+	{
+		var hasItemIds = SaveData.GetList<string>("HasItemIds", null);
+		var hasItemCounts = SaveData.GetList<int>("HasItemCounts", null);
+		if ( hasItemIds == null || hasItemCounts == null )
+			return;
+
+		for(int i = 0; i < hasItemIds.Count; ++i )
+		{
+			m_dicItemHasCount[hasItemIds[i]] = hasItemCounts[i];
+		}
+	}
+
     public int GetHasItemCount(string sID)
     {
         if (false == m_dicItemHasCount.ContainsKey(sID))
@@ -61,14 +75,18 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
         }
         return m_dicItemHasCount[sID];
     }
-    public void GainItemCount(string sID, int iCount)
+    public void ManipulateItemCount(string sID, int iDelta)
     {
         if (false == m_dicItemHasCount.ContainsKey(sID))
         {
             m_dicItemHasCount[sID] = 0;
         }
-        m_dicItemHasCount[sID] += iCount;
-    }
+        m_dicItemHasCount[sID] += iDelta;
+
+		SaveData.SetList("HasItemIds", m_dicItemHasCount.Keys.ToList());
+		SaveData.SetList("HasItemCounts", m_dicItemHasCount.Values.ToList());
+		SaveData.Save();
+	}
 
     public void DispWindow(bool bDisp)
     {
@@ -110,11 +128,11 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
 
             var itemStatus = CItemDataMan.Instance.GetItemStatusById(hasCount.Key);
 
-            var sLabelTxt = itemStatus.Name;
+            var sLabelTxt = itemStatus.name;
             if (hasCount.Value >= 2)
                 sLabelTxt += " ×" + hasCount.Value;
             element.text.text = sLabelTxt;
-            element.itemId = itemStatus.ID;
+            element.itemId = itemStatus.id;
             element.button.onClick.RemoveAllListeners();
             int index = iElement;
             element.button.onClick.AddListener(() =>
@@ -155,10 +173,11 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
 
         var itemStatus = CItemDataMan.Instance.GetItemStatusById(m_sCurrentSelectItemId);
 
-        m_imgSelectingInventryUI.transform.parent.GetComponent<RectTransform>()
-            .localPosition = element.gameObject.GetComponent<RectTransform>().localPosition;
+		var selectingUiTransform = m_imgSelectingInventryUI.transform.parent.GetComponent<RectTransform>();
+		selectingUiTransform.SetParent(element.gameObject.transform);
+		selectingUiTransform.position = element.gameObject.transform.position;
 
-        switch (itemStatus.ItemType)
+		switch (itemStatus.itemType)
         {
             case eItemType.Food:
                 m_txtSelectItemAction.transform.parent.gameObject.SetActive(true);
@@ -182,7 +201,7 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
     {
         var itemStatus = CItemDataMan.Instance.GetItemStatusById(m_sCurrentSelectItemId);
         itemStatus.Use();
-        m_dicItemHasCount[m_sCurrentSelectItemId]--;
+		ManipulateItemCount(m_sCurrentSelectItemId, -1);
         UpdateInventryUI();
         CPartyStatus.Instance.UpdatePartyText();
         CSituationStatus.Instance.UpdateSituationText();

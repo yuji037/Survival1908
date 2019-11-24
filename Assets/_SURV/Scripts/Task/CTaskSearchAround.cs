@@ -27,7 +27,7 @@ public class CTaskSearchAround : CTask
                 var itemStatus = CItemDataMan.Instance.GetItemStatusByName(lsFindItem[i]);
 
                 // アイテム獲得
-                CInventryMan.Instance.GainItemCount(itemStatus.ID, 1);
+                CInventryMan.Instance.ManipulateItemCount(itemStatus.id, 1);
 
                 sDispText += lsFindItem[i];
                 if (i != lsFindItem.Count - 1)

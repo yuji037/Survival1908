@@ -13,10 +13,10 @@ public class CCraftDataEditor : Editor
         var cT = target as CCraftData;
         if (GUILayout.Button("Reflesh"))
         {
-            foreach(var status in cT.m_pcCraftStatus)
+            foreach(var status in cT.craftStatusList)
             {
-                status.DstItemUnit.CorrectItemInfo();
-                foreach(var srcUnit in status.SrcItemUnitList)
+                status.dstItemUnit.CorrectItemInfo();
+                foreach(var srcUnit in status.srcItemUnitList)
                 {
                     srcUnit.CorrectItemInfo();
                 }
@@ -25,7 +25,7 @@ public class CCraftDataEditor : Editor
         }
         if (GUILayout.Button("Sort"))
         {
-            cT.m_pcCraftStatus = cT.m_pcCraftStatus.OrderBy(st => st.DstItemUnit.ItemID).ToArray();
+            cT.craftStatusList = cT.craftStatusList.OrderBy(st => st.dstItemUnit.itemID).ToArray();
             EditorUtility.SetDirty(cT);
         }
 

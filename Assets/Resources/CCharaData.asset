@@ -13,31 +13,31 @@ MonoBehaviour:
   m_Name: CCharaData
   m_EditorClassIdentifier: 
   m_pcCharas:
-  - Name: "\u5538\u308B\u91CE\u72AC"
-    ID: 
-    MaxHp: 15
-    Hp: 0
-    AtkNaked: 4
-    DefNaked: 0
-    ExpHaving: 4
-  - Name: "\u72FC"
-    ID: 
-    MaxHp: 30
-    Hp: 0
-    AtkNaked: 25
-    DefNaked: 0
-    ExpHaving: 25
-  - Name: "\u30B4\u30EA\u30E9"
-    ID: 
-    MaxHp: 150
-    Hp: 0
-    AtkNaked: 50
-    DefNaked: 0
-    ExpHaving: 100
-  - Name: "\u30B4\u30EA\u30E9"
-    ID: 
-    MaxHp: 150
-    Hp: 0
-    AtkNaked: 50
-    DefNaked: 0
-    ExpHaving: 100
+  - name: "\u5538\u308B\u91CE\u72AC"
+    id: 
+    maxHp: 15
+    hp: 0
+    atkNaked: 4
+    defNaked: 0
+    expHaving: 4
+  - name: "\u72FC"
+    id: 
+    maxHp: 30
+    hp: 0
+    atkNaked: 25
+    defNaked: 0
+    expHaving: 25
+  - name: "\u30B4\u30EA\u30E9"
+    id: 
+    maxHp: 150
+    hp: 0
+    atkNaked: 50
+    defNaked: 0
+    expHaving: 100
+  - name: "\u30B4\u30EA\u30E9"
+    id: 
+    maxHp: 150
+    hp: 0
+    atkNaked: 50
+    defNaked: 0
+    expHaving: 100

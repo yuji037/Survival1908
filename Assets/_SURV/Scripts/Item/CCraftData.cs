@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu( menuName = "SURV/CCraftData", fileName = "CCraftData" )]
 public class CCraftData : ScriptableObject
 {
-	public CCraftStatus[] m_pcCraftStatus;
+	public CCraftStatus[] craftStatusList;
 }

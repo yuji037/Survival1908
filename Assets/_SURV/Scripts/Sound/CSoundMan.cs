@@ -29,7 +29,7 @@ public class CSoundMan : CSingletonMonoBehaviour<CSoundMan> {
 	protected override void Awake()
 	{
 		base.Awake();
-		m_pcSoundClips = Resources.Load<CSoundSettings>("CSoundSettings").m_pcSoundClips;
+		m_pcSoundClips = Resources.Load<CSoundSettings>("CSoundSettings").soundClips;
 
 		for (int i = 0; i < m_pChannels.Length; ++i) {
 			var obj = Instantiate(m_oSoundPlayPrefab);

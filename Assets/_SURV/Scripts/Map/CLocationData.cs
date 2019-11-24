@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu( menuName = "SURV/CLocationData", fileName = "CLocationData" )]
 public class CLocationData : ScriptableObject
 {
-    public  CLocationStatus[]   m_pcLocationStatus;
+    public  CLocationStatus[]   locationStatusList;
 }

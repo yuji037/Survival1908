@@ -4,27 +4,45 @@ using UnityEngine;
 
 public class CPartyChara : CChara
 {
-    public      string      CurrentWeaponId;
-    public      float       AtkWeapon;
-    public      float       DefArmor;
+	private 	string[]	currentEquipIds;
 
     public CPartyChara(string _Name) : base(_Name)
     {
-
-    }
+		currentEquipIds = new string[(int)EquipmentPart.MAX];
+	}
 
     public float Food;
 
     public int Exp;
     public int Level;
 
+	public string GetEquipmentItemName(EquipmentPart equipmentPart)
+	{
+		var id = currentEquipIds[(int)equipmentPart];
+		if ( string.IsNullOrWhiteSpace(id) )
+			return "";
+
+		return CItemDataMan.Instance.GetItemStatusById(id).name;
+	}
     public override float GetAtk()
     {
-        return AtkNaked + AtkWeapon;
+		var atkEquip = 0f;
+		var weaponStatus = CItemDataMan.Instance.GetItemStatusById(currentEquipIds[(int)EquipmentPart.Weapon]);
+		if ( weaponStatus != null )
+			atkEquip = weaponStatus.effectValue1;
+		return atkNaked + atkEquip;
     }
     public override float GetDef()
-    {
-        return DefNaked + DefArmor;
+	{
+		var defEquip = 0f;
+		
+		for(int i = (int)EquipmentPart.Head; i <= (int)EquipmentPart.Body; ++i )
+		{
+			var armorStatus = CItemDataMan.Instance.GetItemStatusById(currentEquipIds[i]);
+			if ( armorStatus != null )
+				defEquip += armorStatus.effectValue1;
+		}
+		return defNaked + defEquip;
     }
 
     public void GainExp(int iExp){
@@ -34,9 +52,9 @@ public class CPartyChara : CChara
         CEXPTable.Instance.GetLevel(Exp, out iLeftExp, out Level);
         if (iPreLevel != Level) {
             // レベルアップ
-            MaxHp = 50 + (Level - 1) * 2;
-            AtkNaked = 10 + (Level - 1) * 1;
-            DefNaked = 0 + (Level - 1) * 1;
+            maxHp = 50 + (Level - 1) * 2;
+            atkNaked = 10 + (Level - 1) * 1;
+            defNaked = 0 + (Level - 1) * 1;
         }
     }
 
@@ -46,9 +64,18 @@ public class CPartyChara : CChara
             Food = 100;
     }
 
-    public void EquipWeapon(string sWeaponId){
-        CurrentWeaponId = sWeaponId;
-        var itemStatus = CItemDataMan.Instance.GetItemStatusById(sWeaponId);
-        AtkWeapon = itemStatus.EffectValue1;
+    public void Equip(EquipmentPart equipmentPart, string itemId){
+		currentEquipIds[(int)equipmentPart] = itemId;
+        var itemStatus = CItemDataMan.Instance.GetItemStatusById(itemId);
     }
+}
+
+public enum EquipmentPart
+{
+	Weapon,
+	Head,
+	Body,
+	Accessory1,
+	Accessory2,
+	MAX,
 }

@@ -13,19 +13,19 @@ public class CCharaItemDropDataEditor : Editor
 
         if (GUILayout.Button("Reflesh"))
         {
-            foreach (var charaDropUnit in cT.m_pcCharaItemDropUnits)
+            foreach (var charaDropUnit in cT.charaItemDropUnits)
             {
-                var chara = CCharaDataMan.Instance.GetCharaDataByName(charaDropUnit.CharaName);
+                var chara = CCharaDataMan.Instance.GetCharaDataByName(charaDropUnit.charaName);
                 if (chara == null)
                 {
-                    chara = CCharaDataMan.Instance.GetCharaDataByID(charaDropUnit.CharaID);
+                    chara = CCharaDataMan.Instance.GetCharaDataByID(charaDropUnit.charaID);
                 }
-                charaDropUnit.CharaName = chara.Name;
-                charaDropUnit.CharaID = chara.ID;
+                charaDropUnit.charaName = chara.name;
+                charaDropUnit.charaID = chara.id;
 
-                foreach(var itemDropUnit in charaDropUnit.ItemDropUnits)
+                foreach(var itemDropUnit in charaDropUnit.itemDropUnits)
                 {
-                    itemDropUnit.ItemCountUnit.CorrectItemInfo();
+                    itemDropUnit.itemCountUnit.CorrectItemInfo();
                 }
             }
             EditorUtility.SetDirty(cT);

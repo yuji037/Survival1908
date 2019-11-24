@@ -18,12 +18,15 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
     public      Vector2     m_vPartyPos { get; private set; }
     private     IntVector2  m_ivPartyPos;
 
+	// TODO: データ部分と表示部分を分けるべき
     [SerializeField]
     private     Text        m_textMessage;
     [SerializeField]
     private     Slider      m_sliderHP;
     [SerializeField]
     private     Slider      m_sliderFood;
+    [SerializeField]
+    private     Text        m_textDetail;
 
     // Update is called once per frame
     void Update()
@@ -89,21 +92,40 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 	public void UpdatePartyText()
 	{
 		foreach (var pc in m_lsPartyChara) {
+			// インゲーム画面のパーティステータス
             DispMessage(
-                pc.Name + "\nLevel : " +
-                pc.Level + "\nEXP : " +
-                pc.Exp + "\nHP : " +
-                pc.Hp.ToString("f0") + " / " + pc.MaxHp.ToString("f0") + "\nATK : " +
-                pc.GetAtk() + "\nDEF : " +
-                pc.GetDef() + "\nFood : " +
-                pc.Food.ToString("f0") + "\n脱出の秘宝 : " + 
-                CInventryMan.Instance.GetHasItemCount("NoUse00") + " / 4");
-            m_sliderHP.value = pc.Hp / pc.MaxHp;
-            var rt = m_sliderHP.GetComponent<RectTransform>();
-            var sizeDelta = rt.sizeDelta;
-            // MaxHp:50 で 100f
-            sizeDelta.x = pc.MaxHp * 2f;
-            rt.sizeDelta = sizeDelta;
+                pc.name + 
+				"\nLevel : " + pc.Level + 
+				//"\nEXP : " + pc.Exp + 
+				"\nHP : " + pc.hp.ToString("f0") + " / " + pc.maxHp.ToString("f0") + 
+				"\nFood : " + pc.Food.ToString("f0")/* + */
+				//"\nATK : " + pc.GetAtk() + 
+				//"\nDEF : " + pc.GetDef()
+				);
+
+			// 持ち物画面のパーティステータス
+			m_textDetail.text = pc.name +
+				"\nLevel : " + pc.Level +
+				"\nEXP : " + pc.Exp +
+				"\nHP : " + pc.hp.ToString("f0") + " / " + pc.maxHp.ToString("f0") +
+				"\nFood : " + pc.Food.ToString("f0") +
+				"\n攻 : " + pc.GetAtk() +
+				"\n守 : " + pc.GetDef() +
+				"\n武器 : " + pc.GetEquipmentItemName(EquipmentPart.Weapon) +
+				"\n頭 : " + pc.GetEquipmentItemName(EquipmentPart.Head) +
+				"\n胴 : " + pc.GetEquipmentItemName(EquipmentPart.Body) +
+				"\nアクセ1 : " + pc.GetEquipmentItemName(EquipmentPart.Accessory1) +
+				"\nアクセ2 : " + pc.GetEquipmentItemName(EquipmentPart.Accessory2)
+				;
+
+			m_sliderHP.value = pc.hp / pc.maxHp;
+			
+			//// MaxHPによってSliderUIの長さを変える処理
+            //var rt = m_sliderHP.GetComponent<RectTransform>();
+            //var sizeDelta = rt.sizeDelta;
+            //// MaxHp:50 で 100f
+            //sizeDelta.x = pc.MaxHp * 2f;
+            //rt.sizeDelta = sizeDelta;
             m_sliderFood.value = pc.Food / 100f;
 		}
 	}
@@ -111,12 +133,12 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 	public void OnTurnElapsed(){
 		foreach (var pc in m_lsPartyChara) {
             if (pc.Food > 30) {
-                pc.Hp += 2;
-                if (pc.Hp > pc.MaxHp)
-                    pc.Hp = pc.MaxHp;
+                pc.hp += 2;
+                if (pc.hp > pc.maxHp)
+                    pc.hp = pc.maxHp;
             }
             else if (pc.Food <= 0) {
-                pc.Hp -= 2;
+                pc.hp -= 2;
 
             }
 			pc.Food -= 2;

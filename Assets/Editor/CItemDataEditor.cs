@@ -11,13 +11,13 @@ public class CItemDataEditor : Editor
 	{
 		var cT = target as CItemData;
 
-        if (GUILayout.Button("Reflesh"))
-        {
-            CItemDataMan.Reflesh();
-            Repaint();
-        }
+        //if (GUILayout.Button("Reflesh"))
+        //{
+        //    CItemDataMan.Reflesh();
+        //    Repaint();
+        //}
         if (GUILayout.Button("Sort")) {
-			cT.m_pcItemStatus = cT.m_pcItemStatus.OrderBy(st => st.ID).ToArray();
+			cT.itemStatusList = cT.itemStatusList.OrderBy(st => st.id).ToArray();
 			EditorUtility.SetDirty(cT);
 		}
 

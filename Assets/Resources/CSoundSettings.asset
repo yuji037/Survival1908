@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774887d9adf2f4b4986e6fc62f9ae6f1, type: 3}
   m_Name: CSoundSettings
   m_EditorClassIdentifier: 
-  m_pcSoundClips:
+  soundClips:
   - id: BGM_Field00
     audioClip: {fileID: 8300000, guid: 9b1d341f8f8404a0dbd5adc882febc67, type: 3}
     volume: 0

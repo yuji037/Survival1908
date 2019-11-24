@@ -12,99 +12,134 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5700fe4c5774618beb0247c5365dc2, type: 3}
   m_Name: CItemData
   m_EditorClassIdentifier: 
-  m_pcItemStatus:
-  - Name: "\u7363\u76AE\u306E\u670D"
-    ID: Armor00
-    ItemType: 4
-    EffectTypeID: 0
-    EffectValue1: 10
-  - Name: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
-    ID: Facility00
-    ItemType: 3
-    EffectTypeID: 1
-    EffectValue1: 0
-  - Name: "\u305F\u304D\u706B"
-    ID: Facility01
-    ItemType: 3
-    EffectTypeID: 2
-    EffectValue1: 15
-  - Name: "\u6728\u82FA"
-    ID: Food00
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 10
-  - Name: "\u751F\u9B5A"
-    ID: Food01
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 10
-  - Name: "\u751F\u8089"
-    ID: Food02
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 20
-  - Name: "\u7363\u8089\u3068\u304D\u306E\u3053\u306E\u6C34\u708A\u304D"
-    ID: Food03
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 50
-  - Name: "\u3058\u3083\u304C\u3044\u3082"
-    ID: Food04
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 8
-  - Name: "\u304D\u306E\u3053"
-    ID: Food05
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 3
-  - Name: "\u713C\u3044\u305F\u8089"
-    ID: Food06
-    ItemType: 0
-    EffectTypeID: 0
-    EffectValue1: 30
-  - Name: "\u8131\u51FA\u306E\u79D8\u5B9D"
-    ID: NoUse00
-    ItemType: 2
-    EffectTypeID: 0
-    EffectValue1: 1
-  - Name: "\u30E4\u30B7\u306E\u8449"
-    ID: NoUse01
-    ItemType: 2
-    EffectTypeID: 0
-    EffectValue1: 1
-  - Name: "\u77F3\u7247"
-    ID: NoUse02
-    ItemType: 2
-    EffectTypeID: 0
-    EffectValue1: 1
-  - Name: "\u7363\u306E\u76AE"
-    ID: NoUse03
-    ItemType: 2
-    EffectTypeID: 0
-    EffectValue1: 1
-  - Name: "\u6728\u306E\u679D"
-    ID: Weapon00
-    ItemType: 1
-    EffectTypeID: 0
-    EffectValue1: 5
-  - Name: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
-    ID: Weapon01
-    ItemType: 1
-    EffectTypeID: 0
-    EffectValue1: 15
-  - Name: "\u77F3\u65A7"
-    ID: Weapon02
-    ItemType: 1
-    EffectTypeID: 0
-    EffectValue1: 18
-  - Name: "\u77F3\u69CD"
-    ID: Weapon03
-    ItemType: 1
-    EffectTypeID: 0
-    EffectValue1: 20
-  - Name: "\u3068\u3052\u68CD\u68D2"
-    ID: Weapon04
-    ItemType: 1
-    EffectTypeID: 0
-    EffectValue1: 25
+  itemStatusList:
+  - name: "\u7363\u76AE\u306E\u670D"
+    id: Armor00
+    itemType: 4
+    effectTypeID: 0
+    effectValue1: 10
+  - name: "\u9244\u306E\u76FE"
+    id: Armor01
+    itemType: 4
+    effectTypeID: 0
+    effectValue1: 25
+  - name: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
+    id: Facility00
+    itemType: 3
+    effectTypeID: 1
+    effectValue1: 0
+  - name: "\u305F\u304D\u706B"
+    id: Facility01
+    itemType: 3
+    effectTypeID: 2
+    effectValue1: 15
+  - name: "\u7089"
+    id: Facility02
+    itemType: 3
+    effectTypeID: 0
+    effectValue1: 25
+  - name: "\u795E\u9244\u7089"
+    id: Facility03
+    itemType: 3
+    effectTypeID: 0
+    effectValue1: 25
+  - name: "\u6728\u82FA"
+    id: Food00
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 10
+  - name: "\u751F\u9B5A"
+    id: Food01
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 10
+  - name: "\u751F\u8089"
+    id: Food02
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 20
+  - name: "\u7363\u8089\u3068\u304D\u306E\u3053\u306E\u6C34\u708A\u304D"
+    id: Food03
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 50
+  - name: "\u3058\u3083\u304C\u3044\u3082"
+    id: Food04
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 8
+  - name: "\u304D\u306E\u3053"
+    id: Food05
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 3
+  - name: "\u713C\u3044\u305F\u8089"
+    id: Food06
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 30
+  - name: "\u713C\u3044\u305F\u9B5A"
+    id: Food07
+    itemType: 0
+    effectTypeID: 0
+    effectValue1: 20
+  - name: "\u8131\u51FA\u306E\u79D8\u5B9D"
+    id: NoUse00
+    itemType: 2
+    effectTypeID: 0
+    effectValue1: 1
+  - name: "\u30E4\u30B7\u306E\u8449"
+    id: NoUse01
+    itemType: 2
+    effectTypeID: 0
+    effectValue1: 1
+  - name: "\u77F3\u7247"
+    id: NoUse02
+    itemType: 2
+    effectTypeID: 0
+    effectValue1: 1
+  - name: "\u7363\u306E\u76AE"
+    id: NoUse03
+    itemType: 2
+    effectTypeID: 0
+    effectValue1: 1
+  - name: "\u3066\u3063\u3053\u3046\u305B\u304D"
+    id: NoUse04
+    itemType: 2
+    effectTypeID: 0
+    effectValue1: 0
+  - name: "\u6728\u306E\u679D"
+    id: Weapon00
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 5
+  - name: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
+    id: Weapon01
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 15
+  - name: "\u77F3\u65A7"
+    id: Weapon02
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 18
+  - name: "\u77F3\u69CD"
+    id: Weapon03
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 20
+  - name: "\u3068\u3052\u68CD\u68D2"
+    id: Weapon04
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 25
+  - name: "\u9244\u306E\u5263"
+    id: Weapon05
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 35
+  - name: "\u30D7\u30E9\u30C1\u30CA\u30BD\u30FC\u30C9"
+    id: Weapon06
+    itemType: 1
+    effectTypeID: 0
+    effectValue1: 45

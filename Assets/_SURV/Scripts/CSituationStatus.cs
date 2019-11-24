@@ -25,7 +25,7 @@ public class CSituationStatus : CSingletonMonoBehaviour<CSituationStatus>
     // Use this for initialization
     public void Init()
     {
-        m_pcLocationStatus = Resources.Load<CLocationData>("CLocationData").m_pcLocationStatus;
+        m_pcLocationStatus = Resources.Load<CLocationData>("CLocationData").locationStatusList;
         m_lsEnemy = new List<CChara>();
 
         CMapMan.Instance.Init();
@@ -76,8 +76,8 @@ public class CSituationStatus : CSingletonMonoBehaviour<CSituationStatus>
 		foreach (var enemy in m_lsEnemy) {
 
 			sDispText +=
-				enemy.Name + "\nHP : " +
-				enemy.Hp.ToString("f0") + "\n";
+				enemy.name + "\nHP : " +
+				enemy.hp.ToString("f0") + "\n";
 		}
 
         sDispText += GetCurrentLocationName();
@@ -106,12 +106,12 @@ public class CSituationStatus : CSingletonMonoBehaviour<CSituationStatus>
 
     public string GetCurrentLocationName()
     {
-        return m_pcLocationStatus[m_iLocationType].Name;
+        return m_pcLocationStatus[m_iLocationType].name;
     }
 
     public string GetLocationName(int iLocationType)
     {
-        return m_pcLocationStatus[iLocationType].Name;
+        return m_pcLocationStatus[iLocationType].name;
     }
 
     public CFacility GetCurrentFacility(){
@@ -132,7 +132,7 @@ public class CSituationStatus : CSingletonMonoBehaviour<CSituationStatus>
 
 	public void OnTurnElapsed(){
 
-		m_lsEnemy = m_lsEnemy.Where(c => c.Hp > 0).ToList();
+		m_lsEnemy = m_lsEnemy.Where(c => c.hp > 0).ToList();
 
 		UpdateSituationText();
 	}

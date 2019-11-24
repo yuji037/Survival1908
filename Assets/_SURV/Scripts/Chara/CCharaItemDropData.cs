@@ -6,20 +6,20 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SURV/CCharaItemDropData", fileName = "CCharaItemDropData")]
 public class CCharaItemDropData : ScriptableObject
 {
-    public CCharaItemDropUnit[] m_pcCharaItemDropUnits;
+    public CCharaItemDropUnit[] charaItemDropUnits;
 }
 
 [System.Serializable]
 public class CCharaItemDropUnit
 {
-    public string           CharaName;
-    public string           CharaID;
-    public CItemDropUnit[]  ItemDropUnits;
+	public string           charaName;
+	public string           charaID;
+	public CItemDropUnit[] itemDropUnits;
 }
 
 [System.Serializable]
 public class CItemDropUnit
 {
-    public CItemCountUnit ItemCountUnit;
-    public float DropRatePercent;
+    public CItemCountUnit itemCountUnit;
+	public float dropRatePercent;
 }

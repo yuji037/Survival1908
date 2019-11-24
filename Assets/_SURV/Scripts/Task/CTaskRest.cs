@@ -20,7 +20,7 @@ public class CTaskRest : CTask
 
         // 今は一人だけ
         var chara = CPartyStatus.Instance.GetPartyChara(0);
-        var fHeal = chara.MaxHp * 0.6f;
+        var fHeal = chara.maxHp * 0.6f;
         chara.HealHP(fHeal);
 
         //CMessageWindowMan.Instance.AddText(sDispText);

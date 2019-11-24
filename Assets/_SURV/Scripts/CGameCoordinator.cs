@@ -23,8 +23,8 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
 
         shigeru = new CPartyChara("Shigeru");
 		CPartyStatus.Instance.AppendPartyChara(shigeru);
-		shigeru.Hp = 50;
-        shigeru.AtkNaked = 10;
+		shigeru.hp = 50;
+        shigeru.atkNaked = 10;
 		shigeru.Food = 50;
         shigeru.GainExp(0);
         int mapW = CMapMan.Instance.WIDTH;
@@ -75,14 +75,20 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
         if (Input.GetKeyDown(KeyCode.Y))
         {
             // デバッグ用
-            shigeru.Hp = 5000;
-            shigeru.MaxHp = 5000;
-            shigeru.AtkNaked = 1000;
+            shigeru.hp = 5000;
+            shigeru.maxHp = 5000;
+            shigeru.atkNaked = 1000;
             CPartyStatus.Instance.UpdatePartyText();
         }
 
+		if ( Input.GetKeyDown(KeyCode.L) )
+		{
+			CInventryMan.Instance.Load();
+			CMessageWindowMan.Instance.AddText("デバッグ: ロード");
+		}
 
-        if (Input.GetKeyDown(KeyCode.Z))
+
+		if (Input.GetKeyDown(KeyCode.Z))
         {
             InputButtonAction(0);
         }
@@ -173,7 +179,7 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
             }
             else
             {
-                switch (cFacility.eType)
+                switch (cFacility.type)
                 {
                     case eFacilityType.Shelter:
                         SetInputAction(1, "休む", () =>

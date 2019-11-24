@@ -5,20 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SURV/CNpcEncountData", fileName = "CNpcEncountData")]
 public class CNpcEncountData : ScriptableObject
 {
-	public CNpcEncountStatus[] m_pcNpcEncountStatus;
+	public CNpcEncountStatus[] npcEncountStatusList;
 }
 
 [System.Serializable]
 public class CNpcEncountStatus
 {
-	public string Name;
-	public Color DebugMapColor;
-	public CNpcEncountUnit[] NpcEncountUnits;
+	public string label;
+	public Color debugMapColor;
+	public CNpcEncountUnit[] npcEncountUnits;
 }
 
 [System.Serializable]
 public class CNpcEncountUnit
 {
-	public float RatePercent;
-	public string NpcName;
+	public float ratePercent;
+	public string npcName;
 }

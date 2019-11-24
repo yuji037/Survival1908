@@ -5,7 +5,5 @@ using UnityEngine;
 [CreateAssetMenu( menuName = "SURV/CSoundSettings", fileName = "CSoundSettings" )]
 public class CSoundSettings : ScriptableObject
 {
-	public CSoundClip[] m_pcSoundClips;
-
-
+	public CSoundClip[] soundClips;
 }

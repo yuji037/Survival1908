@@ -5,46 +5,33 @@ using UnityEngine;
 [System.Serializable]
 public class CChara
 {
-    public string Name;
-    public string ID;
-    public float MaxHp;
-    public float Hp;
-    public float AtkNaked;
-    public float DefNaked;
-    public int ExpHaving;
+    public string name;
+	public string id;
+	public float maxHp;
+    public float hp;
+	public float atkNaked;
+	public float defNaked;
+    public int expHaving;
 
     public CChara(string _Name)
     {
-        Name = _Name;
+        name = _Name;
     }
 
     public virtual float GetAtk(){
-        return AtkNaked;
+        return atkNaked;
     }
     public virtual float GetDef(){
-        return DefNaked;
+        return defNaked;
     }
 
     public virtual void HealHP(float fValue)
     {
-        Hp += fValue;
-        if (Hp > MaxHp) Hp = MaxHp;
+        hp += fValue;
+        if (hp > maxHp) hp = maxHp;
     }
 
 	public virtual void OnDead(){
-        var fFood = 0f;
-        switch (Name) {
-            case "唸る野犬":
-                fFood = 10f;
-                break;
-            case "狼":
-                fFood = 30f;
-                break;
-            case "ゴリラ":
-                fFood = 50f;
-                break;
-        }
-        CPartyStatus.Instance.GetPartyChara(0).GainFood(fFood);
-        CPartyStatus.Instance.GetPartyChara(0).GainExp(ExpHaving);
+        CPartyStatus.Instance.GetPartyChara(0).GainExp(expHaving);
 	}
 }

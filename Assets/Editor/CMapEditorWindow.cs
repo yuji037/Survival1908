@@ -33,8 +33,8 @@ public class CMapEditorWindow : EditorWindow
     }
 
     private void OnEnable(){
-        m_pcLocationStatus      = Resources.Load<CLocationData>("CLocationData").m_pcLocationStatus;
-        m_pcNpcEncountStatus    = Resources.Load<CNpcEncountData>("CNpcEncountData").m_pcNpcEncountStatus;
+        m_pcLocationStatus      = Resources.Load<CLocationData>("CLocationData").locationStatusList;
+        m_pcNpcEncountStatus    = Resources.Load<CNpcEncountData>("CNpcEncountData").npcEncountStatusList;
         m_cMapData = CMapMan.LoadMapData();
     }
 
@@ -72,7 +72,7 @@ public class CMapEditorWindow : EditorWindow
             case eMapEditMode.Location:
                 for (int i = 0; i < m_pcLocationStatus.Length; ++i)
                 {
-                    Color color = m_pcLocationStatus[i].DebugMapColor;
+                    Color color = m_pcLocationStatus[i].debugMapColor;
 
                     EditorGUI.DrawRect(
                         new Rect(
@@ -84,7 +84,7 @@ public class CMapEditorWindow : EditorWindow
             case eMapEditMode.Encount:
                 for (int i = 0; i < m_pcNpcEncountStatus.Length; ++i)
                 {
-                    Color color = m_pcNpcEncountStatus[i].DebugMapColor;
+                    Color color = m_pcNpcEncountStatus[i].debugMapColor;
 
                     EditorGUI.DrawRect(
                         new Rect(
@@ -104,10 +104,10 @@ public class CMapEditorWindow : EditorWindow
             switch ((eMapEditMode)m_iSelectMapEditMode)
             {
                 case eMapEditMode.Location:
-                    color = m_pcLocationStatus[m_iSelectLocationType].DebugMapColor;
+                    color = m_pcLocationStatus[m_iSelectLocationType].debugMapColor;
                     break;
                 case eMapEditMode.Encount:
-                    color = m_pcNpcEncountStatus[m_iSelectEncountType].DebugMapColor;
+                    color = m_pcNpcEncountStatus[m_iSelectEncountType].debugMapColor;
                     break;
             }
             EditorGUI.DrawRect(
@@ -119,7 +119,7 @@ public class CMapEditorWindow : EditorWindow
 		// マップ表示
 		for (int h = 0; h < m_cMapData.map.Length; ++h) {
 			for (int w = 0; w < m_cMapData.map[h].Leength; ++w) {
-                var color = m_pcLocationStatus[m_cMapData.map[h][w].iLocationType].DebugMapColor;
+                var color = m_pcLocationStatus[m_cMapData.map[h][w].iLocationType].debugMapColor;
                 switch ((eMapEditMode)m_iSelectMapEditMode)
                 {
                     case eMapEditMode.Encount:
@@ -127,7 +127,7 @@ public class CMapEditorWindow : EditorWindow
                         fRate = Mathf.Clamp(fRate, 0f, 0.9f);
                         color =
                             color * (1f - fRate) +
-                            m_pcNpcEncountStatus[m_cMapData.map[h][w].iEncountType].DebugMapColor * fRate;
+                            m_pcNpcEncountStatus[m_cMapData.map[h][w].iEncountType].debugMapColor * fRate;
                         break;
                 }
                 EditorGUI.DrawRect(

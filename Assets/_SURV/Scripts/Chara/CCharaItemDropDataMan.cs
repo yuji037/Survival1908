@@ -9,10 +9,10 @@ public class CCharaItemDropDataMan : CSingleton<CCharaItemDropDataMan>
     public CCharaItemDropDataMan()
     {
 
-        var pcCharaItemDropUnits = Resources.Load<CCharaItemDropData>("CCharaItemDropData").m_pcCharaItemDropUnits;
+        var pcCharaItemDropUnits = Resources.Load<CCharaItemDropData>("CCharaItemDropData").charaItemDropUnits;
         foreach (var unit in pcCharaItemDropUnits)
         {
-            m_dicCharaItemDropUnits[unit.CharaName] = unit;
+            m_dicCharaItemDropUnits[unit.charaName] = unit;
         }
     }
 
@@ -24,18 +24,18 @@ public class CCharaItemDropDataMan : CSingleton<CCharaItemDropDataMan>
             return list;
 
         var charaDropUnit = m_dicCharaItemDropUnits[sCharaName];
-        foreach(var dropUnit in charaDropUnit.ItemDropUnits)
+        foreach(var dropUnit in charaDropUnit.itemDropUnits)
         {
             var random = Random.Range(0f, 100f);
-            if( random < dropUnit.DropRatePercent)
+            if( random < dropUnit.dropRatePercent)
             {
                 var countUnit = new CItemCountUnit();
                 var countRate = Random.Range(0.7f, 1.3f);
-                var count = dropUnit.ItemCountUnit.Count * countRate;
+                var count = dropUnit.itemCountUnit.count * countRate;
                 if (count <= 0) continue;
-                countUnit.Count = Mathf.RoundToInt(count);
-                countUnit.ItemID = dropUnit.ItemCountUnit.ItemID;
-                countUnit.ItemName = dropUnit.ItemCountUnit.ItemName;
+                countUnit.count = Mathf.RoundToInt(count);
+                countUnit.itemID = dropUnit.itemCountUnit.itemID;
+                countUnit.itemName = dropUnit.itemCountUnit.itemName;
                 list.Add(countUnit);
             }
         }

@@ -13,6 +13,6 @@ public enum eFacilityType
 [System.Serializable]
 public class CFacility
 {
-    public eFacilityType eType;
-    public float fEffectValue;
+    public eFacilityType type;
+	public float effectValue;
 }

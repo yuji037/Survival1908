@@ -12,35 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900a49b12b6914135abf655660b09e99, type: 3}
   m_Name: CNpcEncountData
   m_EditorClassIdentifier: 
-  m_pcNpcEncountStatus:
-  - Name: "\u5B89\u5168"
-    DebugMapColor: {r: 0, g: 0, b: 0, a: 1}
-    NpcEncountUnits: []
-  - Name: Easy00
-    DebugMapColor: {r: 0, g: 0, b: 1, a: 1}
-    NpcEncountUnits:
-    - RatePercent: 10
-      NpcName: "\u5538\u308B\u91CE\u72AC"
-    - RatePercent: 10
-      NpcName: "\u72FC"
-  - Name: Normal00
-    DebugMapColor: {r: 0, g: 0.70051455, b: 1, a: 1}
-    NpcEncountUnits:
-    - RatePercent: 30
-      NpcName: "\u5538\u308B\u91CE\u72AC"
-    - RatePercent: 10
-      NpcName: "\u72FC"
-  - Name: Normal01
-    DebugMapColor: {r: 1, g: 0, b: 0.9721708, a: 1}
-    NpcEncountUnits:
-    - RatePercent: 5
-      NpcName: "\u30B4\u30EA\u30E9"
-    - RatePercent: 30
-      NpcName: "\u72FC"
-  - Name: Hard01
-    DebugMapColor: {r: 1, g: 0, b: 0, a: 1}
-    NpcEncountUnits:
-    - RatePercent: 30
-      NpcName: "\u30B4\u30EA\u30E9"
-    - RatePercent: 60
-      NpcName: "\u72FC"
+  npcEncountStatusList:
+  - label: "\u5B89\u5168"
+    debugMapColor: {r: 0, g: 0, b: 0, a: 1}
+    npcEncountUnits: []
+  - label: Easy00
+    debugMapColor: {r: 0, g: 0, b: 1, a: 1}
+    npcEncountUnits:
+    - ratePercent: 10
+      npcName: "\u5538\u308B\u91CE\u72AC"
+    - ratePercent: 10
+      npcName: "\u72FC"
+  - label: Normal00
+    debugMapColor: {r: 0, g: 0.70051455, b: 1, a: 1}
+    npcEncountUnits:
+    - ratePercent: 30
+      npcName: "\u5538\u308B\u91CE\u72AC"
+    - ratePercent: 10
+      npcName: "\u72FC"
+  - label: Normal01
+    debugMapColor: {r: 1, g: 0, b: 0.9721708, a: 1}
+    npcEncountUnits:
+    - ratePercent: 5
+      npcName: "\u30B4\u30EA\u30E9"
+    - ratePercent: 30
+      npcName: "\u72FC"
+  - label: Hard01
+    debugMapColor: {r: 1, g: 0, b: 0, a: 1}
+    npcEncountUnits:
+    - ratePercent: 30
+      npcName: "\u30B4\u30EA\u30E9"
+    - ratePercent: 60
+      npcName: "\u72FC"
