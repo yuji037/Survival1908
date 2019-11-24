@@ -29,6 +29,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-# Unityのバージョンがなぜか更新されないため
-/ProjectSettings/ProjectVersion.txt
+# /ProjectSettings/ProjectVersion.txt
 
