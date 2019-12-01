@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class CSoundClip{
 	public string 		id;
 	public AudioClip 	audioClip;
-	[Range(0f, 1f)]
+	[Range(0f, 2f)]
 	public float		volume = 1f;
 }
 
@@ -19,6 +19,7 @@ public class CSoundMan : CSingletonMonoBehaviour<CSoundMan> {
 
 	private const int MAX_CHANNEL = 16;
 
+	private				float			m_fMasterVolume = 0.2f;
 	private 			CSoundClip[] 	m_pcSoundClips;
 
 	Dictionary<string, CSoundClip> 		m_dicSoundClips = new Dictionary<string, CSoundClip>();
@@ -29,7 +30,9 @@ public class CSoundMan : CSingletonMonoBehaviour<CSoundMan> {
 	protected override void Awake()
 	{
 		base.Awake();
-		m_pcSoundClips = Resources.Load<CSoundSettings>("CSoundSettings").soundClips;
+		var soundSettings = Resources.Load<CSoundSettings>("CSoundSettings");
+		m_pcSoundClips = soundSettings.soundClips;
+		m_fMasterVolume = soundSettings.masterVolume;
 
 		for (int i = 0; i < m_pChannels.Length; ++i) {
 			var obj = Instantiate(m_oSoundPlayPrefab);
@@ -82,6 +85,7 @@ public class CSoundMan : CSingletonMonoBehaviour<CSoundMan> {
 
 		audioSource.volume = m_dicSoundClips [sSoundID].volume == 0f ?
 			1f : m_dicSoundClips [sSoundID].volume;
+		audioSource.volume *= m_fMasterVolume;
 
 		audioSource.loop = isLoop;
 

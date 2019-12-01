@@ -114,17 +114,17 @@ public class CSituationStatus : CSingletonMonoBehaviour<CSituationStatus>
         return m_pcLocationStatus[iLocationType].name;
     }
 
-    public CFacility GetCurrentFacility(){
-        var ivPos = CPartyStatus.Instance.GetPartyPos();
-        return CMapMan.Instance.GetMapFacility(ivPos.x, ivPos.y);
-    }
+    //public CFacility GetCurrentFacility(){
+    //    var ivPos = CPartyStatus.Instance.GetPartyPos();
+    //    return CMapMan.Instance.GetMapFacility(ivPos.x, ivPos.y);
+    //}
 
-    public void UpdateLocation(){
-        var vPos = CPartyStatus.Instance.m_vPartyPos;
-        m_iLocationType = CMapMan.Instance.GetMapType(
-            Mathf.RoundToInt(vPos.x),
-            Mathf.RoundToInt(vPos.y));
-    }
+    //public void UpdateLocation(){
+    //    var vPos = CPartyStatus.Instance.m_vPartyPos;
+    //    m_iLocationType = CMapMan.Instance.GetMapType(
+    //        Mathf.RoundToInt(vPos.x),
+    //        Mathf.RoundToInt(vPos.y));
+    //}
 
 	public List<string> SearchItem(){
         return m_pcLocationStatus[m_iLocationType].SearchItem();

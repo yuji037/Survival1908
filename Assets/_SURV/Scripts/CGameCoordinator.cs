@@ -30,14 +30,12 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
         int mapW = CMapMan.Instance.WIDTH;
         int mapH = CMapMan.Instance.HEIGHT;
         var vPartyPos = new Vector2(Mathf.Round(mapW * 0.5f), Mathf.Round(mapH * 0.5f));
-        CPartyStatus.Instance.SetPartyPos(vPartyPos);
+        //CPartyStatus.Instance.SetPartyPos(vPartyPos);
         CMapMan.Instance.SetDispPartyPos(vPartyPos);
 
         CSoundMan.Instance.PlayBGM("BGM_Field00");
         CPartyStatus.Instance.UpdatePartyText();
         CSituationStatus.Instance.UpdateSituationText();
-
-        UpdateInputAction();
     }
 	
 	// Update is called once per frame
@@ -102,23 +100,24 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            m_lsTasks.Add(new CTaskMoveArea(new Vector2(0, 1)));
-            m_lsTasks.Add(new CTaskAdvanceTurn());
+			//CMapMan.Instance.SetDispPartyPos()
+            //m_lsTasks.Add(new CTaskMoveArea(new Vector2(0, 1)));
+            //m_lsTasks.Add(new CTaskAdvanceTurn());
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            m_lsTasks.Add(new CTaskMoveArea(new Vector2(0, -1)));
-            m_lsTasks.Add(new CTaskAdvanceTurn());
+            //m_lsTasks.Add(new CTaskMoveArea(new Vector2(0, -1)));
+            //m_lsTasks.Add(new CTaskAdvanceTurn());
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            m_lsTasks.Add(new CTaskMoveArea(new Vector2(-1, 0)));
-            m_lsTasks.Add(new CTaskAdvanceTurn());
+            //m_lsTasks.Add(new CTaskMoveArea(new Vector2(-1, 0)));
+            //m_lsTasks.Add(new CTaskAdvanceTurn());
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            m_lsTasks.Add(new CTaskMoveArea(new Vector2(1, 0)));
-            m_lsTasks.Add(new CTaskAdvanceTurn());
+            //m_lsTasks.Add(new CTaskMoveArea(new Vector2(1, 0)));
+            //m_lsTasks.Add(new CTaskAdvanceTurn());
         }
     }
 
@@ -135,70 +134,6 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
         m_poActionButton[index].GetComponentInChildren<Text>().text = btnText;
         m_pActionDelegate[index] = action;
     }
-
-    public void UpdateInputAction()
-    {
-        var enemy = CSituationStatus.Instance.GetChara(0);
-
-        if (enemy != null)
-        {
-            SetInputAction(0, "攻撃する", () =>
-            {
-                m_lsTasks.Add(new CTaskAttack(shigeru, enemy, "を思いっきり殴った", "SE_Punch00"));
-                m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
-                m_lsTasks.Add(new CTaskAdvanceTurn());
-            });
-        }
-        else
-        {
-            SetInputAction(0, "探索", () =>
-            {
-                m_lsTasks.Add(new CTaskSearchAround());
-                m_lsTasks.Add(new CTaskAdvanceTurn());
-            });
-        }
-
-        if (enemy != null)
-        {
-            SetInputAction(1, "待つ", () =>
-            {
-                m_lsTasks.Add(new CTaskAttack(enemy, shigeru, "に飛びかかった", "SE_Punch00"));
-                m_lsTasks.Add(new CTaskAdvanceTurn());
-            });
-        }
-        else
-        {
-            var ivPos = CPartyStatus.Instance.GetPartyPos();
-            var cFacility = CMapMan.Instance.GetMapFacility(ivPos.x, ivPos.y);
-            if(cFacility == null)
-            {
-                SetInputAction(1, "待つ", () =>
-                {
-                    m_lsTasks.Add(new CTaskAdvanceTurn());
-                });
-            }
-            else
-            {
-                switch (cFacility.type)
-                {
-                    case eFacilityType.Shelter:
-                        SetInputAction(1, "休む", () =>
-                        {
-                            m_lsTasks.Add(new CTaskRest());
-                            m_lsTasks.Add(new CTaskAdvanceTurn());
-                        });
-                        break;
-                    default:
-                        SetInputAction(1, "待つ", () =>
-                        {
-                            m_lsTasks.Add(new CTaskAdvanceTurn());
-                        });
-                        break;
-                }
-            }
-        }
-    }
-
 
 }
 

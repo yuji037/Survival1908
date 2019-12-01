@@ -25,10 +25,10 @@ public class CItemStatus
 				CPartyStatus.Instance.GetPartyChara(0).Equip(EquipmentPart.Body, id);
 				break;
 			case eItemType.Facility:
-                var ivPos = CPartyStatus.Instance.GetPartyPos();
-                var cFacility = new CFacility();
-                cFacility.type = (eFacilityType)effectTypeID;
-                CMapMan.Instance.SetMapFacility(ivPos.x, ivPos.y, cFacility);
+                //var ivPos = CPartyStatus.Instance.GetPartyPos();
+                //var cFacility = new CFacility();
+                //cFacility.type = (eFacilityType)effectTypeID;
+                //CMapMan.Instance.SetMapFacility(ivPos.x, ivPos.y, cFacility);
                 break;
         }
     }

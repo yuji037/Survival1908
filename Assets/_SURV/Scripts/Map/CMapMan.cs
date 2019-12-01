@@ -7,7 +7,7 @@ using System.IO;
 public class CMapMan : CSingletonMonoBehaviour<CMapMan>
 {
     [SerializeField]
-    private GameObject m_oMapCellPrefab;
+    private GameObject m_oMapCellElement;
 
     [SerializeField]
     private GameObject m_oMapCellParent;
@@ -41,7 +41,7 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
 //            }
 //        }
 
-        var cellRT = m_oMapCellPrefab.GetComponent<RectTransform>();
+        var cellRT = m_oMapCellElement.GetComponent<RectTransform>();
         m_fCellWidth    = cellRT.rect.width;
         m_fCellHeight   = cellRT.rect.height;
 
@@ -53,7 +53,7 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
             for (int w = 0; w < m_cMapData.map[h].Leength; ++w) {
                 var cMapCell = m_cMapData.map[h][w];
                 int iLocationType = cMapCell.iLocationType;
-                var oCell = Instantiate(m_oMapCellPrefab);
+                var oCell = Instantiate(m_oMapCellElement);
                 var rt = oCell.GetComponent<RectTransform>();
                 oCell.transform.SetParent(m_oMapCellParent.transform, false);
                 rt.localPosition = new Vector3(m_fCellWidth * w, m_fCellHeight * h);
@@ -72,11 +72,14 @@ public class CMapMan : CSingletonMonoBehaviour<CMapMan>
             }
         }
 
-        m_oPartyCell = Instantiate(m_oMapCellPrefab);
+        m_oPartyCell = Instantiate(m_oMapCellElement);
         m_oPartyCell.transform.SetParent(this.transform);
         m_oPartyCell.GetComponent<RectTransform>().localPosition = Vector3.zero;
+		m_oPartyCell.transform.localScale = Vector3.one;
         m_oPartyCell.GetComponentInChildren<Text>().text = "";
-        m_imgPartyCell = m_oPartyCell.GetComponentInChildren<Image>();
+		m_imgPartyCell = m_oPartyCell.GetComponentInChildren<Image>();
+
+		m_oMapCellElement.SetActive(false);
     }
 
     // Start is called before the first frame update

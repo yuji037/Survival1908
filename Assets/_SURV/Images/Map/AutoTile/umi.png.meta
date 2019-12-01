@@ -1,0 +1,445 @@
+fileFormatVersion: 2
+guid: f4268a061dbe5e74193b816d1a125b46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5748528505159029826
+    second: umi_0
+  - first:
+      213: -6293488647619519499
+    second: umi_1
+  - first:
+      213: -5044442420845094174
+    second: umi_2
+  - first:
+      213: 7232695047367151688
+    second: umi_3
+  - first:
+      213: 2184490673695579845
+    second: umi_4
+  - first:
+      213: 6601425490747500514
+    second: umi_5
+  - first:
+      213: 2934313999401952746
+    second: umi_6
+  - first:
+      213: -3258763453590929383
+    second: umi_7
+  - first:
+      213: -8535328446302563570
+    second: umi_8
+  - first:
+      213: 5403976873451340825
+    second: umi_9
+  - first:
+      213: 2426805801937753970
+    second: umi_10
+  - first:
+      213: -9030830260293922057
+    second: umi_11
+  - first:
+      213: 100441773580027905
+    second: umi_12
+  - first:
+      213: 5165913936816560967
+    second: umi_13
+  - first:
+      213: -6526368980954637672
+    second: umi_14
+  - first:
+      213: 1932033905595455664
+    second: umi_15
+  - first:
+      213: -937819254847568444
+    second: umi_16
+  - first:
+      213: -3675034737009435659
+    second: umi_17
+  - first:
+      213: 8326699543998290767
+    second: umi_18
+  - first:
+      213: -1905550428202286271
+    second: umi_19
+  - first:
+      213: -3508549848652048587
+    second: umi_20
+  - first:
+      213: -2082872361914615790
+    second: umi_21
+  - first:
+      213: 2064802572621846100
+    second: umi_22
+  - first:
+      213: -8689012502296482002
+    second: umi_23
+  - first:
+      213: -3354873580711792364
+    second: umi_24
+  - first:
+      213: 2712561813668034554
+    second: umi_25
+  - first:
+      213: 3459987564862544960
+    second: umi_26
+  - first:
+      213: 6248967230590343877
+    second: umi_27
+  - first:
+      213: 6256044472309393095
+    second: umi_28
+  - first:
+      213: -2315135146822540120
+    second: umi_29
+  - first:
+      213: 3052350293981718845
+    second: umi_30
+  - first:
+      213: -4257721814913770158
+    second: umi_31
+  - first:
+      213: -5415078648112916191
+    second: umi_32
+  - first:
+      213: -5818664066854936386
+    second: umi_33
+  - first:
+      213: 6795669594518802998
+    second: umi_34
+  - first:
+      213: -1668213098140632497
+    second: umi_35
+  - first:
+      213: -8115077381349004803
+    second: umi_36
+  - first:
+      213: 2562841219878438222
+    second: umi_37
+  - first:
+      213: 6690596581754433417
+    second: umi_38
+  - first:
+      213: -4909382724817162479
+    second: umi_39
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: umi_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d430320d2ca7f174cb1220904e11cbec
+      internalID: 5748528505159029826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d876c78fecc0ac14dbbd5a1767e68737
+      internalID: -6293488647619519499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a32669777d289145bf89bfd06606d7f
+      internalID: -5044442420845094174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fe2cc4bc2b086448b301012dbe554f
+      internalID: 7232695047367151688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc9169aeac491b4cbf2dd63bb07686d
+      internalID: 2184490673695579845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cfe8969bb5e424aac1dd81e51dc3d1
+      internalID: 6601425490747500514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6343ef55930aae742a4c116503799014
+      internalID: 2934313999401952746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1580daf0474c0b54c9dc6cc684b762b2
+      internalID: -3258763453590929383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac9c424a78bd6c46b47e48535c512a4
+      internalID: -8535328446302563570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: umi_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4b8ac88be6c264483be71dee401b99
+      internalID: 5403976873451340825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1318a9c1fb92cdf49ab3869ec9656732
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

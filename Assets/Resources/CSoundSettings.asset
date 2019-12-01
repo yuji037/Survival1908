@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774887d9adf2f4b4986e6fc62f9ae6f1, type: 3}
   m_Name: CSoundSettings
   m_EditorClassIdentifier: 
+  masterVolume: 0.621
   soundClips:
   - id: BGM_Field00
     audioClip: {fileID: 8300000, guid: 9b1d341f8f8404a0dbd5adc882febc67, type: 3}
@@ -40,6 +41,6 @@ MonoBehaviour:
   - id: SE_Eat00
     audioClip: {fileID: 8300000, guid: 6c1bdea152cb048f6b8401cc15fd87ce, type: 3}
     volume: 0
-  - id: 
-    audioClip: {fileID: 0}
-    volume: 0
+  - id: SE_Hit00
+    audioClip: {fileID: 8300000, guid: 7c117b0a2dee84715ac29b5168dc9a3e, type: 3}
+    volume: 1

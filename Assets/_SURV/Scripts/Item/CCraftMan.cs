@@ -71,21 +71,21 @@ public class CCraftMan : CSingletonMonoBehaviour<CCraftMan>
         {
             // 表示しない条件
             var isDisp = false;
-            var cFacility = CSituationStatus.Instance.GetCurrentFacility();
-            switch (cs.craftConditionType)
-            {
-                case eCraftConditionType.None:
-                    isDisp = true;
-                    break;
-                case eCraftConditionType.Bonfire:
-                    if( cFacility != null &&
-                        cFacility.type == eFacilityType.Bonfire)
-                    {
-                        isDisp = true;
-                    }
-                    break;
+            //var cFacility = CSituationStatus.Instance.GetCurrentFacility();
+            //switch (cs.craftConditionType)
+            //{
+            //    case eCraftConditionType.None:
+            //        isDisp = true;
+            //        break;
+            //    case eCraftConditionType.Bonfire:
+            //        if( cFacility != null &&
+            //            cFacility.type == eFacilityType.Bonfire)
+            //        {
+            //            isDisp = true;
+            //        }
+            //        break;
 
-            }
+            //}
             if (false == isDisp)
             {
                 continue;

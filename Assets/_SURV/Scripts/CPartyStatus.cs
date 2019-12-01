@@ -15,9 +15,6 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
     private     float       m_fNextUpdateTime       = 0f;
     private     bool        m_IsUpdating            = false;
 
-    public      Vector2     m_vPartyPos { get; private set; }
-    private     IntVector2  m_ivPartyPos;
-
 	// TODO: データ部分と表示部分を分けるべき
     [SerializeField]
     private     Text        m_textMessage;
@@ -76,19 +73,6 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 		return m_lsPartyChara [index];
 	}
 
-    public IntVector2 GetPartyPos()
-    {
-        return m_ivPartyPos;
-    }
-
-    public void SetPartyPos(Vector2 vPos){
-        m_vPartyPos = vPos;
-        m_ivPartyPos = new IntVector2(
-            Mathf.RoundToInt(vPos.x),
-            Mathf.RoundToInt(vPos.y));
-        CSituationStatus.Instance.UpdateLocation();
-    }
-
 	public void UpdatePartyText()
 	{
 		foreach (var pc in m_lsPartyChara) {
@@ -128,27 +112,6 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
             //rt.sizeDelta = sizeDelta;
             m_sliderFood.value = pc.Food / 100f;
 		}
-	}
-
-	public void OnTurnElapsed(){
-		foreach (var pc in m_lsPartyChara) {
-            if (pc.Food > 30) {
-                pc.hp += 2;
-                if (pc.hp > pc.maxHp)
-                    pc.hp = pc.maxHp;
-            }
-            else if (pc.Food <= 0) {
-                pc.hp -= 2;
-
-            }
-			pc.Food -= 2;
-            if (pc.Food < 0)
-                pc.Food = 0;
-		}
-
-		// ゲームオーバー、キャラ死亡時の処理も入れる
-
-		UpdatePartyText();
 	}
 }
 
