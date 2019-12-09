@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889095e6bd6318544a66a8c6af451e3d, type: 3}
+  m_Name: CSkillData
+  m_EditorClassIdentifier: 
+  skills:
+  - id: 10001
+    dispName: "\u65AC\u308A\u3064\u3051"
+    attackPower: 2
+    castTime: 0
+    projectileAppearOffsets:
+    - {x: 0, y: 0}
+    randomizeRadius: 0
+    projectile: {fileID: 8830796358207216064, guid: ef79ca307186cb44ab9c1ec9e58a7c4d,
+      type: 3}
+    shootCountMax: 1
+    shootInterval: 0
+    startActionType: 0
+    knockbackPower: 12
+  - id: 20001
+    dispName: "\u30D5\u30A1\u30A4\u30A2\u30E9\u30F3\u30B9"
+    attackPower: 2
+    castTime: 0
+    projectileAppearOffsets:
+    - {x: 0, y: -1}
+    randomizeRadius: 0
+    projectile: {fileID: 8115889915659374364, guid: 9e64520bf3af9a646969ba8cfde00f8e,
+      type: 3}
+    shootCountMax: 1
+    shootInterval: 0
+    startActionType: 0
+    knockbackPower: 20
+  - id: 20002
+    dispName: "\u30C0\u30FC\u30AF\u30E9\u30F3\u30B9"
+    attackPower: 10
+    castTime: 1
+    projectileAppearOffsets:
+    - {x: 0, y: -3}
+    - {x: 0, y: -5}
+    - {x: 0, y: -7}
+    randomizeRadius: 0
+    projectile: {fileID: 4851878861736675752, guid: 976f8c90791aeea4ca8e01501a4d2f59,
+      type: 3}
+    shootCountMax: 3
+    shootInterval: 0.5
+    startActionType: 1
+    knockbackPower: 8

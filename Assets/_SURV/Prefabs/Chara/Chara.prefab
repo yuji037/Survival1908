@@ -47,8 +47,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.01
-  m_LinearDrag: 1400
+  m_Mass: 1
+  m_LinearDrag: 8
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -84,10 +84,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0d3f2fa00685b47b05f39353a473b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  magicPrefab: {fileID: 8115889915659374364, guid: 9e64520bf3af9a646969ba8cfde00f8e,
-    type: 3}
-  magicForceRate: 100
+  teamType: 0
+  baseSpriteTransform: {fileID: 0}
+  stepForwardCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hp: 20
+  winceTimeMax: 1
+  moveSpeed: 45
 --- !u!95 &1436406364742845416
 Animator:
   serializedVersion: 3
@@ -175,8 +182,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
-  m_Sprite: {fileID: -1343681280618517101, guid: d1ec10c9d575832488d6f1ce86a2f7c5,
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 3391457796574917159, guid: d1ec10c9d575832488d6f1ce86a2f7c5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

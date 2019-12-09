@@ -36,8 +36,8 @@ public class OverrideSprite : MonoBehaviour
 			(float)texture.height / oldTexture.height,
 			1f);
 
-		Debug.Log("texture.width : "+ texture.width);
-		Debug.Log("texture : "+ texture.name);
+		//Debug.Log("texture.width : "+ texture.width);
+		//Debug.Log("texture : "+ texture.name);
 		sr.size = newScale;
 		
 

@@ -4894,6 +4894,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989475ff6efc45c41aa2ff3ff0ef4819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffect: {fileID: 5435765623472815220, guid: e151831948787d240b2ae7012e64b5d9,
-    type: 3}
-  knockbackPower: 20
+  projectileType: 0
+  moveSpeed: 10
+  shootRange: 5
+  remainTime: 5
+  hitEffect: ef_hit_melee02
+  coliderCastDelay: 0
+  coliderCastInterval: 1
+  coliderCastCountMax: 1
+  pierceFlag: 0
+  moveDirection: {x: 0, y: 0}
+  target: {fileID: 0}

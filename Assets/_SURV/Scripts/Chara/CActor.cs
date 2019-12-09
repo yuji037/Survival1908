@@ -8,9 +8,9 @@ public class CActor : MonoBehaviour
 
 	protected Animator animator;
 
-	private Vector2 direction;
+	protected Vector2 direction;
 
-	protected Vector2 Direction
+	public Vector2 Direction
 	{
 		get
 		{
@@ -18,11 +18,24 @@ public class CActor : MonoBehaviour
 				direction = new Vector2(0f, -0.01f);
 			return direction;
 		}
-		set
+	}
+
+	public Vector2 DirectionRightAngle
+	{
+		get
 		{
-			direction = value;
+			var dir = Direction;
+			if(dir.x != 0f && dir.y != 0f )
+			{
+				if ( Mathf.Abs(dir.x) >= Mathf.Abs(dir.y) )
+					dir.y = 0f;
+				else
+					dir.x = 0f;
+			}
+			return dir;
 		}
 	}
+	
 
 	protected virtual void Awake()
 	{
@@ -31,13 +44,13 @@ public class CActor : MonoBehaviour
 	}
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	protected virtual void Update()
     {
         
     }

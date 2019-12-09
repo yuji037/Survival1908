@@ -436,7 +436,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 23, y: -15, z: 0}
     second:
       m_TileIndex: 474
@@ -1885,7 +1885,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 24, y: -9, z: 0}
     second:
       m_TileIndex: 295
@@ -1894,7 +1894,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 25, y: -9, z: 0}
     second:
       m_TileIndex: 296
@@ -2164,7 +2164,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 23, y: -8, z: 0}
     second:
       m_TileIndex: 264
@@ -2173,7 +2173,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 24, y: -8, z: 0}
     second:
       m_TileIndex: 265
@@ -2182,7 +2182,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 25, y: -8, z: 0}
     second:
       m_TileIndex: 266
@@ -3010,7 +3010,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 24, y: -5, z: 0}
     second:
       m_TileIndex: 175
@@ -3019,7 +3019,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 25, y: -5, z: 0}
     second:
       m_TileIndex: 176
@@ -4126,7 +4126,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 24, y: -1, z: 0}
     second:
       m_TileIndex: 55
@@ -4135,7 +4135,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 25, y: -1, z: 0}
     second:
       m_TileIndex: 56
@@ -4144,7 +4144,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: 26, y: -1, z: 0}
     second:
       m_TileIndex: 57
@@ -4172,6 +4172,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 0
+  - first: {x: -4, y: 0, z: 0}
+    second:
+      m_TileIndex: 483
+      m_TileSpriteIndex: 483
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 2
+      m_ColliderType: 1
   - first: {x: -1, y: 0, z: 0}
     second:
       m_TileIndex: 0
@@ -5418,6 +5427,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e14cc87a681216f4790beb8881136678, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 4966e11523365aa4faeba2525964773b, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: b3fb2dd9044c0fa4083b114a9d170886, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 4
     m_Data: {fileID: -4420968687677213064, guid: c6ca90070047a574d86308f059e21f03,
@@ -6846,8 +6857,10 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: -258122238532146133, guid: 804a4361bc573c548a65fc5312982ffc,
       type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 476577019543879559, guid: 734c2175321717242980296c0dedf4a1, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 483
+  - m_RefCount: 484
     m_Data:
       e00: 1
       e01: 0
@@ -6920,7 +6933,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 489
+  - m_RefCount: 490
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}

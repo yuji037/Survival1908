@@ -36,6 +36,7 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
         CSoundMan.Instance.PlayBGM("BGM_Field00");
         CPartyStatus.Instance.UpdatePartyText();
         CSituationStatus.Instance.UpdateSituationText();
+
     }
 	
 	// Update is called once per frame
