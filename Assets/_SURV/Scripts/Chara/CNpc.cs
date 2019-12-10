@@ -47,6 +47,31 @@ public class CNpc : CBody
 		direction = _direction;
 	}
 
+	public void LookAtTarget(float rotateSpeed = 99999f)
+	{
+		var targetDirection = Vector2.down;
+
+		var disToTarget = target.transform.position - transform.position;
+		if ( disToTarget == Vector3.zero )
+			targetDirection = Vector2.down;
+		else
+			targetDirection = disToTarget.normalized;
+
+		if(rotateSpeed >= 99999f )
+		{
+			direction = targetDirection;
+		}
+		else
+		{
+			var beforeRot = Quaternion.LookRotation(Direction, Vector3.back);
+			var targetRot = Quaternion.LookRotation(targetDirection, Vector3.back);
+
+			var afterRot = Quaternion.RotateTowards(beforeRot, targetRot, rotateSpeed * Time.deltaTime);
+
+			direction = afterRot * Vector3.forward;
+		}
+	}
+
 	public void SetAIMovement(Vector2 _velocity, float elapsedTime)
 	{
 		var speedCurveFactor = moveForwardSpeedCurve.Evaluate(elapsedTime);

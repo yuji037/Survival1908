@@ -18,17 +18,13 @@ namespace BehaviorDesigner.Runtime.Tasks.SURV
 			if ( isRandom )
 			{
 				direction = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)) * direction;
+				owner.SetDirection(direction);
 			}
 			else
 			{
-				var disToTarget = owner.Target.transform.position - owner.transform.position;
-				if ( disToTarget == Vector3.zero )
-					direction = Vector2.down;
-				else
-					direction = disToTarget.normalized;
+				owner.LookAtTarget();
 			}
 
-			owner.SetDirection(direction);
 
 			return TaskStatus.Success;
 		}

@@ -11,11 +11,32 @@ namespace BehaviorDesigner.Runtime.Tasks.SURV
 		//[Tooltip("")]
 		public float durationTime = 2f;
 
+		[Tooltip("-設定値～設定値だけdurationTimeを変化させる")]
+		public float durationRandomize = 0f;
+
+		[Tooltip("ターゲットへの誘導角度(/秒) 0で誘導しない")]
+		public float homingTargetSpeed = 0f;
+
+
+		private float _durationTime = 0f;
+
+		public override void OnStart()
+		{
+			base.OnStart();
+
+			_durationTime = durationTime;
+			if ( durationRandomize > 0f )
+				_durationTime += Random.Range(-durationRandomize, durationRandomize);
+		}
+
 		protected override TaskStatus TaskUpdate()
 		{
 
 			if(elapsedTime < durationTime )
 			{
+				if ( homingTargetSpeed > 0f )
+					owner.LookAtTarget(homingTargetSpeed);
+
 				owner.SetAIMovement(owner.Direction, elapsedTime);
 				return TaskStatus.Running;
 			}
