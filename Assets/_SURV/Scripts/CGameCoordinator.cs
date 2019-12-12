@@ -19,53 +19,21 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
     void Start () {
 		//m_cInventryMan.Init();
 
-        CSituationStatus.Instance.Init();
-
         shigeru = new CPartyChara("Shigeru");
 		CPartyStatus.Instance.AppendPartyChara(shigeru);
 		shigeru.hp = 50;
         shigeru.atkNaked = 10;
 		shigeru.Food = 50;
         shigeru.GainExp(0);
-        int mapW = CMapMan.Instance.WIDTH;
-        int mapH = CMapMan.Instance.HEIGHT;
-        var vPartyPos = new Vector2(Mathf.Round(mapW * 0.5f), Mathf.Round(mapH * 0.5f));
-        //CPartyStatus.Instance.SetPartyPos(vPartyPos);
-        CMapMan.Instance.SetDispPartyPos(vPartyPos);
 
         CSoundMan.Instance.PlayBGM("BGM_Field00");
         CPartyStatus.Instance.UpdatePartyText();
-        CSituationStatus.Instance.UpdateSituationText();
-
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         DebugInputKeyboard();
-
-
-        if (m_lsTasks.Count != 0)
-        {
-            var cTask = m_lsTasks[0];
-            if (cTask.CalledCount == 0)
-            {
-				cTask.OnInitialize();
-                cTask.OnStart();
-            }
-            else if (false == cTask.IsEnd)
-            {
-                cTask.OnUpdate();
-            }
-            else
-            {
-                cTask.OnEnd();
-                m_lsTasks.RemoveAt(0);
-            }
-			cTask.CalledCount++;
-            return;
-        }
-
 
     }
 

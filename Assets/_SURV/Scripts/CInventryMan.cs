@@ -204,6 +204,5 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
 		ManipulateItemCount(m_sCurrentSelectItemId, -1);
         UpdateInventryUI();
         CPartyStatus.Instance.UpdatePartyText();
-        CSituationStatus.Instance.UpdateSituationText();
     }
 }

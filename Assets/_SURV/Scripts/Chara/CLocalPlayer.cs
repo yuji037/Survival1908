@@ -13,6 +13,7 @@ public class CLocalPlayer : CBody
 
 	private Vector2 input;
 	private Vector2 movePad;
+	private Vector2 inputTouchMove;
 
 	protected override void Awake()
 	{
@@ -69,6 +70,12 @@ public class CLocalPlayer : CBody
 		if ( input.sqrMagnitude > 1f )
 			input = input.normalized;
 
+		if( input.sqrMagnitude < inputTouchMove.sqrMagnitude )
+		{
+			input = inputTouchMove;
+			inputTouchMove = Vector2.zero;
+		}
+
 		if ( isAttacking )
 			movePad = Vector2.zero;
 		else
@@ -91,15 +98,25 @@ public class CLocalPlayer : CBody
 
 	public void UpdateAction()
 	{
-		if ( Input.GetButtonDown("Fire1") )
-		{
-			StartCoroutine(AttackCoroutine(0));
-		}
+		//if ( Input.GetButtonDown("Fire1") )
+		//{
+		//	StartCoroutine(AttackCoroutine(0));
+		//}
 
-		if ( Input.GetButtonDown("Fire2") )
-		{
-			StartCoroutine(AttackCoroutine(1));
-		}
+		//if ( Input.GetButtonDown("Fire2") )
+		//{
+		//	StartCoroutine(AttackCoroutine(1));
+		//}
+	}
+
+	public void MeleeAttack()
+	{
+		StartCoroutine(AttackCoroutine(0));
+	}
+
+	public void RangeAttack()
+	{
+		StartCoroutine(AttackCoroutine(1));
 	}
 
 	private IEnumerator AttackCoroutine(int attackModuleIndex)
@@ -117,5 +134,13 @@ public class CLocalPlayer : CBody
 		base.ReceiveDamage(attackInfo);
 
 		CSoundMan.Instance.Play("SE_Hit02");
+	}
+
+	public void InputTouchMovement(Vector2 vec)
+	{
+		if ( vec.sqrMagnitude > 1f )
+			vec = vec.normalized;
+
+		inputTouchMove = vec;
 	}
 }
