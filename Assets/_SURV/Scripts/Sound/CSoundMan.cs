@@ -58,7 +58,8 @@ public class CSoundMan : CSingletonMonoBehaviour<CSoundMan> {
 		string 		sSoundID, 
 		bool 		isLoop 		= false, 
 		Vector3? 	vPosition 		= null, 
-		bool 		bPlayIn3DVolume 	= false)
+		bool 		bPlayIn3DVolume 	= false,
+		float		fPitch		=1f)
 	{
 		if (false == m_dicSoundClips.ContainsKey(sSoundID)) {
 			Debug.LogError("登録されていないサウンドIDです ID:" + sSoundID);
@@ -82,6 +83,8 @@ public class CSoundMan : CSingletonMonoBehaviour<CSoundMan> {
 			// 3D的なボリューム調節をしない
 			audioSource.spatialBlend = 0f;
 		}
+
+		audioSource.pitch = fPitch;
 
 		audioSource.volume = m_dicSoundClips [sSoundID].volume == 0f ?
 			1f : m_dicSoundClips [sSoundID].volume;

@@ -567,6 +567,86 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &144425800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144425801}
+  - component: {fileID: 144425802}
+  m_Layer: 0
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &144425801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144425800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.75, y: 0, z: 0}
+  m_LocalScale: {x: 2.8999999, y: 0.43333328, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1924178217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &144425802
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144425800}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 893585093996140730, guid: d97ba834892d1364eab516b224144295, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &196489791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,7 +2379,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 553842968}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4197cd6d0a900cf44820c09d2a96680a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4089,7 +4169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1012071689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4143,6 +4223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0d3f2fa00685b47b05f39353a473b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1050571093 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1436406364742845418, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436406364095509182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1072438937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5744,7 +5830,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1398581825}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4197cd6d0a900cf44820c09d2a96680a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7232,6 +7318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draco (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194086380149833738, guid: 724aad23571e7b14087c4c884aeba493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8050682529243940291, guid: 724aad23571e7b14087c4c884aeba493,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7305,6 +7396,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Draco (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6194086380149833738, guid: 724aad23571e7b14087c4c884aeba493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556900758689638306, guid: 724aad23571e7b14087c4c884aeba493,
+        type: 3}
+      propertyPath: winceTimeMax
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8050682529243940291, guid: 724aad23571e7b14087c4c884aeba493,
         type: 3}
@@ -23111,6 +23212,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1924178216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1924178217}
+  m_Layer: 0
+  m_Name: SwingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1924178217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924178216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 144425801}
+  m_Father: {fileID: 1050571093}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925422572
 GameObject:
   m_ObjectHideFlags: 0
@@ -23765,7 +23897,7 @@ PrefabInstance:
     - target: {fileID: 1436406364742845418, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.67
+      value: -23.9
       objectReference: {fileID: 0}
     - target: {fileID: 1436406364742845418, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
         type: 3}
@@ -24084,11 +24216,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
         type: 3}
-      propertyPath: moveSpeed
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
-        type: 3}
       propertyPath: hp
       value: 999
       objectReference: {fileID: 0}
@@ -24096,6 +24223,61 @@ PrefabInstance:
         type: 3}
       propertyPath: winceTimeMax
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: swingAnchor
+      value: 
+      objectReference: {fileID: 1924178217}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: swingMassCenter
+      value: 
+      objectReference: {fileID: 144425801}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: isSwingingObject
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: rotForceRate
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: rotVelMax
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: dampFactor
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: swingForceRate
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: swingingMoveSpeedFactor
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: swingingLinearDrag
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436406364742845419, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
+        type: 3}
+      propertyPath: swingingMoveSpeed
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 1436406364742845422, guid: 4b8a3218764a6914b94072f7d8e1ec8e,
         type: 3}
@@ -24139,6 +24321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Draco
+      objectReference: {fileID: 0}
+    - target: {fileID: 6194086380149833738, guid: 724aad23571e7b14087c4c884aeba493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7556900758689638306, guid: 724aad23571e7b14087c4c884aeba493,
         type: 3}

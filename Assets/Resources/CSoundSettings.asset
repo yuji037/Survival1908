@@ -16,7 +16,7 @@ MonoBehaviour:
   soundClips:
   - id: BGM_Field00
     audioClip: {fileID: 8300000, guid: 899c0f3dfd402744da4e9116cb776898, type: 3}
-    volume: 0
+    volume: 0.35
   - id: BGM_NormalBattle00
     audioClip: {fileID: 8300000, guid: bc449a792933b4d3ba21da3a81f4eb23, type: 3}
     volume: 0
@@ -55,4 +55,7 @@ MonoBehaviour:
     volume: 0
   - id: SE_Hit02
     audioClip: {fileID: 8300000, guid: d9514b010b95c294e836509bf8474550, type: 3}
+    volume: 0
+  - id: SE_Swing00
+    audioClip: {fileID: 8300000, guid: b8bf97c88aa7cdd47bea5c558866844d, type: 3}
     volume: 0
