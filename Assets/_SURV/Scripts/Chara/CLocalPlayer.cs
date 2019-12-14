@@ -15,6 +15,9 @@ public class CLocalPlayer : CBody
 	private Vector2 movePad;
 	private Vector2 inputTouchMove;
 
+	[SerializeField]
+	private bool isSwingingObject = false;
+
 	protected override void Awake()
 	{
 		base.Awake();
@@ -44,6 +47,7 @@ public class CLocalPlayer : CBody
 		UpdateInput();
 		UpdateAnim();
 		UpdateAction();
+		UpdateSwing();
     }
 
 	void FixedUpdate()
@@ -57,9 +61,85 @@ public class CLocalPlayer : CBody
 		if ( isWincing )
 			return;
 
-		var moveVelocity = movePad * moveSpeed;
+		if ( isSwingingObject )
+		{
+			var moveVelocity = movePad * swingingMoveSpeed;
+			moveVelocity += (Vector2) ( swingMassCenter.position - transform.position ).normalized * Mathf.Abs(rotVel) * swingingMoveSpeedFactor;
 
-		rigidbdy2D.velocity = moveVelocity;
+			rigidbdy2D.drag = swingingLinearDrag;
+			rigidbdy2D.velocity = moveVelocity;
+		}
+		else
+		{
+			var moveVelocity = movePad * moveSpeed;
+
+			rigidbdy2D.drag = walkLinearDrag;
+			rigidbdy2D.velocity = moveVelocity;
+		}
+	}
+
+	[SerializeField]
+	private float swingingMoveSpeed = 3f;
+	[SerializeField]
+	private float swingingLinearDrag = 3f;
+	[SerializeField]
+	private float walkLinearDrag = 8f;
+
+	[SerializeField]
+	private float swingingMoveSpeedFactor = 1.0f;
+
+	[SerializeField]
+	private Transform swingAnchor;
+
+	[SerializeField]
+	private Transform swingMassCenter;
+
+	private float rotVel = 0f;
+
+	[SerializeField]
+	private float rotForceRate = 1.0f;
+
+	[SerializeField]
+	private float swingForceRate = 5f;
+
+	[SerializeField]
+	private float rotVelMax = 20f;
+
+	[SerializeField]
+	private float dampFactor = 1f;
+
+	void UpdateSwing()
+	{
+		if ( false == isSwingingObject )
+			return;
+
+		var vec = swingAnchor.position - swingMassCenter.position;
+		var rotForce = Vector3.Dot(input, vec) * rotForceRate;
+		var swingForce = Vector3.Cross(input, vec).z * swingForceRate;
+
+		if(rotVel < 0f )
+		{
+			rotForce = -rotForce;
+		}
+
+		rotVel += rotForce * Time.deltaTime + swingForce * Time.deltaTime;
+		var dampF = dampFactor;
+		if ( input.sqrMagnitude < 0.1f )
+			dampF = 20f;
+		rotVel *=  1f - dampF * Time.deltaTime;
+		rotVel = Mathf.Clamp(rotVel, -rotVelMax, rotVelMax);
+
+		var beforeRotEulerZ = swingAnchor.rotation.eulerAngles.z;
+
+		swingAnchor.rotation *= Quaternion.Euler(0, 0, rotVel * Time.deltaTime);
+
+		var afterRotEulerZ = swingAnchor.rotation.eulerAngles.z;
+
+		if(	(	beforeRotEulerZ <= 330f && afterRotEulerZ > 330f && rotVel > 0f ) ||
+			(	beforeRotEulerZ > 330f && afterRotEulerZ <= 330f && rotVel < 0f	)      )
+		{
+			CSoundMan.Instance.Play("SE_Swing00", false, null, false, Mathf.Abs(rotVel) / rotVelMax);
+		}
 	}
 
 	void UpdateInput()
@@ -91,6 +171,12 @@ public class CLocalPlayer : CBody
 		if( movePad.x != 0f || movePad.y != 0f )
 		{
 			direction = movePad;
+		}
+
+		if ( isSwingingObject )
+		{
+			speed = 0.4f;
+			direction = (swingMassCenter.position - transform.position).normalized;
 		}
 		animator.SetFloat("Horizontal", Direction.x * speed);
 		animator.SetFloat("Vertical", Direction.y * speed);
