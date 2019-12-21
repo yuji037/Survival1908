@@ -105,8 +105,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamType: 1
+  baseSpriteTransform: {fileID: 0}
+  stepForwardCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   hp: 100
-  moveSpeed: 70
+  maxHp: 20
+  winceTimeMax: 1
+  charaId: Enemy_02
+  charaName: "\u30C9\u30E9\u30B4\u30F3"
+  gainCombatExp: 50
+  moveSpeedRate: 10
+  moveForwardSpeedCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  moveForwardJumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bodyKnockbackPower: 10
+  bodyKnockbackReturnPower: 10
 --- !u!114 &8276400251324737061
 MonoBehaviour:
   m_ObjectHideFlags: 0

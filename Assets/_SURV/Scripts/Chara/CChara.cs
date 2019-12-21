@@ -32,6 +32,6 @@ public class CChara
     }
 
 	public virtual void OnDead(){
-        CPartyStatus.Instance.GetPartyChara(0).GainExp(expHaving);
+        //CPartyStatus.Instance.GetPartyChara(0).GainExp(expHaving);
 	}
 }

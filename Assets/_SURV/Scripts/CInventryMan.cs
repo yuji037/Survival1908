@@ -36,17 +36,15 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
 
     private int m_iSelectInventryIndex;
 
-    public void Init()
-    {
-        //Awake();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         m_oInventryCellElement.SetActive(false);
         DispWindow(false);
-    }
+
+		// 今は常にロードしてみる
+		Load();
+	}
 
     // Update is called once per frame
     void Update()
@@ -82,6 +80,9 @@ public class CInventryMan : CSingletonMonoBehaviour<CInventryMan>
             m_dicItemHasCount[sID] = 0;
         }
         m_dicItemHasCount[sID] += iDelta;
+
+		var itemStatus = CItemDataMan.Instance.GetItemStatusById(sID);
+		Debug.Log(itemStatus.name + "x" + iDelta);
 
 		SaveData.SetList("HasItemIds", m_dicItemHasCount.Keys.ToList());
 		SaveData.SetList("HasItemCounts", m_dicItemHasCount.Values.ToList());

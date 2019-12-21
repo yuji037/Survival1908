@@ -208,7 +208,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hp: 20
+  maxHp: 20
   winceTimeMax: 1
+  charaId: Enemy_00
+  charaName: "\u30B9\u30E9\u30A4\u30E0"
+  gainCombatExp: 1.2
   moveSpeedRate: 1.5
   moveForwardSpeedCurve:
     serializedVersion: 2
@@ -286,6 +290,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   bodyKnockbackPower: 12
+  bodyKnockbackReturnPower: 10
 --- !u!114 &2373819829416673014
 MonoBehaviour:
   m_ObjectHideFlags: 0

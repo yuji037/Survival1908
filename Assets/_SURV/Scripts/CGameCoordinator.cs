@@ -6,7 +6,7 @@ using System;
 
 public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
 
-    CPartyChara shigeru;
+    CLocalPlayer player;
 
     private List<CTask> m_lsTasks = new List<CTask>();
 
@@ -19,12 +19,8 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
     void Start () {
 		//m_cInventryMan.Init();
 
-        shigeru = new CPartyChara("Shigeru");
-		CPartyStatus.Instance.AppendPartyChara(shigeru);
-		shigeru.hp = 50;
-        shigeru.atkNaked = 10;
-		shigeru.Food = 50;
-        shigeru.GainExp(0);
+		player = CLocalPlayer.Instance;
+		CPartyStatus.Instance.AppendPartyChara(player);
 
         CSoundMan.Instance.PlayBGM("BGM_Field00");
         CPartyStatus.Instance.UpdatePartyText();
@@ -33,7 +29,7 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
 	// Update is called once per frame
 	void Update () {
 
-        DebugInputKeyboard();
+        //DebugInputKeyboard();
 
     }
 
@@ -42,9 +38,8 @@ public class CGameCoordinator : CSingletonMonoBehaviour<CGameCoordinator> {
         if (Input.GetKeyDown(KeyCode.Y))
         {
             // デバッグ用
-            shigeru.hp = 5000;
-            shigeru.maxHp = 5000;
-            shigeru.atkNaked = 1000;
+            player.hp = 5000;
+            player.maxHp = 5000;
             CPartyStatus.Instance.UpdatePartyText();
         }
 

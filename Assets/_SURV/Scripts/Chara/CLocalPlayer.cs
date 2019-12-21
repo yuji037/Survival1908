@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CLocalPlayer : CBody
+public class CLocalPlayer : CPartyChara
 {
 	public static CLocalPlayer Instance { get; private set; }
 
@@ -15,13 +15,20 @@ public class CLocalPlayer : CBody
 	private Vector2 movePad;
 	private Vector2 inputTouchMove;
 
+	private CSwingWeapon swingWeapon;
+
+	private Transform locatorSwingWeapon;
+
 	[SerializeField]
-	private bool isSwingingObject = false;
+	private float walkLinearDrag = 8f;
+
 
 	protected override void Awake()
 	{
 		base.Awake();
 		Instance = this;
+
+		locatorSwingWeapon = transform.Find("Locator_SwingWeapon");
 	}
 
 	// Start is called before the first frame update
@@ -61,12 +68,15 @@ public class CLocalPlayer : CBody
 		if ( isWincing )
 			return;
 
-		if ( isSwingingObject )
+		if ( swingWeapon != null )
 		{
-			var moveVelocity = movePad * swingingMoveSpeed;
-			moveVelocity += (Vector2) ( swingMassCenter.position - transform.position ).normalized * Mathf.Abs(rotVel) * swingingMoveSpeedFactor;
+			//var moveVelocity = movePad * swingingMoveSpeed;
+			var moveVelocity = movePad * 1.6f;
+			//moveVelocity += (Vector2)( swingWeapon.MassCenter.position - transform.position ).normalized * Mathf.Abs(rotVel) * swingingMoveSpeedFactor;
+			moveVelocity += (Vector2)( swingWeapon.MassCenter.position - transform.position ).normalized * 
+				Mathf.Abs(swingWeapon.RotVel) * 
+				0.005f;
 
-			rigidbdy2D.drag = swingingLinearDrag;
 			rigidbdy2D.velocity = moveVelocity;
 		}
 		else
@@ -78,67 +88,11 @@ public class CLocalPlayer : CBody
 		}
 	}
 
-	[SerializeField]
-	private float swingingMoveSpeed = 3f;
-	[SerializeField]
-	private float swingingLinearDrag = 3f;
-	[SerializeField]
-	private float walkLinearDrag = 8f;
-
-	[SerializeField]
-	private float swingingMoveSpeedFactor = 1.0f;
-
-	[SerializeField]
-	private Transform swingAnchor;
-
-	[SerializeField]
-	private Transform swingMassCenter;
-
-	private float rotVel = 0f;
-
-	[SerializeField]
-	private float rotForceRate = 1.0f;
-
-	[SerializeField]
-	private float swingForceRate = 5f;
-
-	[SerializeField]
-	private float rotVelMax = 20f;
-
-	[SerializeField]
-	private float dampFactor = 1f;
-
 	void UpdateSwing()
 	{
-		if ( false == isSwingingObject )
-			return;
-
-		var vec = swingAnchor.position - swingMassCenter.position;
-		var rotForce = Vector3.Dot(input, vec) * rotForceRate;
-		var swingForce = Vector3.Cross(input, vec).z * swingForceRate;
-
-		if(rotVel < 0f )
+		if(swingWeapon != null )
 		{
-			rotForce = -rotForce;
-		}
-
-		rotVel += rotForce * Time.deltaTime + swingForce * Time.deltaTime;
-		var dampF = dampFactor;
-		if ( input.sqrMagnitude < 0.1f )
-			dampF = 20f;
-		rotVel *=  1f - dampF * Time.deltaTime;
-		rotVel = Mathf.Clamp(rotVel, -rotVelMax, rotVelMax);
-
-		var beforeRotEulerZ = swingAnchor.rotation.eulerAngles.z;
-
-		swingAnchor.rotation *= Quaternion.Euler(0, 0, rotVel * Time.deltaTime);
-
-		var afterRotEulerZ = swingAnchor.rotation.eulerAngles.z;
-
-		if(	(	beforeRotEulerZ <= 330f && afterRotEulerZ > 330f && rotVel > 0f ) ||
-			(	beforeRotEulerZ > 330f && afterRotEulerZ <= 330f && rotVel < 0f	)      )
-		{
-			CSoundMan.Instance.Play("SE_Swing00", false, null, false, Mathf.Abs(rotVel) / rotVelMax);
+			swingWeapon.UpdateSwing(input);
 		}
 	}
 
@@ -173,10 +127,10 @@ public class CLocalPlayer : CBody
 			direction = movePad;
 		}
 
-		if ( isSwingingObject )
+		if ( swingWeapon != null )
 		{
 			speed = 0.4f;
-			direction = (swingMassCenter.position - transform.position).normalized;
+			direction = (swingWeapon.MassCenter.position - transform.position).normalized;
 		}
 		animator.SetFloat("Horizontal", Direction.x * speed);
 		animator.SetFloat("Vertical", Direction.y * speed);
@@ -195,8 +149,52 @@ public class CLocalPlayer : CBody
 		//}
 	}
 
+	bool TryGrabSwingWeapon()
+	{
+		var hits = Physics2D.CircleCastAll(
+							transform.position + (Vector3)Direction.normalized,
+							0.5f,
+							Vector3.up,
+							0f);
+
+		foreach(var hit in hits )
+		{
+			if(hit.collider.name == "WeaponBody" )
+			{
+				swingWeapon = hit.transform.GetComponentInParent<CSwingWeapon>();
+				swingWeapon.Grab(this);
+				swingWeapon.transform.SetParent(locatorSwingWeapon, true);
+				swingWeapon.transform.localPosition = Vector3.zero;
+
+				rigidbdy2D.mass += swingWeapon.Mass;
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	void ReleaseSwingWeapon()
+	{
+		swingWeapon.transform.SetParent(null);
+		swingWeapon.Releace();
+		rigidbdy2D.mass -= swingWeapon.Mass;
+
+		swingWeapon = null;
+	}
+
 	public void MeleeAttack()
 	{
+		if ( swingWeapon == null && TryGrabSwingWeapon() )
+		{
+			return;
+		}
+		else if ( swingWeapon != null )
+		{
+			ReleaseSwingWeapon();
+			return;
+		}
+
 		StartCoroutine(AttackCoroutine(0));
 	}
 
@@ -229,4 +227,6 @@ public class CLocalPlayer : CBody
 
 		inputTouchMove = vec;
 	}
+
+	
 }

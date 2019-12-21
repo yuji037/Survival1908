@@ -56,6 +56,9 @@ MonoBehaviour:
   coliderCastInterval: 0.2
   coliderCastCountMax: 3
   pierceFlag: 1
+  camShakeStartDirectionType: 5
+  camShakeDelay: 0
+  camShakeStrength: 6.7
   moveDirection: {x: 0, y: 0}
   target: {fileID: 0}
 --- !u!58 &1239974522

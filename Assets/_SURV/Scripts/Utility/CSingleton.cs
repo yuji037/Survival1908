@@ -14,15 +14,11 @@ public abstract class CSingleton<T> where T : new()
         }
     }
 
-    public static void Init(){
-        if (m_instance != null)
-            return;
-
-        m_instance = new T();
-    }
-
-    public static void Reflesh()
-    {
-        m_instance = new T();
-    }
+	protected CSingleton()
+	{
+		if(m_instance != null )
+		{
+			Debug.LogError("2個目が作られました。" + typeof(T).Name);
+		}
+	}
 }

@@ -16,7 +16,7 @@ public class CItemStatus
         switch (itemType) {
             case eItemType.Food:
                 CSoundMan.Instance.Play("SE_Eat00");
-                CPartyStatus.Instance.GetPartyChara(0).GainFood(effectValue1);
+                //CPartyStatus.Instance.GetPartyChara(0).GainFood(effectValue1);
                 break;
             case eItemType.Weapon:
                 CPartyStatus.Instance.GetPartyChara(0).Equip(EquipmentPart.Weapon, id);

@@ -79,30 +79,28 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
 			// インゲーム画面のパーティステータス
             DispMessage(
                 pc.name + 
-				"\nLevel : " + pc.Level + 
-				//"\nEXP : " + pc.Exp + 
 				"\nHP : " + pc.hp.ToString("f0") + " / " + pc.maxHp.ToString("f0") + 
-				"\nFood : " + pc.Food.ToString("f0")/* + */
+				"\nFood : " + pc.food.ToString("f0")/* + */
 				//"\nATK : " + pc.GetAtk() + 
 				//"\nDEF : " + pc.GetDef()
 				);
 
 			// 持ち物画面のパーティステータス
 			m_textDetail.text = pc.name +
-				"\nLevel : " + pc.Level +
-				"\nEXP : " + pc.Exp +
-				"\nHP : " + pc.hp.ToString("f0") + " / " + pc.maxHp.ToString("f0") +
-				"\nFood : " + pc.Food.ToString("f0") +
-				"\n攻 : " + pc.GetAtk() +
-				"\n守 : " + pc.GetDef() +
-				"\n武器 : " + pc.GetEquipmentItemName(EquipmentPart.Weapon) +
-				"\n頭 : " + pc.GetEquipmentItemName(EquipmentPart.Head) +
-				"\n胴 : " + pc.GetEquipmentItemName(EquipmentPart.Body) +
-				"\nアクセ1 : " + pc.GetEquipmentItemName(EquipmentPart.Accessory1) +
-				"\nアクセ2 : " + pc.GetEquipmentItemName(EquipmentPart.Accessory2)
-				;
+				//"\nLevel : "		+ pc.Level +
+				"\nEXP : "			+ pc.combatExp.ToString("f2") +
+				"\nHP : "			+ pc.hp.ToString("f0") + " / " + pc.maxHp.ToString("f0") +
+				"\nFood : "			+ pc.food.ToString("f0") +
+				"\n攻 : "			+ /*pc.GetAtk() +*/
+				"\n守 : "			+ /*pc.GetDef() +*/
+				"\n武器 : "			+ /*pc.GetEquipmentItemName(EquipmentPart.Weapon) +*/
+				"\n頭 : "			+ /*pc.GetEquipmentItemName(EquipmentPart.Head) +*/
+				"\n胴 : "			+ /*pc.GetEquipmentItemName(EquipmentPart.Body) +*/
+				"\nアクセ1 : "		+ /*pc.GetEquipmentItemName(EquipmentPart.Accessory1) +*/
+				"\nアクセ2 : "		+ /*pc.GetEquipmentItemName(EquipmentPart.Accessory2)*/
+				"";
 
-			m_sliderHP.value = pc.hp / pc.maxHp;
+			m_sliderHP.value = (float)pc.hp / pc.maxHp;
 			
 			//// MaxHPによってSliderUIの長さを変える処理
             //var rt = m_sliderHP.GetComponent<RectTransform>();
@@ -110,7 +108,7 @@ public class CPartyStatus : CSingletonMonoBehaviour<CPartyStatus>
             //// MaxHp:50 で 100f
             //sizeDelta.x = pc.MaxHp * 2f;
             //rt.sizeDelta = sizeDelta;
-            m_sliderFood.value = pc.Food / 100f;
+            m_sliderFood.value = pc.food / 100f;
 		}
 	}
 }

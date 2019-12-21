@@ -39,9 +39,7 @@ public class CCaster : CActor
 		if ( false == IsEnemy(target) )
 			return;
 
-		var damage = attackInfo.attackPower;
-		damage *= Random.Range(0.8f, 1.2f);
-		attackInfo.attackPower = damage;
+		attackInfo.attackPower *= Random.Range(0.8f, 1.2f);
 
 		target.ReceiveDamage(attackInfo);
 

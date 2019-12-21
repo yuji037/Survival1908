@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &51808744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51808745}
+  m_Layer: 0
+  m_Name: Locator_SwingWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &51808745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51808744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1436406364742845418}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1436406364742845422
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +62,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4448099436028906664}
+  - {fileID: 51808745}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,13 +119,52 @@ MonoBehaviour:
   baseSpriteTransform: {fileID: 0}
   stepForwardCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.05
+      value: 0.2
+      inSlope: 3.67031
+      outSlope: 0.0031437867
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.124999955
+      outWeight: 0.41666675
+    - serializedVersion: 3
+      time: 0.2
+      value: 0.2
+      inSlope: 0.010291636
+      outSlope: -1.8679242
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.6666667
+    - serializedVersion: 3
+      time: 0.3
+      value: 0
+      inSlope: -1.9999999
+      outSlope: -1.9999999
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  hp: 20
-  winceTimeMax: 1
-  moveSpeed: 45
+  hp: 50
+  maxHp: 50
+  winceTimeMax: 0.3
+  Food: 50
+  moveSpeed: 4.5
+  walkLinearDrag: 8
 --- !u!95 &1436406364742845416
 Animator:
   serializedVersion: 3

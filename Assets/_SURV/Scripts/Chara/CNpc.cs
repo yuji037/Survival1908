@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CNpc : CBody
 {
+	public string charaId;
+	public string charaName;
+
+	public float gainCombatExp;
+
 	private CActor target;
 
 	public CActor Target { get { return target; } }
@@ -18,6 +23,10 @@ public class CNpc : CBody
 
 	[SerializeField]
 	private float bodyKnockbackPower = 10f;
+	[SerializeField]
+	private float bodyKnockbackReturnPower = 10f;
+
+	public CNpcSpawner spawner = null;
 
 	// Start is called before the first frame update
 	protected override void Start()
@@ -89,6 +98,9 @@ public class CNpc : CBody
 		if ( body == null )
 			return;
 
+		if ( false == IsEnemy(body) )
+			return;
+
 		SendDamage(body, new CAttackInfo(
 			this,
 			atkPower,
@@ -96,5 +108,33 @@ public class CNpc : CBody
 			bodyKnockbackPower
 			));
 
+		// 攻撃者の方もノックバック
+		Knockback(transform.position - body.transform.position, bodyKnockbackReturnPower);
+	}
+
+	protected override void GiveDefeatReward(CCaster attacker)
+	{
+		base.GiveDefeatReward(attacker);
+
+		var itemDropList = CCharaItemDropDataMan.Instance.GetDropItemsByCharaName(charaName);
+		foreach(var itemDrop in itemDropList )
+		{
+			CInventryMan.Instance.ManipulateItemCount(itemDrop.itemID, itemDrop.count);
+		}
+
+		if ( attacker is CPartyChara partyChara )
+		{
+			partyChara.GainCombatExp(gainCombatExp);
+		}
+	}
+
+	protected override void OnDead()
+	{
+		base.OnDead();
+
+		if ( spawner )
+		{
+			spawner.UnregisterNpc(this);
+		}
 	}
 }

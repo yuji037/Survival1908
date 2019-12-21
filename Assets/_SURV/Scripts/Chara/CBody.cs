@@ -5,7 +5,10 @@ using UnityEngine;
 public class CBody : CCaster
 {
 	[SerializeField]
-	private int hp = 20;
+	public int hp = 20;
+
+	[SerializeField]
+	public int maxHp = 20;
 
 	[SerializeField]
 	private float winceTimeMax = 1f;
@@ -36,16 +39,23 @@ public class CBody : CCaster
 
 		hp -= intDamage;
 
-		var distance = transform.position - attacker.transform.position;
-		if ( distance == Vector3.zero ) distance = new Vector3(0f, 0f, -1f);
-		SetForce(distance.normalized * attackInfo.knockbackPower);
+		Knockback(transform.position - attacker.transform.position, attackInfo.knockbackPower);
 
 		CDamageTextManager.Instance.DispDamage(intDamage, attackInfo.hitPosition);
 
 		if (hp <= 0 )
 		{
-			Destroy(gameObject);
+			GiveDefeatReward(attacker);
+
+			OnDead();
 		}
+	}
+
+	/// <param name="direction">正規化必要なし</param>
+	public void Knockback(Vector3 direction, float knockbackPower)
+	{
+		if ( direction == Vector3.zero ) direction = new Vector3(0f, 0f, -1f);
+		SetForce(direction.normalized * knockbackPower);
 	}
 
 	public void SetForce(Vector2 velocity)
@@ -56,5 +66,15 @@ public class CBody : CCaster
 		var nowVelocity = rigidbdy2D.velocity;
 		var needForce = velocity - nowVelocity;
 		rigidbdy2D.AddForce(needForce, ForceMode2D.Impulse);
+	}
+
+	protected virtual void GiveDefeatReward(CCaster attacker)
+	{
+
+	}
+
+	protected virtual void OnDead()
+	{
+		Destroy(gameObject);
 	}
 }

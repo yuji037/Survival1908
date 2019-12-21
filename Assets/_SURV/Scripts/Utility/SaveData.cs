@@ -405,8 +405,15 @@ public class SaveData
                     if ( saveDictionary != null )
                     {
                         var sDict = JsonUtility.FromJson<Serialization<string, string>>(sr.ReadToEnd());
-                        sDict.OnAfterDeserialize();
-                        saveDictionary = sDict.ToDictionary();
+						if(sDict == null )
+						{
+							Debug.LogError("セーブデータ構造が変わったかも？初期化されます。");
+						}
+						else
+						{
+							sDict.OnAfterDeserialize();
+							saveDictionary = sDict.ToDictionary();
+						}
                     }
                 }
             }

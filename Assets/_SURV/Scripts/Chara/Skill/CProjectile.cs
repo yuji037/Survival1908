@@ -35,6 +35,15 @@ public class CProjectile : MonoBehaviour
 	[SerializeField]
 	private bool		pierceFlag		= false;
 
+	[SerializeField]
+	private CCameraShake.StartDirectionType camShakeStartDirectionType = CCameraShake.StartDirectionType.DOWN;
+
+	[SerializeField]
+	private float		camShakeDelay = 0f;
+	
+	[SerializeField]
+	private float		camShakeStrength = 0.1f;
+
 	public Vector2 moveDirection;
 	public CBody target;
 
@@ -45,6 +54,8 @@ public class CProjectile : MonoBehaviour
 	private int colliderCastCount;
 
 	private Collider2D collider2D;
+
+	private bool calledCamShake = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -85,6 +96,12 @@ public class CProjectile : MonoBehaviour
 			}
 		}
 
+		if( false == calledCamShake &&
+			elapsedTime >= camShakeDelay )
+		{
+			calledCamShake = true;
+			CCameraShake.Instance.Shake(camShakeStartDirectionType, camShakeStrength);
+		}
     }
 
 	public void SetUp(CCaster _attacker, CSkill _skill)
