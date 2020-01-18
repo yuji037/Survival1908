@@ -170,7 +170,7 @@ public class CSwingWeapon : MonoBehaviour
 		var hitRadius = ( collision.transform.position - transform.position ).magnitude;
 
 		// 現実はhitRadiusの2乗な気がする
-		var damage = attackPower * hitRadius;
+		var damage = attackPower * hitRadius * (Mathf.Abs(rotVel) / rotVelMax);
 		var knockbackPower = knockbackPowerRate * hitRadius;
 
 		var hitPosition = collision.ClosestPoint(transform.position);

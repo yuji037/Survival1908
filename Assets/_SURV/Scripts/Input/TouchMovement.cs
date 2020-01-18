@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TouchMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerUpHandler
+public class TouchMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 	//Vector2 beginDragPos;
 	Vector2 dragVec;
@@ -14,12 +14,26 @@ public class TouchMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IPo
 	[SerializeField]
 	RectTransform debugDispDragTrans;
 
+	[SerializeField]
+	GameObject touchEffectObj;
+
+	private void Start()
+	{
+		touchEffectObj.SetActive(false);
+	}
+
 	private void Update()
 	{
 		if(dragVec != Vector2.zero )
 		{
 			CLocalPlayer.Instance.InputTouchMovement(dragVec);
 		}
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+		touchEffectObj.SetActive(true);
+		touchEffectObj.transform.position = eventData.position;
 	}
 
 	public void OnBeginDrag(PointerEventData eventData)
@@ -50,6 +64,8 @@ public class TouchMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IPo
 	public void OnPointerUp(PointerEventData eventData)
 	{
 		dragVec = Vector2.zero;
+
+		touchEffectObj.SetActive(false);
 
 		if ( debugDispDrag )
 		{
