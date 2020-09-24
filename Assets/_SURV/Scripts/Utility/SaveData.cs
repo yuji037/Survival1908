@@ -251,12 +251,14 @@ public class SaveData
 
         }
 
+		
         /// <summary>
         /// クラスが破棄される時点でファイルに書き込みます。
         /// </summary>
         ~SaveDataBase()
         {
-            Save();
+			// クラッシュの原因　JsonUtilityへのアクセス
+            //Save();
         }
 
         #endregion
@@ -346,11 +348,11 @@ public class SaveData
 
         public float GetFloat(string key, float _default)
         {
-            float ret;
             keyCheck(key);
-            if ( !saveDictionary.ContainsKey(key) )
-                ret = _default;
+			if (!saveDictionary.ContainsKey(key))
+				return _default;
 
+            float ret;
             if ( !float.TryParse(saveDictionary[key], out ret) )
             {
                 ret = 0.0f;

@@ -1,3 +1,6 @@
 マップチップ http://wine.sinfonia-wld.com/?eid=1158729
 
 敵 王国興亡記
+
+状態異常アイコン
+	StatusIconはAssetStoreのREX/ARD　商用利用前に確認

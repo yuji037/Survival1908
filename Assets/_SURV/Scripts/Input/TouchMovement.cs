@@ -26,7 +26,7 @@ public class TouchMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IPo
 	{
 		if(dragVec != Vector2.zero )
 		{
-			CLocalPlayer.Instance.InputTouchMovement(dragVec);
+			LocalPlayer.Instance.InputTouchMovement(dragVec);
 		}
 	}
 
@@ -38,7 +38,6 @@ public class TouchMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IPo
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
-		//beginDragPos = eventData.pos
 	}
 
 	public void OnDrag(PointerEventData eventData)

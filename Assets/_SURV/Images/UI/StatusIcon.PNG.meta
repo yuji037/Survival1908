@@ -1,0 +1,2581 @@
+fileFormatVersion: 2
+guid: 23d36d703b7b29f41b7bda9f3a1a3778
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5169984005172249002
+    second: StatusIcon_0
+  - first:
+      213: -5891042609831178615
+    second: StatusIcon_1
+  - first:
+      213: -8621336737081786054
+    second: StatusIcon_2
+  - first:
+      213: 9215568223518495962
+    second: StatusIcon_3
+  - first:
+      213: 1062612601530190474
+    second: StatusIcon_4
+  - first:
+      213: -6451941757866108712
+    second: StatusIcon_5
+  - first:
+      213: 7586897737082373429
+    second: StatusIcon_6
+  - first:
+      213: 3002281101362489817
+    second: StatusIcon_7
+  - first:
+      213: 5479007284458773500
+    second: StatusIcon_8
+  - first:
+      213: -1984196147997904684
+    second: StatusIcon_9
+  - first:
+      213: -1323847113456572545
+    second: StatusIcon_10
+  - first:
+      213: -1409196391599666860
+    second: StatusIcon_11
+  - first:
+      213: -9208912170818152810
+    second: StatusIcon_12
+  - first:
+      213: -2835792350191473045
+    second: StatusIcon_13
+  - first:
+      213: 5631982575383100717
+    second: StatusIcon_14
+  - first:
+      213: 785666027171087755
+    second: StatusIcon_15
+  - first:
+      213: 5401402580997391602
+    second: StatusIcon_16
+  - first:
+      213: 2724497701426859693
+    second: StatusIcon_17
+  - first:
+      213: -2950588190853373982
+    second: StatusIcon_18
+  - first:
+      213: 6302633854839071769
+    second: StatusIcon_19
+  - first:
+      213: 393431641367690631
+    second: StatusIcon_20
+  - first:
+      213: -3960290445299497531
+    second: StatusIcon_21
+  - first:
+      213: 4949821649394241415
+    second: StatusIcon_22
+  - first:
+      213: 9113660095880008729
+    second: StatusIcon_23
+  - first:
+      213: 2121709887634997151
+    second: StatusIcon_24
+  - first:
+      213: -688472805457619097
+    second: StatusIcon_25
+  - first:
+      213: 2166416947800750472
+    second: StatusIcon_26
+  - first:
+      213: -7511072864157687410
+    second: StatusIcon_27
+  - first:
+      213: -7725753621407688934
+    second: StatusIcon_28
+  - first:
+      213: 8952361898106223581
+    second: StatusIcon_29
+  - first:
+      213: 1406890246488225800
+    second: StatusIcon_30
+  - first:
+      213: 5943851998591447819
+    second: StatusIcon_31
+  - first:
+      213: 5462072487401040377
+    second: StatusIcon_32
+  - first:
+      213: 8652312463149184314
+    second: StatusIcon_33
+  - first:
+      213: -1968220200259498957
+    second: StatusIcon_34
+  - first:
+      213: -4931981452299897050
+    second: StatusIcon_35
+  - first:
+      213: -6273009155730367039
+    second: StatusIcon_36
+  - first:
+      213: -815351184341293082
+    second: StatusIcon_37
+  - first:
+      213: 8386476335940697279
+    second: StatusIcon_38
+  - first:
+      213: 8279750582747608385
+    second: StatusIcon_39
+  - first:
+      213: -6877653260800872344
+    second: StatusIcon_40
+  - first:
+      213: -8646769901060003148
+    second: StatusIcon_41
+  - first:
+      213: -6328841873364743172
+    second: StatusIcon_42
+  - first:
+      213: 3479846687054686842
+    second: StatusIcon_43
+  - first:
+      213: -8953066548912601765
+    second: StatusIcon_44
+  - first:
+      213: 2439384156125874936
+    second: StatusIcon_45
+  - first:
+      213: 6134195322017675775
+    second: StatusIcon_46
+  - first:
+      213: 5645584708016766761
+    second: StatusIcon_47
+  - first:
+      213: -4736149579380108663
+    second: StatusIcon_48
+  - first:
+      213: 3309667659085399809
+    second: StatusIcon_49
+  - first:
+      213: 1148996018258271422
+    second: StatusIcon_50
+  - first:
+      213: 1642735874345056839
+    second: StatusIcon_51
+  - first:
+      213: -3008945107756611155
+    second: StatusIcon_52
+  - first:
+      213: -6145110207664503822
+    second: StatusIcon_53
+  - first:
+      213: -2081122697439669287
+    second: StatusIcon_54
+  - first:
+      213: 8887923254673751608
+    second: StatusIcon_55
+  - first:
+      213: 3173200528209690926
+    second: StatusIcon_56
+  - first:
+      213: -1448379471031614664
+    second: StatusIcon_57
+  - first:
+      213: 6022506925397649019
+    second: StatusIcon_58
+  - first:
+      213: 6423406845364794728
+    second: StatusIcon_59
+  - first:
+      213: 1305999712626589792
+    second: StatusIcon_60
+  - first:
+      213: -166557936405757256
+    second: StatusIcon_61
+  - first:
+      213: -2072277503363698813
+    second: StatusIcon_62
+  - first:
+      213: 219034611361223685
+    second: StatusIcon_63
+  - first:
+      213: 1576388446965726087
+    second: StatusIcon_64
+  - first:
+      213: -8129333759703360498
+    second: StatusIcon_65
+  - first:
+      213: -8748781181244657118
+    second: StatusIcon_66
+  - first:
+      213: 969364684764315209
+    second: StatusIcon_67
+  - first:
+      213: -477303848588333001
+    second: StatusIcon_68
+  - first:
+      213: 1791093826930753383
+    second: StatusIcon_69
+  - first:
+      213: 3563661813067423734
+    second: StatusIcon_70
+  - first:
+      213: -425067575207879457
+    second: StatusIcon_71
+  - first:
+      213: 6268854076824479875
+    second: StatusIcon_72
+  - first:
+      213: -7847905262277212745
+    second: StatusIcon_73
+  - first:
+      213: 2909973494110901669
+    second: StatusIcon_74
+  - first:
+      213: -5385790284589429753
+    second: StatusIcon_75
+  - first:
+      213: 1584833048915688807
+    second: StatusIcon_76
+  - first:
+      213: 7994167891043222917
+    second: StatusIcon_77
+  - first:
+      213: -4888186930071980489
+    second: StatusIcon_78
+  - first:
+      213: -6570305450642036896
+    second: StatusIcon_79
+  - first:
+      213: -1516956396270523841
+    second: StatusIcon_80
+  - first:
+      213: 4072241256950381398
+    second: StatusIcon_81
+  - first:
+      213: -7914118633712836188
+    second: StatusIcon_82
+  - first:
+      213: -505179668917137721
+    second: StatusIcon_83
+  - first:
+      213: 4117046446867393735
+    second: StatusIcon_84
+  - first:
+      213: 4318205220150364828
+    second: StatusIcon_85
+  - first:
+      213: 7973320722632878348
+    second: StatusIcon_86
+  - first:
+      213: -2053199366120194611
+    second: StatusIcon_87
+  - first:
+      213: 1345609402167021519
+    second: StatusIcon_88
+  - first:
+      213: -6635991011223456209
+    second: StatusIcon_89
+  - first:
+      213: 9064639435863658558
+    second: StatusIcon_90
+  - first:
+      213: -255111035353372425
+    second: StatusIcon_91
+  - first:
+      213: 2252505686513726183
+    second: StatusIcon_92
+  - first:
+      213: -4252407578781094849
+    second: StatusIcon_93
+  - first:
+      213: -2460548071362602391
+    second: StatusIcon_94
+  - first:
+      213: 6447914826501979322
+    second: StatusIcon_95
+  - first:
+      213: 6076361864876554463
+    second: StatusIcon_96
+  - first:
+      213: 599786219697603246
+    second: StatusIcon_97
+  - first:
+      213: -3893246413663212783
+    second: StatusIcon_98
+  - first:
+      213: -4350576756290169193
+    second: StatusIcon_99
+  - first:
+      213: 6721791175214101725
+    second: StatusIcon_100
+  - first:
+      213: -2293246546685855387
+    second: StatusIcon_101
+  - first:
+      213: -2326999910625512494
+    second: StatusIcon_102
+  - first:
+      213: 1764825135857724148
+    second: StatusIcon_103
+  - first:
+      213: 5638252445216421783
+    second: StatusIcon_104
+  - first:
+      213: -8913052040305560923
+    second: StatusIcon_105
+  - first:
+      213: 2471973562012480740
+    second: StatusIcon_106
+  - first:
+      213: 7146556643127865852
+    second: StatusIcon_107
+  - first:
+      213: -7947810291590570722
+    second: StatusIcon_108
+  - first:
+      213: -3338942213948946927
+    second: StatusIcon_109
+  - first:
+      213: 5738605048292092309
+    second: StatusIcon_110
+  - first:
+      213: 4404834049704686155
+    second: StatusIcon_111
+  - first:
+      213: -3985812790218764662
+    second: StatusIcon_112
+  - first:
+      213: -2583114596952521418
+    second: StatusIcon_113
+  - first:
+      213: 3901861741404100592
+    second: StatusIcon_114
+  - first:
+      213: -7453111599316516605
+    second: StatusIcon_115
+  - first:
+      213: 4568466777881072444
+    second: StatusIcon_116
+  - first:
+      213: 2170415177852835159
+    second: StatusIcon_117
+  - first:
+      213: -8908425290520824646
+    second: StatusIcon_118
+  - first:
+      213: 5178392633119512307
+    second: StatusIcon_119
+  - first:
+      213: -7470604672476071964
+    second: StatusIcon_120
+  - first:
+      213: 6638515507316450555
+    second: StatusIcon_121
+  - first:
+      213: -7536117432327644904
+    second: StatusIcon_122
+  - first:
+      213: -6789004761555410931
+    second: StatusIcon_123
+  - first:
+      213: 5008856461526796738
+    second: StatusIcon_124
+  - first:
+      213: 2401962905446929830
+    second: StatusIcon_125
+  - first:
+      213: -8471405988311289486
+    second: StatusIcon_126
+  - first:
+      213: -6856734626665433562
+    second: StatusIcon_127
+  - first:
+      213: 2248852264531676655
+    second: StatusIcon_128
+  - first:
+      213: 2964646779322219960
+    second: StatusIcon_129
+  - first:
+      213: -2756987884815213276
+    second: StatusIcon_130
+  - first:
+      213: -282201411478837670
+    second: StatusIcon_131
+  - first:
+      213: -2873360174825825871
+    second: StatusIcon_132
+  - first:
+      213: -105996439887512613
+    second: StatusIcon_133
+  - first:
+      213: 1656847394909050451
+    second: StatusIcon_134
+  - first:
+      213: -3259541943200384680
+    second: StatusIcon_135
+  - first:
+      213: 7358925279362282284
+    second: StatusIcon_136
+  - first:
+      213: 10838798374309342
+    second: StatusIcon_137
+  - first:
+      213: 5488561691454571336
+    second: StatusIcon_138
+  - first:
+      213: 3802496041561980195
+    second: StatusIcon_139
+  - first:
+      213: 770986893114079728
+    second: StatusIcon_140
+  - first:
+      213: -8798216348949151991
+    second: StatusIcon_141
+  - first:
+      213: -6080252298294259615
+    second: StatusIcon_142
+  - first:
+      213: -7135566937990113674
+    second: StatusIcon_143
+  - first:
+      213: 4056646017479232285
+    second: StatusIcon_144
+  - first:
+      213: -4350426337724856953
+    second: StatusIcon_145
+  - first:
+      213: -1201799563177243449
+    second: StatusIcon_146
+  - first:
+      213: -4612861845683320720
+    second: StatusIcon_147
+  - first:
+      213: 7503306064226916962
+    second: StatusIcon_148
+  - first:
+      213: -7146355413256512581
+    second: StatusIcon_149
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StatusIcon_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa14eba9f097fb740800000000000000
+      internalID: 5169984005172249002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e825c55ffce3ea0800000000000000
+      internalID: -5891042609831178615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3107395aebda5880800000000000000
+      internalID: -8621336737081786054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4923e197644ef70800000000000000
+      internalID: 9215568223518495962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a8f08f7882fbe00800000000000000
+      internalID: 1062612601530190474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_5
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d891e2b7291676a0800000000000000
+      internalID: -6451941757866108712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_6
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53582067b431a4960800000000000000
+      internalID: 7586897737082373429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_7
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9649241ce3aa920800000000000000
+      internalID: 3002281101362489817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_8
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb51ff9818590c40800000000000000
+      internalID: 5479007284458773500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_9
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0f2e9bd18b674e0800000000000000
+      internalID: -1984196147997904684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_10
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77ae797010c0ade0800000000000000
+      internalID: -1323847113456572545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_11
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 431
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45980fb1957817ce0800000000000000
+      internalID: -1409196391599666860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696dc9aeb2f533080800000000000000
+      internalID: -9208912170818152810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e2116d1ed35a8d0800000000000000
+      internalID: -2835792350191473045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_14
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d36e21052d82e40800000000000000
+      internalID: 5631982575383100717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_15
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8500adc61f37ea00800000000000000
+      internalID: 785666027171087755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f44a319703a5fa40800000000000000
+      internalID: 5401402580997391602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_17
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae8ae4793c5fc520800000000000000
+      internalID: 2724497701426859693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_18
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efd8bd5ca76d07d0800000000000000
+      internalID: -2950588190853373982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_19
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914a8032914777750800000000000000
+      internalID: 6302633854839071769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_20
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78dbe1b4effb57500800000000000000
+      internalID: 393431641367690631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_21
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5cc8092d83a09c0800000000000000
+      internalID: -3960290445299497531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_22
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f8ea9909c41b440800000000000000
+      internalID: 4949821649394241415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_23
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914949a22993a7e70800000000000000
+      internalID: 9113660095880008729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ffae8c6e3d17d10800000000000000
+      internalID: 2121709887634997151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7679e2191ad0276f0800000000000000
+      internalID: -688472805457619097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_26
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889bc016cb8a01e10800000000000000
+      internalID: 2166416947800750472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e812ec1860f43c790800000000000000
+      internalID: -7511072864157687410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_28
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a179ecd930c98c490800000000000000
+      internalID: -7725753621407688934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_29
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddbfc55f6bd2d3c70800000000000000
+      internalID: 8952361898106223581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_30
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80874e3a937468310800000000000000
+      internalID: 1406890246488225800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_31
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03f98d96edcc7250800000000000000
+      internalID: 5943851998591447819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_32
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f929fcecfd2dcb40800000000000000
+      internalID: 5462072487401040377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_33
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3531b3e750331870800000000000000
+      internalID: 8652312463149184314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_34
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cc8cbe72a7fa4e0800000000000000
+      internalID: -1968220200259498957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_35
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 315
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62779d8fff41e8bb0800000000000000
+      internalID: -4931981452299897050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_36
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd1bef986bc1f8a0800000000000000
+      internalID: -6273009155730367039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_37
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7a422fa6a4fa4f0800000000000000
+      internalID: -815351184341293082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_38
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcf6f84bcfb26470800000000000000
+      internalID: 8386476335940697279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_39
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1453189794597e270800000000000000
+      internalID: 8279750582747608385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_40
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86038a57ccaad80a0800000000000000
+      internalID: -6877653260800872344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_41
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba67c86690800880800000000000000
+      internalID: -8646769901060003148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_42
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb0a7a09df6b28a0800000000000000
+      internalID: -6328841873364743172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_43
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ae6b6ff16ea4030800000000000000
+      internalID: 3479846687054686842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_44
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55c1adb86150c380800000000000000
+      internalID: -8953066548912601765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_45
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa499037fe6ad120800000000000000
+      internalID: 2439384156125874936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_46
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9f9bf152a012550800000000000000
+      internalID: 6134195322017675775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_47
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 257
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f77be5165295e40800000000000000
+      internalID: 5645584708016766761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_48
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982deedfc01d54eb0800000000000000
+      internalID: -4736149579380108663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_49
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1074268533d4eed20800000000000000
+      internalID: 3309667659085399809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_50
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc5f9c7acd02ff00800000000000000
+      internalID: 1148996018258271422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_51
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ab02af29b2cc610800000000000000
+      internalID: 1642735874345056839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_52
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da98487dd541e36d0800000000000000
+      internalID: -3008945107756611155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_53
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3c78603de28baa0800000000000000
+      internalID: -6145110207664503822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_54
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d31b15deed5e13e0800000000000000
+      internalID: -2081122697439669287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_55
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e33c12c1f385b70800000000000000
+      internalID: 8887923254673751608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_56
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21450d6119790c20800000000000000
+      internalID: 3173200528209690926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_57
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83341318b8256ebe0800000000000000
+      internalID: -1448379471031614664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_58
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7628a9d32e349350800000000000000
+      internalID: 6022506925397649019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_59
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 199
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865f7c14e76842950800000000000000
+      internalID: 6423406845364794728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_60
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060ced3b1d7df1210800000000000000
+      internalID: 1305999712626589792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_61
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b24306707440bdf0800000000000000
+      internalID: -166557936405757256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_62
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f29ff079acd33e0800000000000000
+      internalID: -2072277503363698813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_63
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50493bb81da2a0300800000000000000
+      internalID: 219034611361223685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_64
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bfb61c0f470e510800000000000000
+      internalID: 1576388446965726087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_65
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c5a40440ece2f80800000000000000
+      internalID: -8129333759703360498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_66
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2223a426ed5169680800000000000000
+      internalID: -8748781181244657118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_67
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e7f2d7b00e37d00800000000000000
+      internalID: 969364684764315209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_68
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73037f6bda64069f0800000000000000
+      internalID: -477303848588333001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_69
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f3a91985e3bd810800000000000000
+      internalID: 1791093826930753383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_70
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff1283b98ba47130800000000000000
+      internalID: 3563661813067423734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_71
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc923eda4bd91af0800000000000000
+      internalID: -425067575207879457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_72
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388e1eda1917ff650800000000000000
+      internalID: 6268854076824479875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_73
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b54c037eb3a61390800000000000000
+      internalID: -7847905262277212745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_74
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a55846a97d426820800000000000000
+      internalID: 2909973494110901669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_75
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c0c447544d145b0800000000000000
+      internalID: -5385790284589429753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_76
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d3becd2457ef510800000000000000
+      internalID: 1584833048915688807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_77
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585077c875df0fe60800000000000000
+      internalID: 7994167891043222917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_78
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7363a55c2eba92cb0800000000000000
+      internalID: -4888186930071980489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_79
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0672bace00691d4a0800000000000000
+      internalID: -6570305450642036896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_80
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ae98cd130b2fae0800000000000000
+      internalID: -1516956396270523841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_81
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bb738f8d1838830800000000000000
+      internalID: 4072241256950381398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_82
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a12f3f88076b2290800000000000000
+      internalID: -7914118633712836188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_83
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 83
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cec17684cd3df8f0800000000000000
+      internalID: -505179668917137721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_84
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cca05d2eefa22930800000000000000
+      internalID: 4117046446867393735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_85
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9acc46d4c85deb30800000000000000
+      internalID: 4318205220150364828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_86
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c092bc8e3fce6ae60800000000000000
+      internalID: 7973320722632878348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_87
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd39590e029183e0800000000000000
+      internalID: -2053199366120194611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_88
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf47963f909ca210800000000000000
+      internalID: 1345609402167021519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_89
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f263753955938e3a0800000000000000
+      internalID: -6635991011223456209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_90
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3096a75a811ccd70800000000000000
+      internalID: 9064639435863658558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_91
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8ea7f6dd9a57cf0800000000000000
+      internalID: -255111035353372425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_92
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2b233dcf1824f10800000000000000
+      internalID: 2252505686513726183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_93
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ce29a56d96cf4c0800000000000000
+      internalID: -4252407578781094849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_94
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ad8adc0906addd0800000000000000
+      internalID: -2460548071362602391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusIcon_95
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 25
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcff974f589b7950800000000000000
+      internalID: 6447914826501979322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

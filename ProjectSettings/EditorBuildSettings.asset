@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_SURV/Scenes/Test1_FieldMix.unity
-    guid: f1b22fdb9d1866a4fa03693146426ea3
+    path: Assets/_SURV/Scenes/Root_Common.unity
+    guid: dd4e1076c7b8b3a4d880ab0726982334
+  - enabled: 1
+    path: Assets/_SURV/Scenes/Map_Field01.unity
+    guid: e860325ad1c08764f8795258d35aa892
+  - enabled: 1
+    path: Assets/_SURV/Scenes/Map_Boss01.unity
+    guid: 80dabad733bee744c9f79b4a3be06291
+  - enabled: 1
+    path: Assets/_SURV/Scenes/Map_Boss02.unity
+    guid: 9aca7773cbe21df4792465358f4974ee
+  - enabled: 1
+    path: Assets/_SURV/Scenes/Map_Boss03.unity
+    guid: 28600be8c7f544841a501aa56888c6d9
   m_configObjects: {}
