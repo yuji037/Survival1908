@@ -17,7 +17,7 @@ public class FollowCamera : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		CameraShake.Instance.Init(this);
+		CameraShakeManager.Instance.Init(this);
     }
 
     // Update is called once per frame
@@ -25,12 +25,12 @@ public class FollowCamera : MonoBehaviour
     {
 		if(null == followTarget) { return; }
 
-		CameraShake.Instance.elasticity = elasticity;
-		CameraShake.Instance.dampFactor = dampFactor;
+		CameraShakeManager.Instance.elasticity = elasticity;
+		CameraShakeManager.Instance.dampFactor = dampFactor;
 
-		CameraShake.Instance.OnUpdate();
+		CameraShakeManager.Instance.OnUpdate();
 
-		var targetPos = followTarget.position + CameraShake.Instance.shakeOffset;
+		var targetPos = followTarget.position + CameraShakeManager.Instance.shakeOffset;
 
 		transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
     }

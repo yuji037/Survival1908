@@ -98,8 +98,9 @@ public class GameCoordinator : SingletonMonoBehaviour<GameCoordinator>
 	private static async void LoadFirstScene()
 	{
 		Debug.Log("LoadFirstScene");
+		var activeSceneName = SceneManager.GetActiveScene().name;
 		// "Root_Common"でないならクイックインゲーム
-		if(SceneManager.GetActiveScene().name != ROOT_SCENE_NAME )
+		if (activeSceneName.StartsWith("Map_"))
 		{
 			isQuickIngame = true;
 			var quickIngameSceneName = SceneManager.GetActiveScene().name;

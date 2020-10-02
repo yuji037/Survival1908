@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Projectile : MonoBehaviour
 {
+	private const string EFFECT_HIT_MAP = "ef_hit_map01";
+
 	[SerializeField] private ProjectileType projectileType		= ProjectileType.Collider;
 	[SerializeField] private float			animatorSpeed		= 1f;
 	[SerializeField] private float			shootRange			= 5f;
@@ -16,31 +18,31 @@ public class Projectile : MonoBehaviour
 	[SerializeField] private float			coliderCastInterval = 1f;
 	[SerializeField] private int			coliderCastCountMax = 1;
 	[SerializeField] private bool			pierceFlag			= false;
-	[SerializeField] private CameraShake.StartDirectionType camShakeStartDirectionType = CameraShake.StartDirectionType.DOWN;
+	[SerializeField] private CameraShakeManager.StartDirectionType camShakeStartDirectionType = CameraShakeManager.StartDirectionType.DOWN;
 	[SerializeField] private float			camShakeDelay		= 0f;
 	[SerializeField] private float			camShakeStrength	= 0.1f;
 
 	private Chara attacker;
 	private Skill skill;
-
 	private float flyingDistance = 0f;
 	private Vector3 prevPos;
 	private float elapsedTime = 0f;
 	private float nextColliderCastTime;
 	private int colliderCastCount;
-
 	private Animator animator;
 	private Collider2D colider2D;
-
 	private bool ended = false;
-
 	private bool calledCamShake = false;
+
+	public void Init(Chara attacker, Skill skill)
+	{
+		this.attacker = attacker;
+		this.skill = skill;
+	}
 
 	// Start is called before the first frame update
 	void Start()
     {
-		prevPos = transform.position;
-
 		animator = GetComponent<Animator>();
 		if (animator)
 		{
@@ -48,6 +50,7 @@ public class Projectile : MonoBehaviour
 		}
 		colider2D = GetComponentInChildren<Collider2D>();
 
+		prevPos = transform.position;
 		nextColliderCastTime = coliderCastDelay;
 	}
 
@@ -56,46 +59,61 @@ public class Projectile : MonoBehaviour
     {
 		if (ended) { return; }
 
+		CheckEnd();
+		CheckRangeCast();
+		CheckCameraShake();
+    }
+
+	private void CheckEnd()
+	{
 		// 厳密ではない
-		flyingDistance += (colider2D.transform.position - prevPos ).magnitude;
+		var deltaDistance = (colider2D.transform.position - prevPos).magnitude;
+		flyingDistance += deltaDistance;
 		prevPos = colider2D.transform.position;
 
 		elapsedTime += IngameTime.DeltaTime;
 
-		if ( flyingDistance >= shootRange
-			|| elapsedTime >= remainTime)
+		if (flyingDistance >= shootRange
+		|| elapsedTime >= remainTime)
 		{
 			End();
 		}
+	}
 
-		if(projectileType == ProjectileType.RangeCast )
+	private void CheckRangeCast()
+	{
+		if (projectileType == ProjectileType.RangeCast)
 		{
-			if ( elapsedTime >= nextColliderCastTime )
+			if (elapsedTime >= nextColliderCastTime)
 			{
 				nextColliderCastTime += coliderCastInterval;
 
-				if(colliderCastCount < coliderCastCountMax )
+				if (colliderCastCount < coliderCastCountMax)
 				{
 					colliderCastCount++;
 					CastOverlapDamage();
 				}
 			}
 		}
+	}
 
-		if( false == calledCamShake &&
-			elapsedTime >= camShakeDelay )
-		{
-			calledCamShake = true;
-			CameraShake.Instance.Shake(camShakeStartDirectionType, camShakeStrength);
-		}
-    }
+	private void CheckCameraShake()
+	{
+		if (calledCamShake
+		||  elapsedTime < camShakeDelay) { return; }
+
+		calledCamShake = true;
+		CameraShakeManager.Instance.Shake(camShakeStartDirectionType, camShakeStrength);
+	}
 
 	private void End()
 	{
 		colider2D.enabled = false;
 
-		// NOTE:これで子が止まらない場合は全部止める
-		GetComponentInChildren<ParticleSystem>()?.Stop();
+		foreach(var par in GetComponentsInChildren<ParticleSystem>())
+		{
+			par.Stop();
+		}
 
 		foreach (var sp in GetComponentsInChildren<SpriteRenderer>())
 		{
@@ -105,19 +123,17 @@ public class Projectile : MonoBehaviour
 		ended = true;
 	}
 
-	public void SetUp(Chara attacker, Skill skill)
-	{
-		this.attacker = attacker;
-		this.skill = skill;
-	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D otherCollider)
 	{
 		//Debug.Log("あたった");
 		if ( projectileType != ProjectileType.Collider )
 			return;
 
-		OneDamage(collision, collision.ClosestPoint(transform.position));
+		var hitPosition = otherCollider.ClosestPoint(colider2D.transform.position);
+
+		CheckEnemy(otherCollider, hitPosition);
+		CheckHitMap(otherCollider, hitPosition);
 	}
 
 	private void CastOverlapDamage()
@@ -129,25 +145,20 @@ public class Projectile : MonoBehaviour
 		foreach(var hit in hits )
 		{
 			if ( hit.transform != null )
-				OneDamage(hit.collider, hit.point);
+				CheckEnemy(hit.collider, hit.point);
 		}
 	}
 
-	private void OneDamage(Collider2D collider, Vector2 hitPosition)
+	private void CheckEnemy(Collider2D otherCollider, Vector2 hitPosition)
 	{
-		var body = collider.transform.GetComponentInChildren<Chara>();
-		if ( body == null )
-			return;
-
-		if ( false == attacker.IsEnemy(body) )
-			return;
+		var body = otherCollider.transform.GetComponentInChildren<Chara>();
+		if (body == null) { return; }
+		if (false == attacker.IsEnemy(body)) { return; }
 
 		if ( false == pierceFlag)
 		{
 			End();
 		}
-
-		var damage = skill.effectValue1;
 
 		attacker.SendDamage(body, new AttackInfo(
 			attacker,
@@ -157,6 +168,15 @@ public class Projectile : MonoBehaviour
 		));
 
 		EffectMan.Instance.PlayOneEffect(hitEffect, hitPosition, Quaternion.identity);
+	}
+
+	private void CheckHitMap(Collider2D otherCollider, Vector2 hitPosition)
+	{
+		if (otherCollider.gameObject.layer != (int)ObjectLayer.Map) { return; }
+		if (pierceFlag) { return; }
+
+		End();
+		EffectMan.Instance.PlayOneEffect(EFFECT_HIT_MAP, hitPosition, Quaternion.identity);
 	}
 
 	private enum ProjectileType

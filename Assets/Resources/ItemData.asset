@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: "\u7363\u76AE\u306E\u670D"
     id: Armor00
     itemType: 4
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: 137614dccc6dd1440baf52c0e76a9971, type: 3}
     efficacys:
     - type: 0
       value: 3
@@ -24,7 +24,7 @@ MonoBehaviour:
   - name: "\u9244\u306E\u76FE"
     id: Armor01
     itemType: 4
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: d8ff3a1d0c9942e44bc4ebc8d7841979, type: 3}
     efficacys:
     - type: 0
       value: 5
@@ -32,27 +32,27 @@ MonoBehaviour:
   - name: "\u6728\u306E\u8449\u30B7\u30A7\u30EB\u30BF\u30FC"
     id: Facility00
     itemType: 3
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u305F\u304D\u706B"
     id: Facility01
     itemType: 3
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u7089"
     id: Facility02
     itemType: 3
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u795E\u9244\u7089"
     id: Facility03
     itemType: 3
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u6728\u82FA"
     id: Food00
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: 4f6edc90c49dccb469831131eeca5244, type: 3}
     efficacys:
     - type: 4
       value: 5
@@ -60,7 +60,7 @@ MonoBehaviour:
   - name: "\u751F\u9B5A"
     id: Food01
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: c92621415e4b59948aaedd6fc7e857e4, type: 3}
     efficacys:
     - type: 4
       value: 8
@@ -68,7 +68,7 @@ MonoBehaviour:
   - name: "\u751F\u8089"
     id: Food02
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: 497c787504e10fd43ac64c4ae0b39aad, type: 3}
     efficacys:
     - type: 4
       value: 10
@@ -76,7 +76,7 @@ MonoBehaviour:
   - name: "\u7363\u8089\u3068\u304D\u306E\u3053\u306E\u6C34\u708A\u304D"
     id: Food03
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: 407dc5cb4e69d31449ad19a712c2d2ac, type: 3}
     efficacys:
     - type: 4
       value: 30
@@ -87,7 +87,7 @@ MonoBehaviour:
   - name: "\u3058\u3083\u304C\u3044\u3082"
     id: Food04
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 4
       value: 3
@@ -95,7 +95,7 @@ MonoBehaviour:
   - name: "\u304D\u306E\u3053"
     id: Food05
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 4
       value: 3
@@ -103,7 +103,7 @@ MonoBehaviour:
   - name: "\u713C\u3044\u305F\u8089"
     id: Food06
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 4
       value: 20
@@ -114,7 +114,7 @@ MonoBehaviour:
   - name: "\u713C\u3044\u305F\u9B5A"
     id: Food07
     itemType: 0
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 4
       value: 15
@@ -125,32 +125,32 @@ MonoBehaviour:
   - name: "\u8131\u51FA\u306E\u79D8\u5B9D"
     id: NoUse00
     itemType: 2
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u30E4\u30B7\u306E\u8449"
     id: NoUse01
     itemType: 2
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u77F3\u7247"
     id: NoUse02
     itemType: 2
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u7363\u306E\u76AE"
     id: NoUse03
     itemType: 2
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u3066\u3063\u3053\u3046\u305B\u304D"
     id: NoUse04
     itemType: 2
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys: []
   - name: "\u30EA\u30AB\u30D0\u30EA\u30FC\u30DD\u30FC\u30B7\u30E7\u30F3"
     id: Potion00
     itemType: 5
-    iconIndex: 
+    iconOverride: {fileID: 21300000, guid: 4c215e9ec2514b640970b40b9234dbf4, type: 3}
     efficacys:
     - type: 51
       value: 5
@@ -161,7 +161,7 @@ MonoBehaviour:
   - name: "\u6728\u306E\u679D"
     id: Weapon00
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 3
@@ -169,7 +169,7 @@ MonoBehaviour:
   - name: "\u304B\u306A\u308A\u4E08\u592B\u306A\u6728\u306E\u68D2"
     id: Weapon01
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 5
@@ -177,7 +177,7 @@ MonoBehaviour:
   - name: "\u77F3\u65A7"
     id: Weapon02
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 7
@@ -185,7 +185,7 @@ MonoBehaviour:
   - name: "\u77F3\u69CD"
     id: Weapon03
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 7
@@ -193,7 +193,7 @@ MonoBehaviour:
   - name: "\u3068\u3052\u68CD\u68D2"
     id: Weapon04
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 7
@@ -201,7 +201,7 @@ MonoBehaviour:
   - name: "\u9244\u306E\u5263"
     id: Weapon05
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 10
@@ -209,7 +209,7 @@ MonoBehaviour:
   - name: "\u30D7\u30E9\u30C1\u30CA\u30BD\u30FC\u30C9"
     id: Weapon06
     itemType: 1
-    iconIndex: 
+    iconOverride: {fileID: 0}
     efficacys:
     - type: 0
       value: 20

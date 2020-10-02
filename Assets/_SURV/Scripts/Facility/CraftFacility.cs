@@ -9,6 +9,7 @@ public class CraftFacility : MonoBehaviour
 	private UIFieldPopup uiFieldPopup = default;
 
 	private CraftRecipe currentRecipe = null;
+	private int currentCreateCount = 0;
 	private ItemCountUnit[] storingItems = null;
 	private float craftEndTime;
 	private AudioSource craftingSound = null;
@@ -52,17 +53,22 @@ public class CraftFacility : MonoBehaviour
 		}
 	}
 
-	public void StartCraft(CraftRecipe recipe)
+	public void StartCraft(CraftRecipe recipe, int createCount)
 	{
 		currentRecipe = recipe;
+		currentCreateCount = createCount;
 		storingItems = recipe.srcItemUnitList;
-		craftEndTime = IngameTime.Time + recipe.needTime;
+		craftEndTime = IngameTime.Time + recipe.needTime * createCount;
 		UpdatePopupText();
 		craftingSound = SoundManager.Instance.Play("SE_CookMeat00", true);
 	}
 
 	private void CompleteCraft()
 	{
+		var itemUnit = new ItemCountUnit();
+		itemUnit.itemID = currentRecipe.dstItemUnit.itemID;
+		itemUnit.count = currentRecipe.dstItemUnit.count * currentCreateCount;
+		// TODO: 途中で中断したら途中までの数を提供
 		storingItems = new ItemCountUnit[] { currentRecipe.dstItemUnit };
 		EndCraft();
 	}

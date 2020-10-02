@@ -41,7 +41,7 @@ public class UIDragItem : MonoBehaviour
 		else
 		{
 			gameObject.SetActive(true);
-			GetComponentInChildren<Image>().sprite = ItemImageData.Instance.GetSprite(itemID);
+			GetComponentInChildren<Image>().sprite = ItemDataMan.Instance.GetItemStatusById(itemID).GetIconSprite();
 		}
 	}
 }

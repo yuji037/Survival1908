@@ -39,7 +39,7 @@ public class ItemListElement
 		equipmentId = -1;
 		type = Type.Item;
 		var itemStatus = ItemDataMan.Instance.GetItemStatusById(itemID);
-		iconImage.sprite = ItemImageData.Instance.GetSprite(itemStatus);
+		iconImage.sprite = itemStatus.GetIconSprite();
 		var str = itemStatus.Name;
 		str += GetCountText(itemCount);
 		nameText.text = str;
@@ -50,7 +50,7 @@ public class ItemListElement
 		type = Type.EquipmentItem;
 		this.itemID = equipment.ItemId;
 		equipmentId = equipment.EquipmentId;
-		iconImage.sprite = ItemImageData.Instance.GetSprite(equipment.GetItemStatus());
+		iconImage.sprite = equipment.GetItemStatus().GetIconSprite();
 		var str = string.Empty;
 		if (isEquipping) { str += "E:"; }
 		str += equipment.GetName();

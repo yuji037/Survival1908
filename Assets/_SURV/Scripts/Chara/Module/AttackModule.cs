@@ -79,7 +79,7 @@ public class AttackModule
 
 			projectileObj.transform.rotation = offsetRot * shootDirRot;
 
-			projectile.GetComponentInChildren<Projectile>().SetUp(owner, skill);
+			projectile.GetComponentInChildren<Projectile>().Init(owner, skill);
 
 			if ( i < skill.shootCountMax && skill.shootInterval > 0)
 				yield return new WaitForSeconds(skill.shootInterval);

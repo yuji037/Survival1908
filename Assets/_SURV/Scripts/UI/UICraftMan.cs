@@ -20,6 +20,7 @@ public class UICraftMan : SingletonMonoBehaviour<UICraftMan>, ISwitchUI
 	
     private int						selectRecipeIndex	= -1;
 	private int						selectCreateCount	= 0;
+	private int						canCreateCountMax	= 0;
 	private GameObject				window;
     private List<ItemListElement>	craftElements		= new List<ItemListElement>();
 
@@ -33,6 +34,10 @@ public class UICraftMan : SingletonMonoBehaviour<UICraftMan>, ISwitchUI
 		craftActionButton.onClick.AddListener(OnClickCraftButton);
 
 		bgScreenButton.onClick.AddListener(() => SelectRecipe(-1));
+		countMinus10Button.	onClick.AddListener(() => SetSelectCreateCount(selectCreateCount - 10));
+		countMinus1Button.	onClick.AddListener(() => SetSelectCreateCount(selectCreateCount - 1));
+		countPlus1Button.	onClick.AddListener(() => SetSelectCreateCount(selectCreateCount + 1));
+		countPlus10Button.	onClick.AddListener(() => SetSelectCreateCount(selectCreateCount + 10));
 
 		Disp(false);
 	}
@@ -121,78 +126,97 @@ public class UICraftMan : SingletonMonoBehaviour<UICraftMan>, ISwitchUI
 			// ポップアップが出てるなら消す
 			uiPopupText.Deactive();
 			craftActionButton.interactable = false;
+			canCreateCountMax = 0;
+			SetSelectCreateCount(0);
 			return;
 		}
 
-        var craftRecipe = CraftDataMan.Instance.CraftRecipeList[selectRecipeIndex];
+        var selectRecipe = CraftDataMan.Instance.CraftRecipeList[selectRecipeIndex];
 
-		var canCreateCount = int.MaxValue;
-        var craftDesctiption = "必要アイテム\n";
-        foreach(var srcUnit in craftRecipe.srcItemUnitList)
+		canCreateCountMax = int.MaxValue;
+        foreach(var srcUnit in selectRecipe.srcItemUnitList)
         {
 			var hasCount = ItemInventry.Instance.GetHasItemCount(srcUnit.itemID);
 			var rate = Mathf.FloorToInt(hasCount / srcUnit.count);
-			if (canCreateCount > rate)
+			if (canCreateCountMax > rate)
 			{
-				canCreateCount = rate;
+				canCreateCountMax = rate;
 			}
-			craftDesctiption += $"{srcUnit.itemName} {hasCount}/{srcUnit.count}\n";
 		}
-		if (false == CraftDataMan.Instance.CanCraftCondition(craftRecipe))
+		if (false == CraftDataMan.Instance.CanCraftCondition(selectRecipe))
 		{
 			// 設備条件を満たしていない
-			canCreateCount = 0;
+			canCreateCountMax = 0;
 		}
-		craftDesctiption += $"必要設備：{craftRecipe.GetConditionName()}";
-        craftDesctiptionText.text = craftDesctiption;
-		countText.color = canCreateCount == 0 ? Color.gray : Color.white;
+		craftActionButton.interactable = canCreateCountMax > 0;
 
 		// 初期値で最大数作る状態にしてみる
-		selectCreateCount = canCreateCount;
+		SetSelectCreateCount(canCreateCountMax);
 
 		UpdateRecipeDescription();
 
-		var dstItemStatus = ItemDataMan.Instance.GetItemStatusById(craftRecipe.dstItemUnit.itemID);
-		uiPopupText.Popup(Input.mousePosition, dstItemStatus.GetDescription());
+		// ポップアップ
+		DispPopup(selectRecipe);
+	}
+
+	private void SetSelectCreateCount(int count)
+	{
+		count = Mathf.Clamp(count, 0, canCreateCountMax);
+		selectCreateCount = count;
+		countText.text = count.ToString();
+		countText.color = canCreateCountMax == 0 ? Color.gray : Color.white;
 	}
 
 	private void UpdateRecipeDescription()
 	{
-		var craftRecipe = CraftDataMan.Instance.CraftRecipeList[selectRecipeIndex];
-
-		var canCreateCount = int.MaxValue;
-		craftDesctiptionText.text = "必要アイテム\n";
-		foreach (var srcUnit in craftRecipe.srcItemUnitList)
+		if(selectRecipeIndex == -1)
 		{
-			var hasCount = ItemInventry.Instance.GetHasItemCount(srcUnit.itemID);
-			canCreateCount = Mathf.FloorToInt(hasCount / srcUnit.count);
-			craftDesctiptionText.text += $"{srcUnit.itemName} {hasCount}/{srcUnit.count}\n";
+			craftDesctiptionText.text = string.Empty;
+			return;
 		}
+		var craftDesctiption = "必要アイテム\n";
+        var selectRecipe = CraftDataMan.Instance.CraftRecipeList[selectRecipeIndex];
+		foreach (var srcUnit in selectRecipe.srcItemUnitList)
+		{
+			// 消費しようとしている数 / 所持数
+			var hasCount = ItemInventry.Instance.GetHasItemCount(srcUnit.itemID);
+			craftDesctiption += $"{srcUnit.itemName} {srcUnit.count * selectCreateCount}/{hasCount}\n";
+		}
+		craftDesctiption += $"必要設備：{selectRecipe.GetConditionName()}";
+		craftDesctiptionText.text = craftDesctiption;
+	}
 
+	private void DispPopup(CraftRecipe craftRecipe)
+	{
+		var dstItemStatus = ItemDataMan.Instance.GetItemStatusById(craftRecipe.dstItemUnit.itemID);
+		uiPopupText.Popup(Input.mousePosition, dstItemStatus.GetIconSprite(), dstItemStatus.GetDescription());
 	}
 
 	public void OnClickCraftButton()
     {
-		var recipe = CraftDataMan.Instance.CraftRecipeList[selectRecipeIndex];
+        var selectRecipe = CraftDataMan.Instance.CraftRecipeList[selectRecipeIndex];
+
 		// 必要アイテム消費
-		foreach (var srcUnit in recipe.srcItemUnitList)
+		foreach (var srcUnit in selectRecipe.srcItemUnitList)
 		{
 			ItemInventry.Instance.AddChangeItemCount(srcUnit.itemID, -srcUnit.count);
 		}
 
-		if (recipe.craftConditionType == CraftConditionType.None)
+		if (selectRecipe.craftConditionType == CraftConditionType.None)
 		{
 			// 設備は不要（即完成）
 			// 製作アイテム増加
 			ItemInventry.Instance.AddChangeItemCount(
-				recipe.dstItemUnit.itemID,
-				recipe.dstItemUnit.count);
+				selectRecipe.dstItemUnit.itemID,
+				selectRecipe.dstItemUnit.count);
 
 			UpdateCraftUI();
 		}
 		else
 		{
-			CraftDataMan.Instance.CurrentFacility.StartCraft(recipe);
+			CraftDataMan.Instance.CurrentFacility.StartCraft(selectRecipe, selectCreateCount);
+
+			// 戦闘画面に戻る
 			UIIngame.Instance.OnClickSwitchUIButton(0);
 		}
     }

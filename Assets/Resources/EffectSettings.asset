@@ -16,11 +16,20 @@ MonoBehaviour:
   - id: ef_hit_explode01
     effect: {fileID: 5435765623472815220, guid: e151831948787d240b2ae7012e64b5d9,
       type: 3}
+  - id: ef_hit_map01
+    effect: {fileID: 5435765623472815220, guid: c426861e2144d274b965c628a387aa6c,
+      type: 3}
   - id: ef_hit_melee01
     effect: {fileID: 5435765623472815220, guid: 906552b512ae8e247be1f16dcf90741f,
       type: 3}
   - id: ef_hit_melee02
     effect: {fileID: 5435765623472815220, guid: 17b9d013afb28fe47a771f283bd4df4d,
+      type: 3}
+  - id: ef_hit_melee02_big
+    effect: {fileID: 8699249776278282507, guid: a2edbf88272dee94fabeedf162058302,
+      type: 3}
+  - id: ef_hit_melee02_big2
+    effect: {fileID: 1910377600199140594, guid: 84ba35f7822853349bc7c78e8dbf26f4,
       type: 3}
   - id: ef_hit_melee03
     effect: {fileID: 5435765623472815220, guid: 164922468e2108a4fb7fb7cb6b3b630f,
@@ -30,10 +39,4 @@ MonoBehaviour:
       type: 3}
   - id: ef_melee01
     effect: {fileID: 5435765623472815220, guid: 2a884d3b3cb70f240bae210656efc901,
-      type: 3}
-  - id: ef_hit_melee02_big
-    effect: {fileID: 8699249776278282507, guid: a2edbf88272dee94fabeedf162058302,
-      type: 3}
-  - id: ef_hit_melee02_big2
-    effect: {fileID: 1910377600199140594, guid: 84ba35f7822853349bc7c78e8dbf26f4,
       type: 3}

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIPopupText : MonoBehaviour
 {
+	[SerializeField] private Image image = default;
 	[SerializeField] private Text text = default;
 	[SerializeField] private Vector2 positionCorrectSize = new Vector2(200f, 200f);
 
@@ -16,13 +17,14 @@ public class UIPopupText : MonoBehaviour
 		screenSize = new Vector2(Screen.width, Screen.height) * 0.5f;
 	}
 
-	public void Popup(Vector2 position, string message)
+	public void Popup(Vector2 position, Sprite sprite, string message)
 	{
 		if ( !isInit )
 		{
 			Init();
 			isInit = true;
 		}
+		this.image.sprite = sprite;
 		this.text.text = message;
 
 		// スクリーン中央に寄せる補正

@@ -22,15 +22,23 @@ public class ItemStatus
 	[SerializeField] private string			name			= default;
 	[SerializeField] private string			id				= default;
 	[SerializeField] private ItemType		itemType		= default;
-	[SerializeField] private string			iconIndex		= default;		// アイコンはitemType準拠でない場合のみここにIndexを入れる
+	[SerializeField] private Sprite			iconOverride	= default;
     [SerializeField] private Efficacy[]     efficacys		= default;
 
 	public string	Name			{ get => name;  }
 	public string	ID				{ get => id; } 
 	public ItemType Type			{ get => itemType; } 
-	public string	IconIndex		{ get => iconIndex; } 
 	public float	EffectValue1		{ get => efficacys[0].Value; }
 	public IReadOnlyCollection<Efficacy> Efficacys { get => efficacys; }
+
+	public Sprite GetIconSprite()
+	{
+		if(iconOverride != null)
+		{
+			return iconOverride;
+		}
+		return ItemDefaultImageData.Instance.GetSprite(itemType);
+	}
 
 	public void Use(){
         switch (itemType) {

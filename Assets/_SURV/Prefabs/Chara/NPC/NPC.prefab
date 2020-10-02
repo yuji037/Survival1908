@@ -105,8 +105,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamType: 1
-  hp: 20
-  moveSpeed: 20
+  skillIDs: 
+  stepForwardCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  winceTimeMax: 1
+  baseSpriteTransform: {fileID: 0}
+  moveSpeedRate: 10
+  moveForwardSpeedCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  moveForwardJumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bodyKnockbackPower: 10
+  bodyKnockbackReturnPower: 10
+  customStatusRate:
+    maxHpRate: 1
+    atkRate: 1
+    defRate: 1
+  charaId: 
+  charaName: 
+  spawner: {fileID: 0}
 --- !u!114 &8338173625392249341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,10 +222,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -202,7 +202,7 @@ public class UIInventry : SingletonMonoBehaviour<UIInventry>, ISwitchUI
 				break;
 		}
 
-		uiPopupText.Popup(Input.mousePosition, description);
+		uiPopupText.Popup(Input.mousePosition, itemStatus.GetIconSprite(), description);
 	}
 
 	public void OnClickUseItemButton()

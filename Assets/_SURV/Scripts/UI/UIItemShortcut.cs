@@ -104,7 +104,7 @@ public class UIItemShortcut : EventTrigger
 		else
 		{
 			itemImage.gameObject.SetActive(true);
-			itemImage.sprite = ItemImageData.Instance.GetSprite(itemID);
+			itemImage.sprite = ItemDataMan.Instance.GetItemStatusById(itemID).GetIconSprite();
 			countText.text = $"×{ItemInventry.Instance.GetHasItemCount(itemID)}";
 		}
 	}

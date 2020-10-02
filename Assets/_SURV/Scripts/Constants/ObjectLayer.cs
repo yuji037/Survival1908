@@ -10,4 +10,7 @@ public enum ObjectLayer
 
 	Water			= 4,
 	UI				= 5,
+
+	PostProcessing	= 8,
+	Map				= 9,
 }
