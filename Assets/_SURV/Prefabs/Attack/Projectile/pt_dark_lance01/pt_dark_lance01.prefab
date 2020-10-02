@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5898101088275276939}
   - component: {fileID: 1239974522}
   - component: {fileID: 6071046531044422065}
+  - component: {fileID: -7969066388518857705}
   - component: {fileID: 886468404295658659}
   m_Layer: 0
   m_Name: pt_dark_lance01
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: 1
-  moveSpeed: 0
+  animatorSpeed: 1
   shootRange: 5
   remainTime: 5
   hitEffect: ef_hit_melee02
@@ -56,11 +57,6 @@ MonoBehaviour:
   coliderCastInterval: 0.2
   coliderCastCountMax: 3
   pierceFlag: 1
-  camShakeStartDirectionType: 5
-  camShakeDelay: 0
-  camShakeStrength: 6.7
-  moveDirection: {x: 0, y: 0}
-  target: {fileID: 0}
 --- !u!58 &1239974522
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,6 +94,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7969066388518857705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851878861736675752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69c1e4f72c3b89438f64e3a96ebc19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionType: 5
+  delay: 0
+  strength: 6.7
 --- !u!114 &886468404295658659
 MonoBehaviour:
   m_ObjectHideFlags: 0

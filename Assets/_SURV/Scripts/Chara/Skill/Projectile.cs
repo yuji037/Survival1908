@@ -10,7 +10,6 @@ public class Projectile : MonoBehaviour
 	private const string EFFECT_HIT_MAP = "ef_hit_map01";
 
 	[SerializeField] private ProjectileType projectileType		= ProjectileType.Collider;
-	[SerializeField] private float			animatorSpeed		= 1f;
 	[SerializeField] private float			shootRange			= 5f;
 	[SerializeField] private float			remainTime			= 5f;
 	[SerializeField] private string			hitEffect			= default;
@@ -18,21 +17,16 @@ public class Projectile : MonoBehaviour
 	[SerializeField] private float			coliderCastInterval = 1f;
 	[SerializeField] private int			coliderCastCountMax = 1;
 	[SerializeField] private bool			pierceFlag			= false;
-	[SerializeField] private CameraShakeManager.StartDirectionType camShakeStartDirectionType = CameraShakeManager.StartDirectionType.DOWN;
-	[SerializeField] private float			camShakeDelay		= 0f;
-	[SerializeField] private float			camShakeStrength	= 0.1f;
 
+	private Collider2D colider2D;
 	private Chara attacker;
 	private Skill skill;
-	private float flyingDistance = 0f;
 	private Vector3 prevPos;
-	private float elapsedTime = 0f;
+	private float flyingDistance = 0f;
+	private float endTime = 0f;
 	private float nextColliderCastTime;
 	private int colliderCastCount;
-	private Animator animator;
-	private Collider2D colider2D;
 	private bool ended = false;
-	private bool calledCamShake = false;
 
 	public void Init(Chara attacker, Skill skill)
 	{
@@ -43,15 +37,11 @@ public class Projectile : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		animator = GetComponent<Animator>();
-		if (animator)
-		{
-			animator.speed = animatorSpeed;
-		}
 		colider2D = GetComponentInChildren<Collider2D>();
 
 		prevPos = transform.position;
-		nextColliderCastTime = coliderCastDelay;
+		nextColliderCastTime = IngameTime.Time + coliderCastDelay;
+		endTime = IngameTime.Time + remainTime;
 	}
 
     // Update is called once per frame
@@ -60,8 +50,7 @@ public class Projectile : MonoBehaviour
 		if (ended) { return; }
 
 		CheckEnd();
-		CheckRangeCast();
-		CheckCameraShake();
+		CheckRangeDamage();
     }
 
 	private void CheckEnd()
@@ -71,20 +60,18 @@ public class Projectile : MonoBehaviour
 		flyingDistance += deltaDistance;
 		prevPos = colider2D.transform.position;
 
-		elapsedTime += IngameTime.DeltaTime;
-
 		if (flyingDistance >= shootRange
-		|| elapsedTime >= remainTime)
+		|| IngameTime.Time >= endTime)
 		{
 			End();
 		}
 	}
 
-	private void CheckRangeCast()
+	private void CheckRangeDamage()
 	{
 		if (projectileType == ProjectileType.RangeCast)
 		{
-			if (elapsedTime >= nextColliderCastTime)
+			if (IngameTime.Time >= nextColliderCastTime)
 			{
 				nextColliderCastTime += coliderCastInterval;
 
@@ -95,15 +82,6 @@ public class Projectile : MonoBehaviour
 				}
 			}
 		}
-	}
-
-	private void CheckCameraShake()
-	{
-		if (calledCamShake
-		||  elapsedTime < camShakeDelay) { return; }
-
-		calledCamShake = true;
-		CameraShakeManager.Instance.Shake(camShakeStartDirectionType, camShakeStrength);
 	}
 
 	private void End()
@@ -123,7 +101,6 @@ public class Projectile : MonoBehaviour
 		ended = true;
 	}
 
-
 	private void OnTriggerEnter2D(Collider2D otherCollider)
 	{
 		//Debug.Log("あたった");
@@ -132,7 +109,7 @@ public class Projectile : MonoBehaviour
 
 		var hitPosition = otherCollider.ClosestPoint(colider2D.transform.position);
 
-		CheckEnemy(otherCollider, hitPosition);
+		CheckEnemyDamage(otherCollider, hitPosition);
 		CheckHitMap(otherCollider, hitPosition);
 	}
 
@@ -145,11 +122,11 @@ public class Projectile : MonoBehaviour
 		foreach(var hit in hits )
 		{
 			if ( hit.transform != null )
-				CheckEnemy(hit.collider, hit.point);
+				CheckEnemyDamage(hit.collider, hit.point);
 		}
 	}
 
-	private void CheckEnemy(Collider2D otherCollider, Vector2 hitPosition)
+	private void CheckEnemyDamage(Collider2D otherCollider, Vector2 hitPosition)
 	{
 		var body = otherCollider.transform.GetComponentInChildren<Chara>();
 		if (body == null) { return; }
